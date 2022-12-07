@@ -35,7 +35,7 @@ Assume, you have done install _grpcurl_
 {% endhint %}
 
 ```bash
-grpcurl -plaintext grpc.gravity.roomit.xyz  list
+ grpcurl grpc.gravity.roomit.xyz:443  list
 ```
 
 ## P2P

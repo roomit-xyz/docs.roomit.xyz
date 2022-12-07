@@ -4,14 +4,15 @@ description: Port Mapping RoomIT Validator
 
 # Port Mapping
 
-| Services             | Port   | Protocol | Status          |
-| -------------------- | ------ | -------- | --------------- |
-| PROXY App            | secret | TCP      | Private         |
-| RPC                  | secret | TCP      | Private         |
-| P2P                  | 16656  | TCP      | Public (Direct) |
-| Metrics              | secret | TCP      | Private         |
-| API                  | secret | TCP      | Private         |
-| gRPC                 | secret | TCP      | Private         |
-| gRPC Web             | secret | TCP      | Private         |
-| Orchestrator Metrics | secret | TCP      | Private         |
+| Services             | Port  | Protocol | Status          |
+| -------------------- | ----- | -------- | --------------- |
+| Proxy App            | 16500 | TCP      | Private         |
+| RPC                  | 16700 | TCP      | Private         |
+| pProf                | 1100  | TCP      | Private         |
+| P2P                  | 16600 | TCP      | Public (Direct) |
+| Prometheus Metrics   | 16800 | TCP      | Private         |
+| API                  | 1200  | TCP      | Private         |
+| gRPC                 | 1300  | TCP      | Private         |
+| gRPC Web             | 1400  | TCP      | Private         |
+| Orchestrator Metrics | 1500  | TCP      | Private         |
 
