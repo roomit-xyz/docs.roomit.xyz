@@ -44,3 +44,8 @@
 * [User and Group Management](security/user-and-group-management.md)
 * [Firewall](security/firewall/README.md)
   * [Gravity Bridge](security/firewall/gravity-bridge.md)
+
+## Automations
+
+* [Scripts](automations/scripts/README.md)
+  * [Auto-restake](automations/scripts/auto-restake.md)
