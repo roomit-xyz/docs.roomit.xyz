@@ -57,3 +57,5 @@
 
 * [Scripts](automations/scripts/README.md)
   * [Auto-restake](automations/scripts/auto-restake.md)
+* [Platform](automations/platform/README.md)
+  * [Docker](automations/platform/docker.md)

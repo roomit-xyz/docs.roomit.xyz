@@ -5,19 +5,18 @@ description: Firewall Gravity Bridge
 # Gravity Bridge
 
 ```bash
-####### GRAVITY VALIDATOR
+####### GITOPIA VALIDATOR
 ## gRPC
--A INPUT -s 10.xx.xx.0/24 -p tcp -m multiport --dports 5090 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p tcp -m multiport --dports 2301 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 # gRPC-web
--A INPUT -s 10.xx.xx.0/24 -p tcp -m multiport --dports 5091 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p tcp -m multiport --dports 2401 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 # api
--A INPUT -s 10.xx.xx.0/24  -p tcp -m multiport --dports 5317 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -s 10.66.66.0/24,127.0.0.1  -p tcp -m multiport --dports 2201 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 # rpc
--A INPUT -s 10.xx.xx.0/24 -p tcp -m multiport --dports 16657 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -s 10.66.66.0/24,127.0.0.1 -p tcp -m multiport --dports 26701 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 # p2p
--A INPUT -p tcp -m multiport --dports 16656 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p tcp -m multiport --dports 26601 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 # Metrics
--A INPUT -s 10.xx.xx.0/24 -p tcp -m multiport --dports 16660 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
--A INPUT -s 10.xx.xx.0/24 -p tcp -m multiport --dports 6631 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -s 10.66.66.0/24,127.0.0.1  -p tcp -m multiport --dports 26801 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 
 ```
