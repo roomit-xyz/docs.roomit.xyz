@@ -23,7 +23,7 @@ AGaEw8kZuNAGZyQXYrtedaZcAYUE7aUzngeYGrBgHETo
 1. Open NYM Wallet
 2. Move to menu **Delegation** and Click Delegate Button on Right Top.&#x20;
 
-<figure><img src="../../.gitbook/assets/NYM.png" alt=""><figcaption><p>Delegate</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/NYM.png" alt=""><figcaption><p>Delegate</p></figcaption></figure>
 
 3\. Click Delgate Stake and Delegate.
 

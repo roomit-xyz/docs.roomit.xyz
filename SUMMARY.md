@@ -4,9 +4,14 @@
 
 ## MAINNET
 
-* [🟩 NYM Mixnode](mainnet/nym-mixnode/README.md)
-  * [How to Stake Your Token](mainnet/nym-mixnode/how-to-stake-your-token.md)
-  * [Install Mixnode](mainnet/nym-mixnode/install-mixnode.md)
+* [🟩 NYM](mainnet/nym/README.md)
+  * [NYM Mixnode](mainnet/nym/nym-mixnode/README.md)
+    * [How to Stake Your Token](mainnet/nym/nym-mixnode/how-to-stake-your-token.md)
+    * [Installation](mainnet/nym/nym-mixnode/installation/README.md)
+      * [Preparation](mainnet/nym/nym-mixnode/installation/preparation.md)
+      * [Setup Mixnode](mainnet/nym/nym-mixnode/installation/setup-mixnode.md)
+    * [Infrastructures](mainnet/nym/nym-mixnode/infrastructures.md)
+    * [Firewall](mainnet/nym/nym-mixnode/firewall.md)
 * [🟩 Gravity Bridge](mainnet/gravity-bridge/README.md)
   * [How to Stake Your Token](mainnet/gravity-bridge/how-to-stake-your-token.md)
   * [Installation Node](mainnet/gravity-bridge/installation-node/README.md)
@@ -37,6 +42,9 @@
 
 * [Install Monitoring Stack](monitoring/install-monitoring-stack.md)
 * [Install Grafana Renderer](https://roomit.medium.com/install-grafana-renderer-cb1059bf93cb)
+* [Grafana Visual](monitoring/grafana-visual/README.md)
+  * [NYM Mixnode](monitoring/grafana-visual/nym-mixnode.md)
+  * [Gravity Bridge](monitoring/grafana-visual/gravity-bridge.md)
 
 ## Security
 
