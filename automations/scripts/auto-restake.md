@@ -9,8 +9,8 @@ description: This Script for auto restake own wallet
 #
 # RoomIT
 # https://roomit.xyz
-# If this script usefull and you will visit cikarang indonesia, 
-# Lets drink coffee and talk about blockchain
+# If this script useful and you will visit cikarang indonesia, 
+# Let's drink coffee and talk about blockchain
 #
 #
 
