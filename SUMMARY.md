@@ -48,7 +48,9 @@
 
 ## Security
 
-* [Hardening](security/hardening.md)
+* [Hardening](security/hardening/README.md)
+  * [Nginx](security/hardening/nginx.md)
+  * [CIS Hardening](security/hardening/cis-hardening.md)
 * [User and Group Management](security/user-and-group-management.md)
 * [Firewall](security/firewall/README.md)
   *
