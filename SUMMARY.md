@@ -40,6 +40,7 @@
 
 * [Install Monitoring Stack](monitoring/install-monitoring-stack.md)
 * [Install Grafana Renderer](https://roomit.medium.com/install-grafana-renderer-cb1059bf93cb)
+* [Prometheus Config](monitoring/prometheus-config.md)
 * [Grafana Visual Config](monitoring/grafana-visual-config/README.md)
   * [NYM Mixnode](monitoring/grafana-visual-config/nym-mixnode.md)
   * [Gravity Bridge](monitoring/grafana-visual-config/gravity-bridge.md)
@@ -63,5 +64,5 @@
 ## Archieves
 
 * [Testnet](archieves/testnet/README.md)
-  * [OKP4 Validator](archieves/testnet/okp4-validator/README.md)
-    * [Create Genesis](archieves/testnet/okp4-validator/create-genesis.md)
+  * [OKP4 Validator](testnet/okp4-validator/README.md)
+    * [Create Genesis](testnet/okp4-validator/create-genesis.md)

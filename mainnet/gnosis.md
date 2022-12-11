@@ -1,6 +1,6 @@
 ---
 description: Gnosis Chain
-cover: ../.gitbook/assets/photo_2022-12-06_16-58-09.jpg
+cover: ../.gitbook/assets/Cover.jpg
 coverY: -12.99492385786802
 ---
 
