@@ -51,7 +51,7 @@
 * [Hardening](security/hardening.md)
 * [User and Group Management](security/user-and-group-management.md)
 * [Firewall](security/firewall/README.md)
-  * [Gravity Bridge](security/firewall/gravity-bridge.md)
+  *
 
 ## Automations
 
