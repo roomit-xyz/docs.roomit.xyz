@@ -23,6 +23,7 @@
     * [State Sync](mainnet/gravity-bridge/installation-node/state-sync.md)
   * [Command Gravity](mainnet/gravity-bridge/command-gravity.md)
   * [Infrastructures](mainnet/gravity-bridge/infrastructures/README.md)
+    * [Status Node](mainnet/gravity-bridge/infrastructures/status-node.md)
     * [Endpoint Public](mainnet/gravity-bridge/infrastructures/endpoint-public.md)
     * [Port Mapping](mainnet/gravity-bridge/infrastructures/port-mapping.md)
   * [Monitoring View Gravity Bridge](mainnet/gravity-bridge/monitoring-view-gravity-bridge.md)
