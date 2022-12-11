@@ -27,6 +27,7 @@
     * [Port Mapping](mainnet/gravity-bridge/infrastructures/port-mapping.md)
   * [Monitoring View Gravity Bridge](mainnet/gravity-bridge/monitoring-view-gravity-bridge.md)
   *
+  * [Wallets](mainnet/gravity-bridge/wallets.md)
 * [🟩 Gnosis](mainnet/gnosis.md)
 * [🟩 Mysterium](mainnet/mysterium.md)
 
