@@ -42,9 +42,9 @@
 
 * [Install Monitoring Stack](monitoring/install-monitoring-stack.md)
 * [Install Grafana Renderer](https://roomit.medium.com/install-grafana-renderer-cb1059bf93cb)
-* [Grafana Visual](monitoring/grafana-visual/README.md)
-  * [NYM Mixnode](monitoring/grafana-visual/nym-mixnode.md)
-  * [Gravity Bridge](monitoring/grafana-visual/gravity-bridge.md)
+* [Grafana Visual Config](monitoring/grafana-visual-config/README.md)
+  * [NYM Mixnode](monitoring/grafana-visual-config/nym-mixnode.md)
+  * [Gravity Bridge](monitoring/grafana-visual-config/gravity-bridge.md)
 
 ## Security
 
