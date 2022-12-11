@@ -5,7 +5,7 @@ description: How to create genesis
 # Create Genesis
 
 {% hint style="info" %}
-Assume, We run in user _salinem._ you can refer to [user-and-group-management.md](../../security/user-and-group-management.md "mention")
+Assume, We run in user _salinem._ you can refer to [user-and-group-management.md](../../../security/user-and-group-management.md "mention")
 {% endhint %}
 
 Login to user salinem

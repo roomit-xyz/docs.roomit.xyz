@@ -32,8 +32,6 @@
 
 ## Testnet
 
-* [OKP4 Validator](testnet/okp4-validator/README.md)
-  * [Create Genesis](testnet/okp4-validator/create-genesis.md)
 * [Gitopia Validator](testnet/gitopia-validator/README.md)
   * [Installation Gitopia](https://medium.com/@roomit/running-node-gitopia-c741880dd2b5)
   * [Commands Gitopia](testnet/gitopia-validator/commands-gitopia.md)
@@ -61,3 +59,9 @@
   * [Auto-restake](automations/scripts/auto-restake.md)
 * [Platform](automations/platform/README.md)
   * [Docker](automations/platform/docker.md)
+
+## Archieves
+
+* [Testnet](archieves/testnet/README.md)
+  * [OKP4 Validator](archieves/testnet/okp4-validator/README.md)
+    * [Create Genesis](archieves/testnet/okp4-validator/create-genesis.md)
