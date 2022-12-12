@@ -46,6 +46,8 @@
 * [Grafana Visual Config](monitoring/grafana-visual-config/README.md)
   * [NYM Mixnode](monitoring/grafana-visual-config/nym-mixnode.md)
   * [Gravity Bridge](monitoring/grafana-visual-config/gravity-bridge.md)
+* [Alerting](monitoring/alerting/README.md)
+  * [Alert Block](monitoring/alerting/alert-block.md)
 
 ## Security
 
