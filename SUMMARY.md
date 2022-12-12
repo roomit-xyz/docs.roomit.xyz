@@ -27,7 +27,7 @@
     * [Port Mapping](mainnet/gravity-bridge/infrastructures/port-mapping.md)
     * [Status Node](https://health.roomit.xyz/status/gravity-bridge)
   * [Monitoring View Gravity Bridge](mainnet/gravity-bridge/monitoring-view-gravity-bridge.md)
-  *
+  * [Firewall](security/firewall/gravity-bridge.md)
   * [Wallets](mainnet/gravity-bridge/wallets.md)
 * [🟩 Gnosis](mainnet/gnosis.md)
 * [🟩 Mysterium](mainnet/mysterium.md)
