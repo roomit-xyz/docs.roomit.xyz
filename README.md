@@ -6,6 +6,8 @@ coverY: -15.014662756598241
 
 # Home
 
+## Descriptions
+
 This document related with testnet and mainnet for RoomIT Validator.&#x20;
 
 * Mainnet Documents
@@ -13,3 +15,9 @@ This document related with testnet and mainnet for RoomIT Validator.&#x20;
 * Security
 * Monitoring And Alerting
 * Managment
+* Automations&#x20;
+
+## Topology
+
+<figure><img src="https://raw.githubusercontent.com/luneareth/stake.roomit.xyz/main/img/powered/RoomIT-Network.png" alt=""><figcaption><p>Topology RoomIT</p></figcaption></figure>
+
