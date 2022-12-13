@@ -46,7 +46,8 @@
 * [Grafana Visual Config](monitoring/grafana-visual-config/README.md)
   * [NYM Mixnode](monitoring/grafana-visual-config/nym-mixnode.md)
   * [Gravity Bridge](monitoring/grafana-visual-config/gravity-bridge.md)
-* [Alerting](automations/scripts/alert-block.md)
+* [Alerting](monitoring/alerting/README.md)
+  * [Alerting Missed Block](automations/scripts/alert-block.md)
 
 ## Security
 
@@ -60,6 +61,7 @@
 ## Automations
 
 * [Scripts](automations/scripts/README.md)
+  * [Alert Active Node](automations/scripts/alert-active-node.md)
   * [Auto Restake](automations/scripts/auto-restake.md)
   * [Alert Block](automations/scripts/alert-block.md)
 * [Platform](automations/platform/README.md)
