@@ -46,8 +46,7 @@
 * [Grafana Visual Config](monitoring/grafana-visual-config/README.md)
   * [NYM Mixnode](monitoring/grafana-visual-config/nym-mixnode.md)
   * [Gravity Bridge](monitoring/grafana-visual-config/gravity-bridge.md)
-* [Alerting](monitoring/alerting/README.md)
-  * [Alert Block](monitoring/alerting/alert-block.md)
+* [Alerting](automations/scripts/alert-block.md)
 
 ## Security
 
@@ -56,12 +55,13 @@
   * [CIS Hardening](security/hardening/cis-hardening.md)
 * [User and Group Management](security/user-and-group-management.md)
 * [Firewall](security/firewall/README.md)
-  * [Gravity Bridge](security/firewall/gravity-bridge.md)
+  *
 
 ## Automations
 
 * [Scripts](automations/scripts/README.md)
-  * [Auto-restake](automations/scripts/auto-restake.md)
+  * [Auto Restake](automations/scripts/auto-restake.md)
+  * [Alert Block](automations/scripts/alert-block.md)
 * [Platform](automations/platform/README.md)
   * [Docker](automations/platform/docker.md)
 
