@@ -72,6 +72,7 @@
 * [Platform](automations/platform/README.md)
   * [Docker](automations/platform/docker/README.md)
     * [Installation Docker](automations/platform/docker/docker.md)
+    * [Docker Administrator I](https://roomit.medium.com/install-docker-and-command-managment-a43c635360bb)
 
 ## Archieves
 
