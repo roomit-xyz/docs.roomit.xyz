@@ -38,45 +38,45 @@
 
 ## Testnet
 
-* [Gitopia Validator](testnet/gitopia-validator/README.md)
+* [🟨 Gitopia Validator](testnet/gitopia-validator/README.md)
   * [Installation Gitopia](https://medium.com/@roomit/running-node-gitopia-c741880dd2b5)
   * [Commands Gitopia](testnet/gitopia-validator/commands-gitopia.md)
 
 ## Monitoring
 
-* [Install Monitoring Stack](monitoring/install-monitoring-stack.md)
-* [Install Grafana Renderer](https://roomit.medium.com/install-grafana-renderer-cb1059bf93cb)
-* [Prometheus Config](monitoring/prometheus-config.md)
-* [Grafana Visual Config](monitoring/grafana-visual-config/README.md)
+* [🟪 Install Monitoring Stack](monitoring/install-monitoring-stack.md)
+* [🟪 Install Grafana Renderer](https://roomit.medium.com/install-grafana-renderer-cb1059bf93cb)
+* [🟪 Prometheus Config](monitoring/prometheus-config.md)
+* [🟪 Grafana Visual Config](monitoring/grafana-visual-config/README.md)
   * [NYM Mixnode](monitoring/grafana-visual-config/nym-mixnode.md)
   * [Gravity Bridge](monitoring/grafana-visual-config/gravity-bridge.md)
-* [Alerting](monitoring/alerting/README.md)
+* [🟪 Alerting](monitoring/alerting/README.md)
   * [Alerting Missed Block](automations/scripts/alert-block.md)
   * [Alert Status Active or Inactive](automations/scripts/alert-active-node.md)
 
 ## Security
 
-* [Hardening](security/hardening/README.md)
+* [🟥 Hardening](security/hardening/README.md)
   * [Nginx](security/hardening/nginx.md)
   * [CIS Hardening](security/hardening/cis-hardening.md)
-* [User and Group Management](security/user-and-group-management.md)
-* [Firewall](security/firewall/README.md)
+* [🟥 User and Group Management](security/user-and-group-management.md)
+* [🟥 Firewall](security/firewall/README.md)
   * [Firewall - Gravity Bridge](security/firewall/gravity-bridge.md)
   * [Firewall - NYM Mixnode](security/firewall/firewall.md)
 
 ## Automations
 
-* [Scripts](automations/scripts/README.md)
+* [🟦 Scripts](automations/scripts/README.md)
   * [Alert Active Node](automations/scripts/alert-active-node.md)
   * [Auto Restake](automations/scripts/auto-restake.md)
   * [Alert Missed Block](automations/scripts/alert-block.md)
-* [Platform](automations/platform/README.md)
+* [🟦 Platform](automations/platform/README.md)
   * [Docker](automations/platform/docker/README.md)
     * [Installation Docker](automations/platform/docker/docker.md)
     * [Docker Administrator I](https://roomit.medium.com/install-docker-and-command-managment-a43c635360bb)
 
 ## Archieves
 
-* [Testnet](archieves/testnet/README.md)
+* [⬛ Testnet](archieves/testnet/README.md)
   * [OKP4 Validator](testnet/okp4-validator/README.md)
     * [Create Genesis](testnet/okp4-validator/create-genesis.md)
