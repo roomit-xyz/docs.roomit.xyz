@@ -14,8 +14,8 @@
     * [Infrastructures](mainnet/nym/nym-mixnode/infrastructures/README.md)
       * [Port Mapping](mainnet/nym/nym-mixnode/infrastructures/port-mapping.md)
       * [Healthcheck](https://health.roomit.xyz/status/nym-mixnode/)
-    * [Firewall](mainnet/nym/nym-mixnode/firewall.md)
     * [Monitoring View Mixnode](mainnet/nym/nym-mixnode/monitoring-view-gravity-bridge.md)
+    * [Firewall](security/firewall/firewall.md)
 * [🟩 Gravity Bridge](mainnet/gravity-bridge/README.md)
   * [How to Stake Your Token](mainnet/gravity-bridge/how-to-stake-your-token.md)
   * [Installation Node](mainnet/gravity-bridge/installation-node/README.md)
@@ -31,8 +31,8 @@
     * [Port Mapping](mainnet/gravity-bridge/infrastructures/port-mapping.md)
     * [Healthcheck](https://health.roomit.xyz/status/gravity-bridge)
   * [Monitoring View Gravity Bridge](mainnet/gravity-bridge/monitoring-view-gravity-bridge.md)
-  * [Firewall](security/firewall/gravity-bridge.md)
   * [Wallets](mainnet/gravity-bridge/wallets.md)
+  * [Firewall](security/firewall/gravity-bridge.md)
 * [🟩 Gnosis](mainnet/gnosis.md)
 * [🟩 Mysterium](mainnet/mysterium.md)
 
@@ -61,7 +61,8 @@
   * [CIS Hardening](security/hardening/cis-hardening.md)
 * [User and Group Management](security/user-and-group-management.md)
 * [Firewall](security/firewall/README.md)
-  *
+  * [Firewall - Gravity Bridge](security/firewall/gravity-bridge.md)
+  * [Firewall - NYM Mixnode](security/firewall/firewall.md)
 
 ## Automations
 
