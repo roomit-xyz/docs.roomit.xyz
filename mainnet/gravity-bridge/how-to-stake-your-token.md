@@ -8,9 +8,9 @@ Access [Web Keplr Wallet RoomIT](https://wallet.keplr.app/chains/gravity-bridge?
 
 Click Delegate if you did not stake yet in other validator .
 
-<figure><img src="../../.gitbook/assets/Screenshot at 2022-12-01 12-22-15.png" alt=""><figcaption><p>Delegate $GRAV</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/RoomIT-Gravity-Wallet.png" alt=""><figcaption><p>Delegate $GRAV</p></figcaption></figure>
 
 If you have done delegate in other validator and intersting join us. Just click redelagate and search RoomIT, Next and Delegate your amount.
 
-<figure><img src="../../.gitbook/assets/Screenshot at 2022-12-01 12-22-27.png" alt=""><figcaption><p>Redelegate to RoomIT Validator</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/RoomIT-NYM-Wallet.png" alt=""><figcaption><p>Redelegate to RoomIT Validator</p></figcaption></figure>
 

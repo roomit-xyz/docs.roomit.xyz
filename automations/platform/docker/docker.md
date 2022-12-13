@@ -2,10 +2,10 @@
 description: Installation Docker
 ---
 
-# Docker
+# Installation Docker
 
 {% hint style="info" %}
-assume you was create user, refer [user-and-group-management.md](../../security/user-and-group-management.md "mention")\
+assume you was create user, refer [user-and-group-management.md](../../../security/user-and-group-management.md "mention")\
 and\
 you running in root
 {% endhint %}
