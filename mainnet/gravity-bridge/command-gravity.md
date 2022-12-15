@@ -124,7 +124,7 @@ gravityd tx staking create-validator \
 --moniker="${MONIKER}" \
 --identity="${PROFILE}" \
 --details="${DETAILS}" \
---website="${WEBSITE}"
+--website="${WEBSITE}" \
 --chain-id=gravity-bridge-3 \
 --commission-rate=0.05 \
 --commission-max-rate=0.20 \
