@@ -4,9 +4,17 @@ description: Script Updates Ports
 
 # Update Ports
 
-````bash
-```
+```bash
+#!/bin/bash
+#
+# RoomIT
+# https://roomit.xyz
+# If this script useful and you will visit cikarang indonesia, 
+# Let's drink coffee and talk about blockchain
+#
+#
 ##### Global Env
+HOME_VALIDATOR="/mainnet/salinem"
 CONF_BLOCKCHAIN=".gravity"
 HOME_VALIDATOR=`pwd`
 CHAIN_ID="testnet-1"
@@ -35,5 +43,5 @@ sed -i.bak -e "s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${GRPC}\"%" ${H
 sed -i.bak -e "s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${WEBGRPC}\"%" ${HOME_VALIDATOR}/${CONF_BLOCKCHAIN}/config/app.toml
 sed -i.bak -e "s%^node = \"tcp://localhost:26657\"%address = \"tcp://0.0.0.0:${RPC}\"%" ${HOME_VALIDATOR}/${CONF_BLOCKCHAIN}/config/client.toml
 
+
 ```
-````
