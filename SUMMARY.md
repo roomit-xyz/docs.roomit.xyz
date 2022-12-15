@@ -63,6 +63,8 @@
 * [🟥 Firewall](security/firewall/README.md)
   * [Firewall - Gravity Bridge](security/firewall/gravity-bridge.md)
   * [Firewall - NYM Mixnode](security/firewall/firewall.md)
+* [🟥 Other](security/other/README.md)
+  * [Compile Script Bash](security/other/compile-script-bash.md)
 
 ## Automations
 

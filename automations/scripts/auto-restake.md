@@ -2,7 +2,13 @@
 description: This Script for auto restake own wallet
 ---
 
-# Auto-restake
+# Auto Restake
+
+{% hint style="info" %}
+For Used this script in production. Please encrypt this script, due password attached.
+
+We recommend for compile this script with shc. Refer : [compile-script-bash.md](../../security/other/compile-script-bash.md "mention")
+{% endhint %}
 
 ```bash
 #!/bin/bash
