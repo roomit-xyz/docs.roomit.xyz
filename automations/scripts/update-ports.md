@@ -17,7 +17,7 @@ description: Script Updates Ports
 HOME_VALIDATOR="/mainnet/salinem"
 CONF_BLOCKCHAIN=".gravity"
 HOME_VALIDATOR=`pwd`
-CHAIN_ID="testnet-1"
+
 
 ##### config.toml
 PROXY_APP="26500"
