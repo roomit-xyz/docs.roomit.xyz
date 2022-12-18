@@ -4,6 +4,15 @@ description: nginx hardening
 
 # Nginx
 
+### NGINX Hardening
+
+* Disable Token SIgn Version
+* Adjusting Buffer Client
+* Keepalive
+* Header Restriction
+* Request Retriction
+* Direction Domain Unused
+
 nginx.conf
 
 ```
