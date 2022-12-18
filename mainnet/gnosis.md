@@ -6,6 +6,12 @@ coverY: -12.99492385786802
 
 # 🟩 Gnosis
 
+<figure><img src="https://github.com/roomit-xyz/stake.roomit.xyz/raw/main/img/services/gnosis.png" alt=""><figcaption><p>Gnosis Chain</p></figcaption></figure>
+
+Gnosis Chain (Execution layer with EVM) is a fully Ethereum-compatible companion chain with low fees, a native stablecoin, and thriving ecosystem of dApps. Gnosis Chain: Execution Layer GNO Token Validators use the GNO token to provide Proof-of-Stake consensus protection for GBC.
+
+
+
 Due Gnosis Chain only consume by ours side. Details Document not published.\
 Visit our Gnosis Chain Validator :&#x20;
 
