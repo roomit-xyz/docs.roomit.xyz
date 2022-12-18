@@ -1,7 +1,7 @@
 ---
 description: Decentralized privacy platform
-cover: ../../.gitbook/assets/Cover.jpg
-coverY: -14.07624633431085
+cover: ../../.gitbook/assets/Banner.jpg
+coverY: 0
 ---
 
 # 🟩 NYM

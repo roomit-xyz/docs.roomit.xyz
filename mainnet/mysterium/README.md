@@ -1,7 +1,7 @@
 ---
 description: Decentralized VPN
-cover: ../../.gitbook/assets/Cover.jpg
-coverY: -14.851341551849165
+cover: ../../.gitbook/assets/Banner.jpg
+coverY: 0
 ---
 
 # 🟩 Mysterium

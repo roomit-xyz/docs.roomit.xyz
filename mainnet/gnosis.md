@@ -1,7 +1,7 @@
 ---
 description: Gnosis Chain
-cover: ../.gitbook/assets/Cover.jpg
-coverY: -12.99492385786802
+cover: ../.gitbook/assets/Banner.jpg
+coverY: 0
 ---
 
 # 🟩 Gnosis

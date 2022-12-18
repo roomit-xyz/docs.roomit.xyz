@@ -1,7 +1,7 @@
 ---
 description: Document NodeGravity Bridge
-cover: ../../.gitbook/assets/Cover.jpg
-coverY: -13.923132704858592
+cover: ../../.gitbook/assets/Banner.jpg
+coverY: 0
 ---
 
 # 🟩 Gravity Bridge
