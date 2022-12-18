@@ -12,7 +12,7 @@ Gnosis Chain (Execution layer with EVM) is a fully Ethereum-compatible companion
 
 
 
-Due Gnosis Chain only consume by ours side. Details Document not published.\
+Due Gnosis Chain only consume by ours side. Details Document not published, if you still want deploy gnosis validator please refer to [https://docs.gnosischain.com/node/guide/](https://docs.gnosischain.com/node/guide/).\
 Visit our Gnosis Chain Validator :&#x20;
 
 {% embed url="https://beacon.gnosischain.com/validator/b6c314d24b91f98ae3afea3ba2a5ef8bf234668c15091e5ab06cb7a7b30e93f69b4bedac2116042afc22867c6c8e1992#deposits" %}
