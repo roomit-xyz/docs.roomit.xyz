@@ -2,7 +2,7 @@
 description: This page explain how to manage user and group
 ---
 
-# User and Group Management
+# 🟥 User and Group Management
 
 {% hint style="info" %}
 Don't running your application blockchain with root or administrator user.\

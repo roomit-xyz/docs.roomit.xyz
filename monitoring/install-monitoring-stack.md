@@ -2,7 +2,7 @@
 description: Install Grafana and Prometheus
 ---
 
-# Install Monitoring Stack
+# 🟪 Install Monitoring Stack
 
 Download Script and save as file monitoring-stack.sh or [visit.](https://roomit.medium.com/install-monitoring-stack-grafana-prometheus-690d254495d2)\
 

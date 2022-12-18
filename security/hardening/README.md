@@ -4,5 +4,5 @@ description: >-
   Accounting, File Integrity, SSH, Networking, Logging, Maintenance and Other
 ---
 
-# Hardening
+# 🟥 Hardening
 

@@ -2,5 +2,5 @@
 description: Visual Status Nodes
 ---
 
-# Grafana Visual
+# 🟪 Grafana Visual Config
 

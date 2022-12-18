@@ -34,7 +34,10 @@
   * [Wallets](mainnet/gravity-bridge/wallets.md)
   * [Firewall](security/firewall/gravity-bridge.md)
 * [🟩 Gnosis](mainnet/gnosis.md)
-* [🟩 Mysterium](mainnet/mysterium.md)
+* [🟩 Mysterium](mainnet/mysterium/README.md)
+  * [Installation Mysterium](mainnet/mysterium/installation-mysterium.md)
+  * [Up And Running](mainnet/mysterium/up-and-running.md)
+  * [Dashboard Mysterium](mainnet/mysterium/dashboard-mysterium.md)
 
 ## Testnet
 
