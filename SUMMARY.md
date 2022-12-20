@@ -75,6 +75,7 @@
   * [Alert Active Node](automations/scripts/alert-active-node.md)
   * [Auto Restake](automations/scripts/auto-restake.md)
   * [Alert Missed Block](automations/scripts/alert-block.md)
+  * [Check Balance Address Gravity](automations/scripts/check-balance-address-gravity.md)
   * [Update Ports](automations/scripts/update-ports.md)
 * [🟦 Platform](automations/platform/README.md)
   * [Docker](automations/platform/docker/README.md)
