@@ -1,3 +1,3 @@
-# Monitoring View Gravity Bridge
+# Monitoring View Comdex
 
-<figure><img src="../../.gitbook/assets/Gravity-Monitoring.png" alt=""><figcaption><p>Monitoring Gravity</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/comdex-monitoring-grafana.png" alt=""><figcaption><p>Monitoring Gravity</p></figcaption></figure>

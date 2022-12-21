@@ -45,7 +45,7 @@
     * [Endpoint Public](mainnet/comdex/infrastructures/endpoint-public.md)
     * [Port Mapping](mainnet/comdex/infrastructures/port-mapping.md)
     * [Healthcheck](https://health.roomit.xyz/status/comdex)
-  * [Monitoring View Gravity Bridge](mainnet/comdex/monitoring-view-gravity-bridge.md)
+  * [Monitoring View Comdex](mainnet/comdex/monitoring-view-gravity-bridge.md)
   * [Wallets](mainnet/comdex/wallets.md)
   * [Firewall](security/firewall/firewall-comdex.md)
 * [🟩 Gnosis](mainnet/gnosis.md)
@@ -79,18 +79,13 @@
   * [CIS Hardening](security/hardening/cis-hardening.md)
 * [🟥 User and Group Management](security/user-and-group-management.md)
 * [🟥 Firewall](security/firewall/README.md)
-  *
-  *
-  *
 * [🟥 Other](security/other/README.md)
   * [Compile Script Bash](security/other/compile-script-bash.md)
 
 ## Automations
 
 * [🟦 Scripts](automations/scripts/README.md)
-  *
   * [Auto Restake](automations/scripts/auto-restake.md)
-  *
   * [Check Balance Address Gravity](automations/scripts/check-balance-address-gravity.md)
   * [Update Ports](automations/scripts/update-ports.md)
 * [🟦 Platform](automations/platform/README.md)
