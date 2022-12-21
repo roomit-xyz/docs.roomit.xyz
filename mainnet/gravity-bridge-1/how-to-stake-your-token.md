@@ -17,10 +17,3 @@ Click Button Delegate
 <figure><img src="../../.gitbook/assets/comdex_delegate.png" alt=""><figcaption><p>Aftaer Click Delegate</p></figcaption></figure>
 
 &#x20;Fill Amoun Token, and Click delegate for stake.
-
-<figure><img src="../../.gitbook/assets/RoomIT-Gravity-Wallet.png" alt=""><figcaption><p>Delegate $GRAV</p></figcaption></figure>
-
-If you have done delegate in other validator and intersting join us. Just click redelagate and search RoomIT, Next and Delegate your amount.
-
-<figure><img src="../../.gitbook/assets/RoomIT-NYM-Wallet.png" alt=""><figcaption><p>Redelegate to RoomIT Validator</p></figcaption></figure>
-
