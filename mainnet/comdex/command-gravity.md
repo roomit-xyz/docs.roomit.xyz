@@ -1,8 +1,8 @@
 ---
-description: This is command about CLI Gravity Bridge
+description: This is command about CLI Comdex
 ---
 
-# Command Gravity
+# Command Comdex
 
 ### **Key Management**
 
