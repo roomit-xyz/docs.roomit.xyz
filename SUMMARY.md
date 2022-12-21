@@ -87,6 +87,8 @@
   * [Firewall - Comdex](security/firewall/firewall-comdex.md)
   * [Firewall - Gravity Bridge](security/firewall/firewall-gravity-bridge.md)
   * [Firewall - NYM Mixnode](security/firewall/firewall-nym-mixnode.md)
+* [🟥 Logging](security/logging/README.md)
+  * [Install Loki](security/logging/install-loki.md)
 * [🟥 Other](security/other/README.md)
   * [Compile Script Bash](security/other/compile-script-bash.md)
 
