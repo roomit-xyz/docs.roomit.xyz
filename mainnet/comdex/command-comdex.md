@@ -119,7 +119,7 @@ DETAILS="Describes Your Validator"
 WEBSITE="https://yourwebsite.com"
 
 comdex tx staking create-validator \
---amount=1000000ugraviton \
+--amount=1000000ucmdx \
 --pubkey=$(comdex tendermint show-validator --home ${HOME}/.gravity) \
 --moniker="${MONIKER}" \
 --identity="${PROFILE}" \
@@ -262,7 +262,7 @@ comdex tx distribution withdraw-rewards $(comdex keys show mywallet --bech val -
 #### Delegate My Token to Own Validator
 
 ```bash
-comdex tx staking delegate $(comdex keys show wallet --bech val -a) 1000000ugraviton \
+comdex tx staking delegate $(comdex keys show wallet --bech val -a) 1000000ucmdx \
 --from mywallet \
 --gas-adjustment 1.4 \
 --home ${HOME}/.gravity \
@@ -275,7 +275,7 @@ comdex tx staking delegate $(comdex keys show wallet --bech val -a) 1000000ugrav
 #### Delegate Your Token To Our Validator
 
 ```bash
-comdex tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 1000000ugraviton \ 
+comdex tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 1000000ucmdx \ 
 --from mywallet \
 --gas-adjustment 1.4 \ 
 --gas auto \
@@ -288,7 +288,7 @@ comdex tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz
 #### Redelegate Tokens to Another Validator
 
 ```bash
-comdex tx staking redelegate $(comdex keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ugraviton \
+comdex tx staking redelegate $(comdex keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ucmdx \
 --from mywallet 
 --gas-adjustment 1.4 \
 --gas auto \
@@ -301,7 +301,7 @@ comdex tx staking redelegate $(comdex keys show wallet --bech val -a) <TO_VALOPE
 #### Unbound or Unstake Your Tokens
 
 ```bash
-comdex tx staking unbond $(comdex keys show wallet --bech val -a) 1000000ugraviton \
+comdex tx staking unbond $(comdex keys show wallet --bech val -a) 1000000ucmdx \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
@@ -314,7 +314,7 @@ comdex tx staking unbond $(comdex keys show wallet --bech val -a) 1000000ugravit
 Send tokens to the wallet
 
 ```
-comdex tx bank send wallet <TO_WALLET_ADDRESS> 1000000ugraviton \
+comdex tx bank send wallet <TO_WALLET_ADDRESS> 1000000ucmdx \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
