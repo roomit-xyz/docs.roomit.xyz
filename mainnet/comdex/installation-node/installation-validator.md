@@ -13,6 +13,8 @@ sudo apt update
 sudo apt install curl git jq lz4 build-essential zsh -y
 ```
 
+#### User Management
+
 Create User, Please Refer to [user-and-group-management.md](../../../security/user-and-group-management.md "mention")
 
 Login as User salinem
@@ -39,6 +41,8 @@ pwd
 **Running in user** : _salinem_
 {% endhint %}
 
+#### FHS of Comdex
+
 Create FHS for application
 
 ```bash
@@ -49,14 +53,15 @@ mkdir -p ${HOME}/bin
 mkdir -p ${HOME}/conf
 ```
 
-Install Golang
+#### Shell Variable Comdex
 
-<pre class="language-bash"><code class="lang-bash">GOLANG_VERSION="1.19.4"
-<strong>wget "https://golang.org/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz"
-</strong>tar xvf go${GOLANG_VERSION}.linux-amd64.tar.gz 
-mv go/ ${HOME_VALIDATOR}/.go
-rm -f ${HOME_VALIDATOR}/tmp/go${GOLANG_VERSION}.linux-amd64.tar.gz
-</code></pre>
+Setup Shell Variable, add line in your shell profile ${HOME}/.zshrc or if using bash ${HOME}/.bashrc
+
+```bash
+####### COMDEX ######
+export PATH="${PATH}:/${HOME}/bin"
+source /app/comdex/conf/cosmovisor-env
+```
 
 Set Variable Golang in shell zshrc
 
@@ -69,6 +74,19 @@ GOROOT="\$HOME_VALIDATOR/.go"
 APP_BIN="\$HOME_VALIDATOR/bin"
 EOF
 ```
+
+#### Installation Comdex
+
+Install Golang
+
+<pre class="language-bash"><code class="lang-bash">GOLANG_VERSION="1.19.4"
+<strong>wget "https://golang.org/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz"
+</strong>tar xvf go${GOLANG_VERSION}.linux-amd64.tar.gz 
+mv go/ ${HOME_VALIDATOR}/.go
+rm -f ${HOME_VALIDATOR}/tmp/go${GOLANG_VERSION}.linux-amd64.tar.gz
+</code></pre>
+
+
 
 Install Comdex&#x20;
 
@@ -89,14 +107,6 @@ Check version, ensure you have version v6.0.2
 
 ```
 comdex version
-```
-
-Setup Shell Variable, add line in your shell profile ${HOME}/.zshrc or if using bash ${HOME}/.bashrc
-
-```bash
-####### COMDEX ######
-export PATH="${PATH}:/${HOME}/bin"
-source /app/comdex/conf/cosmovisor-env
 ```
 
 Initialized Node
