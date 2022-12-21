@@ -1,5 +1,5 @@
 ---
-description: Stake your $GRAV to Our Validator
+description: Stake your $CMDX to Our Validator
 ---
 
 # How to Stake Your Token
