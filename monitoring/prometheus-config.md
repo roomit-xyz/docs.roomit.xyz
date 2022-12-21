@@ -17,6 +17,9 @@
      - targets: ["mainnet-02.roomit.xyz:16800"]
        labels:
          group: 'gravity-node'
+     - targets: ["mainnet-02.roomit.xyz:16801"]
+       labels:
+         group: 'comdex-node'
      - targets: ["mainnet-02.roomit.xyz:1500"]
        labels:
          group: 'gravity-orchestrator'

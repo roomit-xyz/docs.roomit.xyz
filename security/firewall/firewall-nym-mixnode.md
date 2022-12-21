@@ -1,10 +1,10 @@
 ---
-description: Net Filter NYM Mixnode
+description: NYM Mixnode Netfilter Iptables
 ---
 
-# Firewall
+# Firewall - NYM Mixnode
 
-```
+```bash
 ### GLOBAL
 -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 -A INPUT -i lo -j ACCEPT
@@ -14,5 +14,4 @@ description: Net Filter NYM Mixnode
 -A INPUT  -p tcp -m tcp -m state --state NEW,RELATED,ESTABLISHED  --dport 1789 -j ACCEPT
 -A INPUT  -p tcp -m tcp -m state --state NEW,RELATED,ESTABLISHED  --dport 1790 -j ACCEPT
 -A INPUT  -p tcp -m tcp -m state --state NEW,RELATED,ESTABLISHED  --dport 8000 -j ACCEPT
-
 ```

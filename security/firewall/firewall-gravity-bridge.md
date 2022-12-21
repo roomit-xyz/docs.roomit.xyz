@@ -1,10 +1,10 @@
 ---
-description: Net Filter Iptables Gravity Bridge
+description: Gravity Bridge Netfilter Iptables
 ---
 
-# Gravity Bridge
+# Firewall - Gravity Bridge
 
-```
+```bash
 ####### GRAVITY VALIDATOR
 ## gRPC
 -A INPUT -s 10.66.66.0/24 -p tcp -m multiport --dports 1300 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT

@@ -1,5 +1,5 @@
 ---
-description: Net Filter Iptables Comdex
+description: Comdex Netfilter Iptables
 ---
 
 # Firewall - Comdex
@@ -18,6 +18,5 @@ description: Net Filter Iptables Comdex
 -A INPUT -p tcp -m multiport --dports 16601 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 # Metrics
 -A INPUT -s 10.66.66.0/24 -p tcp -m multiport --dports 16801 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
-
 
 ```
