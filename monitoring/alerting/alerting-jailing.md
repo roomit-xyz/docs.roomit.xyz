@@ -1,6 +1,6 @@
 # Alerting Jailing
 
-```
+```bash
 #!/bin/bash
 #
 # RoomIT
