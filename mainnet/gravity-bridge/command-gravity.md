@@ -79,7 +79,7 @@ gravityd keys import mywallet mywallet_file.backup --home ${HOME}/.gravity
 <pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `gravityd keys list --home ${HOME}/.gravity --output json| jq -r ".[] .address"`
 </strong>do
    CHAIN_ID="gravity-bridge-3"
-   RPC="tcp://localhost:26657"
+   RPC="tcp://localhost:16700"
    gravityd q bank balances ${mywallet} --home ${HOME}/.gravity --chain-id ${CHAIN_ID} --node ${RPC}
 done
 </code></pre>
@@ -87,7 +87,7 @@ done
 #### Show Balance Address
 
 ```bash
-gravityd q bank balances mywallet_public_address --home ${HOME}/.gravity --chain-id gravity-bridge-3 --node tcp://localhost:26657
+gravityd q bank balances mywallet_public_address --home ${HOME}/.gravity --chain-id gravity-bridge-3 --node tcp://localhost:16700
 ```
 
 ### Validator Management
@@ -133,7 +133,7 @@ gravityd tx staking create-validator \
 --from=mywallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---node tcp://localhost:26657 \
+--node tcp://localhost:16700 \
 --home ${HOME}/.gravity \
 -y
 ```
@@ -156,7 +156,7 @@ gravityd tx staking edit-validator \
 --from=mywallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---node tcp://localhost:26657 \
+--node tcp://localhost:16700 \
 --home ${HOME}/.gravity \
 -y
 ```
@@ -192,7 +192,7 @@ gravityd tx slashing unjail \
 --from mywallet \
 --chain-id gravity-bridge-3 \
  --home ${HOME}/.gravity \
- --node  tcp://localhost:26657 \
+ --node  tcp://localhost:16700 \
  --gas auto \
  --gas-adjustment 1.4 \
  -y
@@ -202,7 +202,7 @@ gravityd tx slashing unjail \
 
 ```bash
 gravityd query slashing signing-info $(gravityd tendermint show-validator) \
- --node  tcp://localhost:26657 \
+ --node  tcp://localhost:16700 \
  --home ${HOME}/.gravity
 ```
 
@@ -227,7 +227,7 @@ $(gravityd keys show \
                 $(gravityd keys list --home ${HOME}/.gravity --output json| jq -r ".[] .address" | tail -n1) \
 --bech val -a) \
 --chain-id gravity-bridge-3 \
---node tcp://localhost:26657
+--node tcp://localhost:16700
 ```
 
 ### Token Management
@@ -238,7 +238,7 @@ $(gravityd keys show \
 gravityd tx distribution withdraw-all-rewards \
 --from mywallet \
 --chain-id gravity-bridge-3 \
---node tcp://localhost:26657 \
+--node tcp://localhost:16700 \
 --home ${HOME}/.gravity \
 --gas-adjustment 1.4 \
 --gas auto \
@@ -254,7 +254,7 @@ gravityd tx distribution withdraw-rewards $(gravityd keys show mywallet --bech v
 --gas-adjustment 1.4 \
 --gas auto \
 --chain-id gravity-bridge-3 \
---node tcp://localhost:26657 \
+--node tcp://localhost:16700 \
 --home ${HOME}/.gravity \
 -y 
 ```
@@ -266,7 +266,7 @@ gravityd tx staking delegate $(gravityd keys show wallet --bech val -a) 1000000u
 --from mywallet \
 --gas-adjustment 1.4 \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
+--node tcp://localhost:16700 \
 --chain-id gravity-bridge-3 \
 --gas auto \
 -y
@@ -280,7 +280,7 @@ gravityd tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590l
 --gas-adjustment 1.4 \ 
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
+--node tcp://localhost:16700 \
 --chain-id gravity-bridge-3 \
 -y
 ```
@@ -293,7 +293,7 @@ gravityd tx staking redelegate $(gravityd keys show wallet --bech val -a) <TO_VA
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
+--node tcp://localhost:16700 \
 --chain-id gravity-bridge-3 \
 -y 
 ```
@@ -306,7 +306,7 @@ gravityd tx staking unbond $(gravityd keys show wallet --bech val -a) 1000000ugr
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
+--node tcp://localhost:16700 \
 --chain-id gravity-bridge-3 \
 -y 
 ```
@@ -319,7 +319,7 @@ gravityd tx bank send wallet <TO_WALLET_ADDRESS> 1000000ugraviton \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
+--node tcp://localhost:16700 \
 --chain-id gravity-bridge-3 \
 -y 
 ```
@@ -357,7 +357,7 @@ gravityd tx gov vote 1 yes \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
+--node tcp://localhost:16700 \
 --chain-id gravity-bridge-3 \
 -y 
 
@@ -367,7 +367,7 @@ gravityd tx gov vote 1 no \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
+--node tcp://localhost:16700 \
 --chain-id gravity-bridge-3 \
 -y 
 
@@ -377,7 +377,7 @@ gravityd tx gov vote 1 abstain \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
+--node tcp://localhost:16700 \
 --chain-id gravity-bridge-3 \
 -y 
 
@@ -387,7 +387,7 @@ gravityd tx gov vote 1 nowithveto \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
+--node tcp://localhost:16700 \
 --chain-id gravity-bridge-3 \
 -y 
 ```

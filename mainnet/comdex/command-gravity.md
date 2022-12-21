@@ -33,7 +33,7 @@ Install jq package for management json format
 #### **Add New Key**
 
 ```bash
-gravityd keys add mywallet --home ${HOME}/.gravity        
+comdex keys add mywallet --home ${HOME}/.gravity        
 ```
 
 #### **Recover Key**
@@ -41,53 +41,53 @@ gravityd keys add mywallet --home ${HOME}/.gravity
 With Passphrase
 
 ```bash
-gravityd keys add mywallet --recover  --home ${HOME}/.gravity              
+comdex keys add mywallet --recover  --home ${HOME}/.gravity              
 ```
 
 With Keyring
 
 ```bash
-gravityd keys add mywallet --recover --keyring-backend os --home ${HOME}/.gravity              
+comdex keys add mywallet --recover --keyring-backend os --home ${HOME}/.gravity              
 ```
 
 #### **List Key**
 
 ```bash
-gravityd keys list --home ${HOME}/.gravity           
+comdex keys list --home ${HOME}/.gravity           
 ```
 
 #### **Delete Key**
 
 ```bash
-gravityd keys delete mywallet --home ${HOME}/.gravity    
+comdex keys delete mywallet --home ${HOME}/.gravity    
 ```
 
 **Export Key**
 
 ```bash
- gravityd keys export mywallet --home ${HOME}/.gravity    
+ comdex keys export mywallet --home ${HOME}/.gravity    
 ```
 
 #### Import Key
 
 ```
-gravityd keys import mywallet mywallet_file.backup --home ${HOME}/.gravity 
+comdex keys import mywallet mywallet_file.backup --home ${HOME}/.gravity 
 ```
 
 #### Show All Balances Address
 
-<pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `gravityd keys list --home ${HOME}/.gravity --output json| jq -r ".[] .address"`
+<pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `comdex keys list --home ${HOME}/.gravity --output json| jq -r ".[] .address"`
 </strong>do
-   CHAIN_ID="gravity-bridge-3"
-   RPC="tcp://localhost:26657"
-   gravityd q bank balances ${mywallet} --home ${HOME}/.gravity --chain-id ${CHAIN_ID} --node ${RPC}
+   CHAIN_ID="comdex-1"
+   RPC="tcp://localhost:16701"
+   comdex q bank balances ${mywallet} --home ${HOME}/.gravity --chain-id ${CHAIN_ID} --node ${RPC}
 done
 </code></pre>
 
 #### Show Balance Address
 
 ```bash
-gravityd q bank balances mywallet_public_address --home ${HOME}/.gravity --chain-id gravity-bridge-3 --node tcp://localhost:26657
+comdex q bank balances mywallet_public_address --home ${HOME}/.gravity --chain-id comdex-1 --node tcp://localhost:16701
 ```
 
 ### Validator Management
@@ -118,14 +118,14 @@ PROFILE="PGP_KEY_OF_KEYBASE"
 DETAILS="Describes Your Validator"
 WEBSITE="https://yourwebsite.com"
 
-gravityd tx staking create-validator \
+comdex tx staking create-validator \
 --amount=1000000ugraviton \
---pubkey=$(gravityd tendermint show-validator --home ${HOME}/.gravity) \
+--pubkey=$(comdex tendermint show-validator --home ${HOME}/.gravity) \
 --moniker="${MONIKER}" \
 --identity="${PROFILE}" \
 --details="${DETAILS}" \
 --website="${WEBSITE}" \
---chain-id=gravity-bridge-3 \
+--chain-id=comdex-1 \
 --commission-rate=0.05 \
 --commission-max-rate=0.20 \
 --commission-max-change-rate=0.01 \
@@ -133,7 +133,7 @@ gravityd tx staking create-validator \
 --from=mywallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---node tcp://localhost:26657 \
+--node tcp://localhost:16701 \
 --home ${HOME}/.gravity \
 -y
 ```
@@ -146,17 +146,17 @@ PROFILE="PGP_KEY_OF_KEYBASE"
 DETAILS="Describes Your Validator"
 WEBSITE="https://yourwebsite.com"
 
-gravityd tx staking edit-validator \
+comdex tx staking edit-validator \
 --moniker="${MONIKER}" \
 --identity="${PROFILE}" \
 --details="${DETAILS}" \
 --website="${WEBSITE}"
---chain-id=gravity-bridge-3 \
+--chain-id=comdex-1 \
 --commission-rate=0.05 \
 --from=mywallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---node tcp://localhost:26657 \
+--node tcp://localhost:16701 \
 --home ${HOME}/.gravity \
 -y
 ```
@@ -164,19 +164,19 @@ gravityd tx staking edit-validator \
 #### Get Validator Info
 
 ```
-gravityd status 2>&1 | jq .ValidatorInfo
+comdex status 2>&1 | jq .ValidatorInfo
 ```
 
 #### Get Syncing Block
 
 ```
-gravityd status 2>&1 | jq .SyncInfo
+comdex status 2>&1 | jq .SyncInfo
 ```
 
 #### Get Peer Node
 
 ```bash
-echo $(gravityd tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.gravity/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+echo $(comdex tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.gravity/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
 #### Get Peer Node
@@ -188,11 +188,11 @@ curl -sS http://localhost:16657/net_info | jq -r '.result.peers[] | "\(.node_inf
 #### Unjail Validator
 
 ```bash
-gravityd tx slashing unjail \
+comdex tx slashing unjail \
 --from mywallet \
---chain-id gravity-bridge-3 \
+--chain-id comdex-1 \
  --home ${HOME}/.gravity \
- --node  tcp://localhost:26657 \
+ --node  tcp://localhost:16701 \
  --gas auto \
  --gas-adjustment 1.4 \
  -y
@@ -201,33 +201,33 @@ gravityd tx slashing unjail \
 #### Jail Reason
 
 ```bash
-gravityd query slashing signing-info $(gravityd tendermint show-validator) \
- --node  tcp://localhost:26657 \
+comdex query slashing signing-info $(comdex tendermint show-validator) \
+ --node  tcp://localhost:16701 \
  --home ${HOME}/.gravity
 ```
 
 #### List All Active Validator
 
 ```bash
-gravityd q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+comdex q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
 
 #### List All Inactive Validator
 
 ```bash
-gravityd q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+comdex q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
 
 #### Show Validator Details
 
 ```
-gravityd \
+comdex \
 query staking validator \
-$(gravityd keys show \ 
-                $(gravityd keys list --home ${HOME}/.gravity --output json| jq -r ".[] .address" | tail -n1) \
+$(comdex keys show \ 
+                $(comdex keys list --home ${HOME}/.gravity --output json| jq -r ".[] .address" | tail -n1) \
 --bech val -a) \
---chain-id gravity-bridge-3 \
---node tcp://localhost:26657
+--chain-id comdex-1 \
+--node tcp://localhost:16701
 ```
 
 ### Token Management
@@ -235,10 +235,10 @@ $(gravityd keys show \
 #### Withdraw All Reward From Validator
 
 ```bash
-gravityd tx distribution withdraw-all-rewards \
+comdex tx distribution withdraw-all-rewards \
 --from mywallet \
---chain-id gravity-bridge-3 \
---node tcp://localhost:26657 \
+--chain-id comdex-1 \
+--node tcp://localhost:16701 \
 --home ${HOME}/.gravity \
 --gas-adjustment 1.4 \
 --gas auto \
@@ -248,13 +248,13 @@ gravityd tx distribution withdraw-all-rewards \
 #### Withdraw Commision Reward From Validator
 
 ```bash
-gravityd tx distribution withdraw-rewards $(gravityd keys show mywallet --bech val -a) \
+comdex tx distribution withdraw-rewards $(comdex keys show mywallet --bech val -a) \
 --commission \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---chain-id gravity-bridge-3 \
---node tcp://localhost:26657 \
+--chain-id comdex-1 \
+--node tcp://localhost:16701 \
 --home ${HOME}/.gravity \
 -y 
 ```
@@ -262,12 +262,12 @@ gravityd tx distribution withdraw-rewards $(gravityd keys show mywallet --bech v
 #### Delegate My Token to Own Validator
 
 ```bash
-gravityd tx staking delegate $(gravityd keys show wallet --bech val -a) 1000000ugraviton \
+comdex tx staking delegate $(comdex keys show wallet --bech val -a) 1000000ugraviton \
 --from mywallet \
 --gas-adjustment 1.4 \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
---chain-id gravity-bridge-3 \
+--node tcp://localhost:16701 \
+--chain-id comdex-1 \
 --gas auto \
 -y
 ```
@@ -275,52 +275,52 @@ gravityd tx staking delegate $(gravityd keys show wallet --bech val -a) 1000000u
 #### Delegate Your Token To Our Validator
 
 ```bash
-gravityd tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 1000000ugraviton \ 
+comdex tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 1000000ugraviton \ 
 --from mywallet \
 --gas-adjustment 1.4 \ 
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
---chain-id gravity-bridge-3 \
+--node tcp://localhost:16701 \
+--chain-id comdex-1 \
 -y
 ```
 
 #### Redelegate Tokens to Another Validator
 
 ```bash
-gravityd tx staking redelegate $(gravityd keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ugraviton \
+comdex tx staking redelegate $(comdex keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ugraviton \
 --from mywallet 
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
---chain-id gravity-bridge-3 \
+--node tcp://localhost:16701 \
+--chain-id comdex-1 \
 -y 
 ```
 
 #### Unbound or Unstake Your Tokens
 
 ```bash
-gravityd tx staking unbond $(gravityd keys show wallet --bech val -a) 1000000ugraviton \
+comdex tx staking unbond $(comdex keys show wallet --bech val -a) 1000000ugraviton \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
---chain-id gravity-bridge-3 \
+--node tcp://localhost:16701 \
+--chain-id comdex-1 \
 -y 
 ```
 
 Send tokens to the wallet
 
 ```
-gravityd tx bank send wallet <TO_WALLET_ADDRESS> 1000000ugraviton \
+comdex tx bank send wallet <TO_WALLET_ADDRESS> 1000000ugraviton \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
---chain-id gravity-bridge-3 \
+--node tcp://localhost:16701 \
+--chain-id comdex-1 \
 -y 
 ```
 
@@ -345,49 +345,49 @@ Install jq package for management json format
 #### List All Proposal
 
 ```bash
-gravityd query gov proposals
+comdex query gov proposals
 ```
 
 #### How to Vote
 
 ```bash
 ### vote yes
-gravityd tx gov vote 1 yes \
+comdex tx gov vote 1 yes \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
---chain-id gravity-bridge-3 \
+--node tcp://localhost:16701 \
+--chain-id comdex-1 \
 -y 
 
 ### vote no
-gravityd tx gov vote 1 no \
+comdex tx gov vote 1 no \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
---chain-id gravity-bridge-3 \
+--node tcp://localhost:16701 \
+--chain-id comdex-1 \
 -y 
 
 ### vote abstain
-gravityd tx gov vote 1 abstain \
+comdex tx gov vote 1 abstain \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
---chain-id gravity-bridge-3 \
+--node tcp://localhost:16701 \
+--chain-id comdex-1 \
 -y 
 
 ### vote No With Veto
-gravityd tx gov vote 1 nowithveto \
+comdex tx gov vote 1 nowithveto \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.gravity \
---node tcp://localhost:26657 \
---chain-id gravity-bridge-3 \
+--node tcp://localhost:16701 \
+--chain-id comdex-1 \
 -y 
 ```
