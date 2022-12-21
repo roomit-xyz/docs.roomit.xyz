@@ -4,9 +4,19 @@ description: Stake your $GRAV to Our Validator
 
 # How to Stake Your Token
 
-Access [Web Keplr Wallet RoomIT](https://wallet.keplr.app/chains/gravity-bridge?modal=validator\&chain=gravity-bridge-3\&validator\_address=gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz\&referral=true)
+Access [Explorer](https://comdex.omniflix.co/)
 
-Click Delegate if you did not stake yet in other validator .
+Connect your Wallet Keplr Or Cosmostation
+
+<figure><img src="../../.gitbook/assets/comdex_connect.png" alt=""><figcaption><p>Connect Wallet</p></figcaption></figure>
+
+Search Validator **RoomIT**
+
+Click Button Delegate
+
+<figure><img src="../../.gitbook/assets/comdex_delegate.png" alt=""><figcaption><p>Aftaer Click Delegate</p></figcaption></figure>
+
+&#x20;Fill Amoun Token, and Click delegate for stake.
 
 <figure><img src="../../.gitbook/assets/RoomIT-Gravity-Wallet.png" alt=""><figcaption><p>Delegate $GRAV</p></figcaption></figure>
 
