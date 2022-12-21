@@ -6,6 +6,8 @@ description: Install IBC Hermes
 
 {% hint style="info" %}
 login to user : salinem
+
+Ensure you have add sudoers, refer [sudo-management.md](../../../security/sudo-management.md "mention")
 {% endhint %}
 
 Generate Keys For Gravity IBC | save as file _ibc-gravity.json_

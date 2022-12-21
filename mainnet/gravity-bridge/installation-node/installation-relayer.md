@@ -6,6 +6,8 @@ Assume we have already done install gbt refer to [installation-validator.md](ins
 
 {% hint style="info" %}
 **Running in user** : _salinem_
+
+Ensure you have add sudoers, refer [sudo-management.md](../../../security/sudo-management.md "mention")
 {% endhint %}
 
 Test for Relayer

@@ -12,6 +12,8 @@ State Sync allows a new node to join the network by fetching a snapshot of the a
 
 {% hint style="info" %}
 **Running in user** : _salinem_
+
+Ensure you have add sudoers, refer [sudo-management.md](../../../security/sudo-management.md "mention")
 {% endhint %}
 
 Stop and Reset Block Data

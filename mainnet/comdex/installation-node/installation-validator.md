@@ -51,6 +51,7 @@ mkdir -p ${HOME}/tmp
 mkdir -p ${HOME}/lib
 mkdir -p ${HOME}/bin
 mkdir -p ${HOME}/conf
+mkdir -p ${HOME}/systemd
 ```
 
 #### Shell Variable Comdex
@@ -75,6 +76,12 @@ APP_BIN="\$HOME_VALIDATOR/bin"
 EOF
 ```
 
+Reload Profile Shell
+
+```
+source ${HOME}/.zshrc
+```
+
 #### Installation Comdex
 
 Install Golang
@@ -85,8 +92,6 @@ Install Golang
 mv go/ ${HOME_VALIDATOR}/.go
 rm -f ${HOME_VALIDATOR}/tmp/go${GOLANG_VERSION}.linux-amd64.tar.gz
 </code></pre>
-
-
 
 Install Comdex&#x20;
 

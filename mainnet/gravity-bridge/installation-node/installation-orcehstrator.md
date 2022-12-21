@@ -22,8 +22,12 @@ description: Install Orchestrator
 **Gravity Orchestrator Ethereum Key:** This is an Ethereum key this is the key that represents your validators voting power on Ethereum in the `Gravity.sol` contract. In short this key secures the Gravity Bridge funds on Ethereum. This key will _not_ be actively used to submit messages to Ethereum unless you chose to relay in addition to validate. Like the Gravity Orchestrator Cosmos Key you will be generating this key here and registering it as part of your gentx.
 {% endhint %}
 
+
+
 {% hint style="info" %}
 **Running in user** : _salinem_
+
+Ensure you have add sudoers, refer [sudo-management.md](../../../security/sudo-management.md "mention")
 {% endhint %}
 
 Create RPC in [Alchemy Etherum Mainnet](https://alchemy.com/)
