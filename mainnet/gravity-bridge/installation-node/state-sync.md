@@ -18,7 +18,7 @@ Ensure you have add sudoers, refer [sudo-management.md](../../../security/sudo-m
 
 Stop and Reset Block Data
 
-```
+```bash
 ### STOP SERVICE
 sudo systemctl stop gravityd
 
@@ -50,6 +50,6 @@ mv $HOME/.gravity/priv_validator_state.json.backup $HOME/.gravity/data/priv_vali
 
 Restart Service
 
-```
+```bash
 sudo systemctl start gravityd && journalctl -u gravityd -f 
 ```

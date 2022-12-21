@@ -93,6 +93,7 @@
 ## Automations
 
 * [🟦 Scripts](automations/scripts/README.md)
+  * [Pruning Storage Tendermint](automations/scripts/pruning-storage-tendermint.md)
   * [Auto Restake Tendermint](automations/scripts/auto-restake.md)
   * [Check Balance Address Gravity](automations/scripts/check-balance-address-gravity.md)
   * [Update Ports](automations/scripts/update-ports.md)
