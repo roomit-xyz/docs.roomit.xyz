@@ -71,23 +71,23 @@ comdex keys delete mywallet --home ${HOME}/.comdex
 #### Import Key
 
 ```
-comdex keys import mywallet mywallet_file.backup --home ${HOME}/.gravity 
+comdex keys import mywallet mywallet_file.backup --home ${HOME}/.comdex 
 ```
 
 #### Show All Balances Address
 
-<pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `comdex keys list --home ${HOME}/.gravity --output json| jq -r ".[] .address"`
+<pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `comdex keys list --home ${HOME}/.comdex --output json| jq -r ".[] .address"`
 </strong>do
    CHAIN_ID="comdex-1"
    RPC="tcp://localhost:16701"
-   comdex q bank balances ${mywallet} --home ${HOME}/.gravity --chain-id ${CHAIN_ID} --node ${RPC}
+   comdex q bank balances ${mywallet} --home ${HOME}/.comdex --chain-id ${CHAIN_ID} --node ${RPC}
 done
 </code></pre>
 
 #### Show Balance Address
 
 ```bash
-comdex q bank balances mywallet_public_address --home ${HOME}/.gravity --chain-id comdex-1 --node tcp://localhost:16701
+comdex q bank balances mywallet_public_address --home ${HOME}/.comdex --chain-id comdex-1 --node tcp://localhost:16701
 ```
 
 ### Validator Management
@@ -120,7 +120,7 @@ WEBSITE="https://yourwebsite.com"
 
 comdex tx staking create-validator \
 --amount=1000000ucmdx \
---pubkey=$(comdex tendermint show-validator --home ${HOME}/.gravity) \
+--pubkey=$(comdex tendermint show-validator --home ${HOME}/.comdex) \
 --moniker="${MONIKER}" \
 --identity="${PROFILE}" \
 --details="${DETAILS}" \
@@ -134,7 +134,7 @@ comdex tx staking create-validator \
 --gas-adjustment=1.4 \
 --gas=auto \
 --node tcp://localhost:16701 \
---home ${HOME}/.gravity \
+--home ${HOME}/.comdex \
 -y
 ```
 
@@ -157,7 +157,7 @@ comdex tx staking edit-validator \
 --gas-adjustment=1.4 \
 --gas=auto \
 --node tcp://localhost:16701 \
---home ${HOME}/.gravity \
+--home ${HOME}/.comdex \
 -y
 ```
 
@@ -176,7 +176,7 @@ comdex status 2>&1 | jq .SyncInfo
 #### Get Peer Node
 
 ```bash
-echo $(comdex tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.gravity/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+echo $(comdex tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.comdex/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
 #### Get Peer Node
@@ -191,7 +191,7 @@ curl -sS http://localhost:16657/net_info | jq -r '.result.peers[] | "\(.node_inf
 comdex tx slashing unjail \
 --from mywallet \
 --chain-id comdex-1 \
- --home ${HOME}/.gravity \
+ --home ${HOME}/.comdex \
  --node  tcp://localhost:16701 \
  --gas auto \
  --gas-adjustment 1.4 \
@@ -203,7 +203,7 @@ comdex tx slashing unjail \
 ```bash
 comdex query slashing signing-info $(comdex tendermint show-validator) \
  --node  tcp://localhost:16701 \
- --home ${HOME}/.gravity
+ --home ${HOME}/.comdex
 ```
 
 #### List All Active Validator
@@ -224,7 +224,7 @@ comdex q staking validators -oj --limit=3000 | jq '.validators[] | select(.statu
 comdex \
 query staking validator \
 $(comdex keys show \ 
-                $(comdex keys list --home ${HOME}/.gravity --output json| jq -r ".[] .address" | tail -n1) \
+                $(comdex keys list --home ${HOME}/.comdex --output json| jq -r ".[] .address" | tail -n1) \
 --bech val -a) \
 --chain-id comdex-1 \
 --node tcp://localhost:16701
@@ -239,7 +239,7 @@ comdex tx distribution withdraw-all-rewards \
 --from mywallet \
 --chain-id comdex-1 \
 --node tcp://localhost:16701 \
---home ${HOME}/.gravity \
+--home ${HOME}/.comdex \
 --gas-adjustment 1.4 \
 --gas auto \
 -y
@@ -255,7 +255,7 @@ comdex tx distribution withdraw-rewards $(comdex keys show mywallet --bech val -
 --gas auto \
 --chain-id comdex-1 \
 --node tcp://localhost:16701 \
---home ${HOME}/.gravity \
+--home ${HOME}/.comdex \
 -y 
 ```
 
@@ -265,7 +265,7 @@ comdex tx distribution withdraw-rewards $(comdex keys show mywallet --bech val -
 comdex tx staking delegate $(comdex keys show wallet --bech val -a) 1000000ucmdx \
 --from mywallet \
 --gas-adjustment 1.4 \
---home ${HOME}/.gravity \
+--home ${HOME}/.comdex \
 --node tcp://localhost:16701 \
 --chain-id comdex-1 \
 --gas auto \
@@ -279,7 +279,7 @@ comdex tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz
 --from mywallet \
 --gas-adjustment 1.4 \ 
 --gas auto \
---home ${HOME}/.gravity \
+--home ${HOME}/.comdex \
 --node tcp://localhost:16701 \
 --chain-id comdex-1 \
 -y
@@ -292,7 +292,7 @@ comdex tx staking redelegate $(comdex keys show wallet --bech val -a) <TO_VALOPE
 --from mywallet 
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.gravity \
+--home ${HOME}/.comdex \
 --node tcp://localhost:16701 \
 --chain-id comdex-1 \
 -y 
@@ -305,7 +305,7 @@ comdex tx staking unbond $(comdex keys show wallet --bech val -a) 1000000ucmdx \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.gravity \
+--home ${HOME}/.comdex \
 --node tcp://localhost:16701 \
 --chain-id comdex-1 \
 -y 
@@ -318,7 +318,7 @@ comdex tx bank send wallet <TO_WALLET_ADDRESS> 1000000ucmdx \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.gravity \
+--home ${HOME}/.comdex \
 --node tcp://localhost:16701 \
 --chain-id comdex-1 \
 -y 
@@ -356,7 +356,7 @@ comdex tx gov vote 1 yes \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.gravity \
+--home ${HOME}/.comdex \
 --node tcp://localhost:16701 \
 --chain-id comdex-1 \
 -y 
@@ -366,7 +366,7 @@ comdex tx gov vote 1 no \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.gravity \
+--home ${HOME}/.comdex \
 --node tcp://localhost:16701 \
 --chain-id comdex-1 \
 -y 
@@ -376,7 +376,7 @@ comdex tx gov vote 1 abstain \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.gravity \
+--home ${HOME}/.comdex \
 --node tcp://localhost:16701 \
 --chain-id comdex-1 \
 -y 
@@ -386,7 +386,7 @@ comdex tx gov vote 1 nowithveto \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.gravity \
+--home ${HOME}/.comdex \
 --node tcp://localhost:16701 \
 --chain-id comdex-1 \
 -y 
