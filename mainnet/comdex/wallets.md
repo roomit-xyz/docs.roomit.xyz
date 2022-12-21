@@ -9,29 +9,13 @@ description: Information Wallet Worker
 Wallet Node
 
 ```
-gravity1ssduj8c0cc8kquljvw3ygq9hduvcysnf9wkp3k
+comdex1psy3gmflujcvcnm7d7palh3ywjxc00dmraucsv
 ```
 
 Wallet Operator
 
 ```
-gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz
-```
-
-###
-
-### Orchestrator and Relayer Wallet
-
-Wallet Orchestrator
-
-```
-gravity187dgvpsaeknguy8sksewldqcp9wukvy7f6zg6t
-```
-
-Wallet Relayer Ethereum
-
-```
-0x167e2DDdb25A133Fb6575ea3cd9A4b764299552D
+comdexvaloper1psy3gmflujcvcnm7d7palh3ywjxc00dms2x2wd
 ```
 
 
@@ -48,4 +32,10 @@ Wallet Osmosis IBC
 
 ```
 osmo16zv6xqknkcfk4ecgjh5d3nyu2l5t0adzc34wx0
+```
+
+Wallet Comdex IBC
+
+```
+// Some code
 ```
