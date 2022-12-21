@@ -40,7 +40,7 @@
     * [Installation IBC Hermes](mainnet/comdex/installation-node/installation-ibc-hermes.md)
     * [Edit Configuration Node](mainnet/comdex/installation-node/edit-configuration-node.md)
     * [State Sync](mainnet/comdex/installation-node/state-sync.md)
-  * [Command Comdex](mainnet/comdex/command-gravity.md)
+  * [Command Comdex](mainnet/comdex/command-comdex.md)
   * [Infrastructures](mainnet/comdex/infrastructures/README.md)
     * [Endpoint Public](mainnet/comdex/infrastructures/endpoint-public.md)
     * [Port Mapping](mainnet/comdex/infrastructures/port-mapping.md)
@@ -79,18 +79,18 @@
   * [CIS Hardening](security/hardening/cis-hardening.md)
 * [🟥 User and Group Management](security/user-and-group-management.md)
 * [🟥 Firewall](security/firewall/README.md)
-  * [Firewall - Comdex](security/firewall/firewall-comdex.md)
-  * [Firewall - Gravity Bridge](security/firewall/gravity-bridge.md)
-  * [Firewall - NYM Mixnode](security/firewall/firewall.md)
+  *
+  *
+  *
 * [🟥 Other](security/other/README.md)
   * [Compile Script Bash](security/other/compile-script-bash.md)
 
 ## Automations
 
 * [🟦 Scripts](automations/scripts/README.md)
-  * [Alert Active Node](automations/scripts/alert-active-node.md)
+  *
   * [Auto Restake](automations/scripts/auto-restake.md)
-  * [Alert Missed Block](automations/scripts/alert-block.md)
+  *
   * [Check Balance Address Gravity](automations/scripts/check-balance-address-gravity.md)
   * [Update Ports](automations/scripts/update-ports.md)
 * [🟦 Platform](automations/platform/README.md)
