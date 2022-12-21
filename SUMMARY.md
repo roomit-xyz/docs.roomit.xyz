@@ -68,11 +68,13 @@
 * [🟪 Install Grafana Renderer](https://roomit.medium.com/install-grafana-renderer-cb1059bf93cb)
 * [🟪 Prometheus Config](monitoring/prometheus-config.md)
 * [🟪 Grafana Visual Config](monitoring/grafana-visual-config/README.md)
+  * [Comdex](monitoring/grafana-visual-config/comdex.md)
   * [NYM Mixnode](monitoring/grafana-visual-config/nym-mixnode.md)
   * [Gravity Bridge](monitoring/grafana-visual-config/gravity-bridge.md)
 * [🟪 Alerting](monitoring/alerting/README.md)
   * [Alerting Missed Block](automations/scripts/alert-block.md)
   * [Alert Status Active or Inactive](automations/scripts/alert-active-node.md)
+  * [Alerting Jailing](monitoring/alerting/alerting-jailing.md)
 
 ## Security
 
@@ -91,7 +93,7 @@
 ## Automations
 
 * [🟦 Scripts](automations/scripts/README.md)
-  * [Auto Restake](automations/scripts/auto-restake.md)
+  * [Auto Restake Tendermint](automations/scripts/auto-restake.md)
   * [Check Balance Address Gravity](automations/scripts/check-balance-address-gravity.md)
   * [Update Ports](automations/scripts/update-ports.md)
 * [🟦 Platform](automations/platform/README.md)
