@@ -33,7 +33,7 @@ Install jq package for management json format
 #### **Add New Key**
 
 ```bash
-comdex keys add mywallet --home ${HOME}/.gravity        
+comdex keys add mywallet --home ${HOME}/.comdex      
 ```
 
 #### **Recover Key**
@@ -41,31 +41,31 @@ comdex keys add mywallet --home ${HOME}/.gravity
 With Passphrase
 
 ```bash
-comdex keys add mywallet --recover  --home ${HOME}/.gravity              
+comdex keys add mywallet --recover  --home ${HOME}/.comdex            
 ```
 
 With Keyring
 
 ```bash
-comdex keys add mywallet --recover --keyring-backend os --home ${HOME}/.gravity              
+comdex keys add mywallet --recover --keyring-backend os --home ${HOME}/.comdex            
 ```
 
 #### **List Key**
 
 ```bash
-comdex keys list --home ${HOME}/.gravity           
+comdex keys list --home ${HOME}/.comdex         
 ```
 
 #### **Delete Key**
 
 ```bash
-comdex keys delete mywallet --home ${HOME}/.gravity    
+comdex keys delete mywallet --home ${HOME}/.comdex  
 ```
 
 **Export Key**
 
 ```bash
- comdex keys export mywallet --home ${HOME}/.gravity    
+ comdex keys export mywallet --home ${HOME}/.comdex  
 ```
 
 #### Import Key
