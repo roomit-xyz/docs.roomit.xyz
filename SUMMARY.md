@@ -74,6 +74,7 @@
 * [🟪 Alerting](monitoring/alerting/README.md)
   * [Alerting Missed Block](automations/scripts/alert-block.md)
   * [Alert Status Active or Inactive](automations/scripts/alert-active-node.md)
+  * [Alerting Jailing](monitoring/alerting/alerting-jailing.md)
 
 ## Security
 
