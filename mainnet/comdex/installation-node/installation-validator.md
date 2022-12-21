@@ -4,7 +4,7 @@ description: Install Node Producer
 
 # Installation Validator
 
-**Chain ID**: gravity-bridge-3 | **Latest Binary Version**: v1.7.2
+**Chain ID**: comdex-1 | **Latest Binary Version**: v6.0.2
 
 Update and install packages for compiling
 
@@ -46,11 +46,12 @@ echo "Install FHS"
 mkdir -p ${HOME}/tmp
 mkdir -p ${HOME}/lib
 mkdir -p ${HOME}/bin
+mkdir -p ${HOME}/conf
 ```
 
 Install Golang
 
-<pre class="language-bash"><code class="lang-bash">GOLANG_VERSION="1.18.2"
+<pre class="language-bash"><code class="lang-bash">GOLANG_VERSION="1.19.4"
 <strong>wget "https://golang.org/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz"
 </strong>tar xvf go${GOLANG_VERSION}.linux-amd64.tar.gz 
 mv go/ ${HOME_VALIDATOR}/.go
@@ -69,42 +70,33 @@ APP_BIN="\$HOME_VALIDATOR/bin"
 EOF
 ```
 
-Install Gravity Bridge and GBT
+Install Comdex&#x20;
 
 ```bash
-wget -O bin/gravityd https://github.com/Gravity-Bridge/Gravity-Bridge/releases/download/v1.7.2/gravity-linux-amd64
-wget -O bin/gbt https://github.com/Gravity-Bridge/Gravity-Bridge/releases/download/v1.7.2/gbt
-chmod +x bin/*
+cd "${HOME}/lib"
+git clone https://github.com/comdex-official/comdex.git
+cd comdex
+git fetch --tags
+git checkout v6.0.2
+unset GOPATH
+export GOPATH="${HOME}/lib"
+go mod vendor
+make install
+cp ${HOME}/lib/go/bin/comdex ${HOME}/bin
 ```
 
-Create Systemd
+Check version, ensure you have version v6.0.2
 
-```bash
-sudo tee /etc/systemd/system/gravityd.service > /dev/null << EOF
-[Unit]
-Description=gravitybridge node service
-After=network-online.target
-
-[Service]
-User=salinem
-Group=salinem
-ExecStart=/mainnet/salinem/bin/gravityd start --home $HOME/.gravity
-Restart=on-failure
-RestartSec=3
-LimitNOFILE=65535
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-sudo systemctl daemon-reload
-sudo systemctl enable gravityd
+```
+comdex version
 ```
 
-Reload shell
+Setup Shell Variable, add line in your shell profile ${HOME}/.zshrc or if using bash ${HOME}/.bashrc
 
 ```bash
-source ~/.zshrc
+####### COMDEX ######
+export PATH="${PATH}:/${HOME}/bin"
+source /app/comdex/conf/cosmovisor-env
 ```
 
 Initialized Node
@@ -114,18 +106,15 @@ YOUR NAME NODE IS MONIKER
 {% endhint %}
 
 ```bash
-gravityd init "YOUR NAME NODE" --chain-id gravity-bridge-3
+comdex init "YOUR NAME NODE" --chain-id comdex-1
 ```
 
 Download Genesis
 
 ```bash
-wget -c https://github.com/roomit-xyz/Mainnet-Validator/blob/main/Gravity-Bridge/config/genesis.json?raw=true -O genesis.json && mv genesis.json  $HOME/.gravity/config/
-wget -c 
-https://raw.githubusercontent.com/roomit-xyz/Mainnet-Validator/main/Gravity-Bridge/config/addrbook.json && mv addrbook.json 
-$HOME/.gravity/config/
+curl https://raw.githubusercontent.com/comdex-official/networks/main/mainnet/comdex-1/genesis.json > ~/.comdex/config/genesis.json
 ```
 
-Edit config, You can refer to [edit-configuration-node.md](../../gravity-bridge/installation-node/edit-configuration-node.md "mention")
+Edit config, You can refer to [edit-configuration-node.md](edit-configuration-node.md "mention")
 
-Apply State Sync, refer to [state-sync.md](../../gravity-bridge/installation-node/state-sync.md "mention")
+Apply State Sync, refer to [state-sync.md](state-sync.md "mention")
