@@ -12,6 +12,12 @@ We recommend for compile this script with shc. Refer : [compile-script-bash.md](
 
 ```bash
 #!/bin/bash
+#
+# RoomIT
+# https://roomit.xyz
+# If this script useful and you will visit cikarang indonesia, 
+# Let's drink coffee and talk about blockchain
+#
 set -e
 HOME_VALIDATOR=""
 DELEGATOR_ADDRESS=''

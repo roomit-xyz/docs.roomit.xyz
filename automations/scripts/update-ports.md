@@ -12,24 +12,38 @@ description: Script Updates Ports
 # If this script useful and you will visit cikarang indonesia, 
 # Let's drink coffee and talk about blockchain
 #
-#
-##### Global Env
-HOME_VALIDATOR="/mainnet/salinem"
-CONF_BLOCKCHAIN=".gravity"
-HOME_VALIDATOR=`pwd`
 
+##### Global Env
+CONF_BLOCKCHAIN=".comdex"
+HOME_VALIDATOR=`pwd`
+CHAIN_ID="comdex-1"
 
 ##### config.toml
-PROXY_APP="26500"
-RPC="26700"
-PROF_RPC="2100"
-P2P="26600"
-METRICS="26800"
+PROXY_APP="16501"
+RPC="16701"
+PROF_RPC="1101"
+P2P="16601"
+METRICS="16801"
 
 ##### app.toml
-API="2200"
-GRPC="2300"
-WEBGRPC="2400"
+API="1201"
+GRPC="1301"
+WEBGRPC="1401"
+
+PORT_ARRAY=("${PROXY_APP}" "${RPC}" "${PROF_RPC}" "${P2P}" "${METRICS}" "${API}" "${GRPC}" "${WEBGRPC}")
+
+for port in  ${PORT_ARRAY[@]}
+do
+   check_port=`ss -tulpn | grep ${port} | awk '{print $5}' | awk -F":" '{print $2}' | tr -d " " | wc -l`
+   if [ ${port} -eq 1 ]
+   then
+      echo "PORT was exist"
+      exit 1;
+    else
+      echo "Port ${port} - OK"
+    fi
+done
+
 
 
 

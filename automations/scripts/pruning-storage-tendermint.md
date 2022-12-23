@@ -6,6 +6,14 @@ description: Tendermint Puning Storage
 
 ```bash
 #!/bin/bash
+#
+# RoomIT
+# https://roomit.xyz
+# If this script useful and you will visit cikarang indonesia, 
+# Let's drink coffee and talk about blockchain
+#
+
+
 CONF_VALIDATOR=""
 pruning="custom"
 pruning_keep_recent="100"
