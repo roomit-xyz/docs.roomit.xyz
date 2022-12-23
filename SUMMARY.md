@@ -101,6 +101,7 @@
   * [Check Balance Address Gravity](automations/scripts/check-balance-address-gravity.md)
   * [Update Ports](automations/scripts/update-ports.md)
 * [🟦 Platform](automations/platform/README.md)
+  * [Ansible](automations/platform/ansible.md)
   * [Docker](automations/platform/docker/README.md)
     * [Installation Docker](automations/platform/docker/docker.md)
     * [Docker Administrator I](https://roomit.medium.com/install-docker-and-command-managment-a43c635360bb)
