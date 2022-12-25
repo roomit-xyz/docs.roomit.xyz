@@ -1,5 +1,7 @@
 ---
 description: Install Grafana and Prometheus
+cover: ../.gitbook/assets/Banner.jpg
+coverY: 0
 ---
 
 # 🟪 Install Monitoring Stack

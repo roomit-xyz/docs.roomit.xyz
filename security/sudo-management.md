@@ -1,5 +1,7 @@
 ---
 description: Sudo For Application
+cover: ../.gitbook/assets/Banner.jpg
+coverY: 0
 ---
 
 # 🟥 Sudo Management

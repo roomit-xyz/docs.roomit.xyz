@@ -1,5 +1,7 @@
 ---
 description: Hardening Descriptions
+cover: ../../.gitbook/assets/Banner.jpg
+coverY: 0
 ---
 
 # 🟥 Hardening
@@ -8,7 +10,7 @@ description: Hardening Descriptions
 
 * OS Kernel Hardening
 * User and Group management
-* &#x20;Module Kernel Restriction
+* Module Kernel Restriction
 * Auditing and  Accounting
 * File Integrity
 * SSH Hardening

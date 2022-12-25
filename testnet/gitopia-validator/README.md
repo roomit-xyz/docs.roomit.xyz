@@ -1,5 +1,7 @@
 ---
 description: How Become Validator Gitopia | Code Collaboration for Web3
+cover: ../../.gitbook/assets/Banner.jpg
+coverY: 0
 ---
 
 # 🟨 Gitopia Validator

@@ -1,7 +1,7 @@
 ---
 description: Technical Document RoomIT Validator
-cover: .gitbook/assets/Cover.jpg
-coverY: -14.076246334310824
+cover: .gitbook/assets/Banner.jpg
+coverY: 10.997067448680353
 ---
 
 # Home

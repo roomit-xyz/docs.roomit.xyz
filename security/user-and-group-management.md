@@ -1,5 +1,7 @@
 ---
 description: This page explain how to manage user and group
+cover: ../.gitbook/assets/Banner.jpg
+coverY: 0
 ---
 
 # 🟥 User and Group Management
