@@ -8,13 +8,13 @@ description: Install IBC Hermes
 login to user : salinem
 {% endhint %}
 
-Generate Keys For Gravity IBC | save as file _ibc-gravity.json_
+#### Generate Keys For Gravity IBC | save as file _ibc-gravity.json_
 
 ```bash
 gravityd keys add ibc-gravity --keyring-backend file --output json     
 ```
 
-Generate Keys For Osmosis IBC | save as file _ibc-osmosis.json_
+#### Generate Keys For Osmosis IBC | save as file _ibc-osmosis.json_
 
 {% hint style="info" %}
 If you have not  Node Osmosis, Download first binary
@@ -29,6 +29,26 @@ Generate Keys
 
 ```bash
 osmosisd keys add ibc-osmosis --keyring-backend file --output json 
+```
+
+#### Generate Keys For Comdex | Save as ibc-comdex.json
+
+```
+comdex keys add ibc-comdex --keyring-backend file --output json 
+```
+
+Create new User For IBC and Add All keys IBC
+
+```
+useradd -m -d /mainnet/ibc -s /bin/zsh ibc
+```
+
+{% hint style="info" %}
+Running as user : ibc
+{% endhint %}
+
+```
+su - ibc
 ```
 
 Install Hermes
@@ -89,6 +109,35 @@ enabled = true
 host = '0.0.0.0'
 port = 4001
 
+[[chains]]
+id = 'comdex-1'
+rpc_addr = 'xxxxxx'
+grpc_addr = 'xxxxxx'
+websocket_addr = 'xxxxxxxx'
+
+rpc_timeout = '20s'
+account_prefix = 'comdex'
+key_name = 'xxxx'
+address_type = { derivation = 'cosmos' }
+store_prefix = 'ibc'
+default_gas = 300000
+max_gas = 5000000
+gas_price = { price = 0.04, denom = 'ucmdx' }
+gas_multiplier = 1.4
+max_msg_num = 30
+max_tx_size = 1800000
+clock_drift = '15s'
+max_block_time = '10s'
+trusting_period = '7days'
+memo_prefix = 'RoomIT_IBC'
+trust_threshold = { numerator = '1', denominator = '3' }
+
+[chains.packet_filter]
+policy = 'allow'
+list = [
+  ['transfer', 'channel-26'], # Gravity
+  ['transfer', 'channel-1'], # Osmosis
+]
 
 
 [[chains]]
@@ -159,6 +208,7 @@ And Add Keys to Hermes
 ```bash
 hermes keys add --chain gravity-bridge-3 --key-file .hermes/wallets/ibc-gravity.json
 hermes keys add --chain osmosis-1 --key-file .hermes/ibc-osmosis.json
+hermes keys add --chain comdex-1 --key-file  .hermes/wallet/ibc-comdex.json
 ```
 
 Create Init Systemd
@@ -201,5 +251,10 @@ sudo systemctl start ibc
 Create Connection
 
 ```
-hermes create connection --a-chain gravity-bridge-3 --b-chain osmosis-1
+  hermes create connection --a-chain comdex-1  --b-chain gravity-bridge-3
+  hermes create connection --a-chain comdex-1  --b-chain osmosis-1
+  hermes create connection --a-chain gravity-bridge-3  --b-chain osmosis-1
+  hermes create connection --a-chain gravity-bridge-3  --b-chain comdex-1
+  hermes create connection --a-chain osmosis-1  --b-chain comdex-1
+  hermes create connection --a-chain osmosis-1  --b-chain gravity-bridge-3
 ```
