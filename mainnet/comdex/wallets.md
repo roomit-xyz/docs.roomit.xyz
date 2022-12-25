@@ -22,20 +22,20 @@ comdexvaloper1psy3gmflujcvcnm7d7palh3ywjxc00dms2x2wd
 
 ### IBC Relayer Wallet
 
-Wallet Gravity IBC
+Wallet _**Gravity**_ IBC
 
-```
+```bash
 gravity1r0awpz4zkrv5revdyssv6c0janxzqfjr470zzy
 ```
 
-Wallet Osmosis IBC
+Wallet _**Osmosis**_ IBC
 
-```
+```bash
 osmo16zv6xqknkcfk4ecgjh5d3nyu2l5t0adzc34wx0
 ```
 
-Wallet Comdex IBC
+Wallet _**Comdex**_ IBC
 
-```
-// Some code
+```bash
+comdex19862vvyfv6wf3cem7v4l0jgncghy05cn2uanm3
 ```

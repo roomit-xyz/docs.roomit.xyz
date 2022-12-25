@@ -22,13 +22,13 @@ gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz
 
 ### Orchestrator and Relayer Wallet
 
-Wallet Orchestrator
+Wallet **Orchestrator**
 
 ```
 gravity187dgvpsaeknguy8sksewldqcp9wukvy7f6zg6t
 ```
 
-Wallet Relayer Ethereum
+Wallet Relayer _**Ethereum**_
 
 ```
 0x167e2DDdb25A133Fb6575ea3cd9A4b764299552D
@@ -38,14 +38,20 @@ Wallet Relayer Ethereum
 
 ### IBC Relayer Wallet
 
-Wallet Gravity IBC
+Wallet _**Gravity**_ IBC
 
 ```
 gravity1r0awpz4zkrv5revdyssv6c0janxzqfjr470zzy
 ```
 
-Wallet Osmosis IBC
+Wallet _**Osmosis**_ IBC
 
 ```
 osmo16zv6xqknkcfk4ecgjh5d3nyu2l5t0adzc34wx0
+```
+
+Wallet _**Comdex**_ IBC
+
+```bash
+comdex19862vvyfv6wf3cem7v4l0jgncghy05cn2uanm3
 ```
