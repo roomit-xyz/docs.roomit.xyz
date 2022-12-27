@@ -99,6 +99,13 @@ akash init --chain-id "$AKASH_CHAIN_ID" "YOUE_NAME_VALIDATOR"
 wget -O $HOME/.akash/config/genesis.json https://github.com/ovrclk/net/raw/master/mainnet/genesis.json 
 ```
 
+#### Add AddressBook
+
+```bash
+wget -O addrbook.json https://snapshots.polkachu.com/addrbook/akash/addrbook.json --inet4-only
+mv addrbook.json ~/.akash/config
+```
+
 Edit config, You can refer to [edit-configuration-node.md](../../comdex/installation-node/edit-configuration-node.md "mention")
 
 Apply State Sync, refer to [state-sync.md](state-sync.md "mention")

@@ -10,8 +10,7 @@ Ensure you have add sudoers, refer [sudo-management.md](../../../security/sudo-m
 
 #### Create Exec Akash
 
-````
-```shellscript
+```
 cat <<EOF | tee ${HOME}/bin/akash-start.sh
 #!/usr/bin/env bash
 
@@ -27,7 +26,6 @@ export AKASH_STATESYNC_SNAPSHOT_INTERVAL=0
 /mainnet/salinem/bin/akash start
 EOF
 ```
-````
 
 #### Create Systemd
 
