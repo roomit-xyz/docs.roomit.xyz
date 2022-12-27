@@ -1,13 +1,15 @@
 ---
-description: This is command about CLI Comdex
+description: This is command about CLI Akash
 ---
 
-# Command Comdex
+# Command Akash
 
 ### **Key Management**
 
 {% hint style="info" %}
-we assume, variable name\_your\_wallet is name of your own wallet.
+we assume, variable name\_your\_wallet is name of your own wallet.&#x20;
+
+
 
 Install jq package for management json format
 
@@ -31,7 +33,7 @@ Install jq package for management json format
 #### **Add New Key**
 
 ```bash
-comdex keys add mywallet --home ${HOME}/.comdex      
+akash keys add mywallet --home ${HOME}/.akash      
 ```
 
 #### **Recover Key**
@@ -39,53 +41,53 @@ comdex keys add mywallet --home ${HOME}/.comdex
 With Passphrase
 
 ```bash
-comdex keys add mywallet --recover  --home ${HOME}/.comdex            
+akash keys add mywallet --recover  --home ${HOME}/.akash            
 ```
 
 With Keyring
 
 ```bash
-comdex keys add mywallet --recover --keyring-backend os --home ${HOME}/.comdex            
+akash keys add mywallet --recover --keyring-backend os --home ${HOME}/.akash            
 ```
 
 #### **List Key**
 
 ```bash
-comdex keys list --home ${HOME}/.comdex         
+akash keys list --home ${HOME}/.akash         
 ```
 
 #### **Delete Key**
 
 ```bash
-comdex keys delete mywallet --home ${HOME}/.comdex  
+akash keys delete mywallet --home ${HOME}/.akash  
 ```
 
 **Export Key**
 
 ```bash
- comdex keys export mywallet --home ${HOME}/.comdex  
+ akash keys export mywallet --home ${HOME}/.akash  
 ```
 
 #### Import Key
 
 ```
-comdex keys import mywallet mywallet_file.backup --home ${HOME}/.comdex 
+akash keys import mywallet mywallet_file.backup --home ${HOME}/.akash 
 ```
 
 #### Show All Balances Address
 
-<pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `comdex keys list --home ${HOME}/.comdex --output json| jq -r ".[] .address"`
+<pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `akash keys list --home ${HOME}/.akash --output json| jq -r ".[] .address"`
 </strong>do
-   CHAIN_ID="comdex-1"
+   CHAIN_ID="akash-1"
    RPC="tcp://localhost:16701"
-   comdex q bank balances ${mywallet} --home ${HOME}/.comdex --chain-id ${CHAIN_ID} --node ${RPC}
+   akash q bank balances ${mywallet} --home ${HOME}/.akash --chain-id ${CHAIN_ID} --node ${RPC}
 done
 </code></pre>
 
 #### Show Balance Address
 
 ```bash
-comdex q bank balances mywallet_public_address --home ${HOME}/.comdex --chain-id comdex-1 --node tcp://localhost:16701
+akash q bank balances mywallet_public_address --home ${HOME}/.akash --chain-id akash-1 --node tcp://localhost:16701
 ```
 
 ### Validator Management
@@ -116,14 +118,14 @@ PROFILE="PGP_KEY_OF_KEYBASE"
 DETAILS="Describes Your Validator"
 WEBSITE="https://yourwebsite.com"
 
-comdex tx staking create-validator \
+akash tx staking create-validator \
 --amount=1000000ucmdx \
---pubkey=$(comdex tendermint show-validator --home ${HOME}/.comdex) \
+--pubkey=$(akash tendermint show-validator --home ${HOME}/.akash) \
 --moniker="${MONIKER}" \
 --identity="${PROFILE}" \
 --details="${DETAILS}" \
 --website="${WEBSITE}" \
---chain-id=comdex-1 \
+--chain-id=akash-1 \
 --commission-rate=0.05 \
 --commission-max-rate=0.20 \
 --commission-max-change-rate=0.01 \
@@ -132,7 +134,7 @@ comdex tx staking create-validator \
 --gas-adjustment=1.4 \
 --gas=auto \
 --node tcp://localhost:16701 \
---home ${HOME}/.comdex \
+--home ${HOME}/.akash \
 -y
 ```
 
@@ -144,37 +146,37 @@ PROFILE="PGP_KEY_OF_KEYBASE"
 DETAILS="Describes Your Validator"
 WEBSITE="https://yourwebsite.com"
 
-comdex tx staking edit-validator \
+akash tx staking edit-validator \
 --moniker="${MONIKER}" \
 --identity="${PROFILE}" \
 --details="${DETAILS}" \
 --website="${WEBSITE}"
---chain-id=comdex-1 \
+--chain-id=akash-1 \
 --commission-rate=0.05 \
 --from=mywallet \
 --gas-adjustment=1.4 \
 --gas=auto \
 --node tcp://localhost:16701 \
---home ${HOME}/.comdex \
+--home ${HOME}/.akash \
 -y
 ```
 
 #### Get Validator Info
 
 ```
-comdex status 2>&1 | jq .ValidatorInfo
+akash status 2>&1 | jq .ValidatorInfo
 ```
 
 #### Get Syncing Block
 
 ```
-comdex status 2>&1 | jq .SyncInfo
+akash status 2>&1 | jq .SyncInfo
 ```
 
 #### Get Peer Node
 
 ```bash
-echo $(comdex tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.comdex/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+echo $(akash tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.akash/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
 #### Get Peer Node
@@ -186,10 +188,10 @@ curl -sS http://localhost:16657/net_info | jq -r '.result.peers[] | "\(.node_inf
 #### Unjail Validator
 
 ```bash
-comdex tx slashing unjail \
+akash tx slashing unjail \
 --from mywallet \
---chain-id comdex-1 \
- --home ${HOME}/.comdex \
+--chain-id akash-1 \
+ --home ${HOME}/.akash \
  --node  tcp://localhost:16701 \
  --gas auto \
  --gas-adjustment 1.4 \
@@ -199,32 +201,32 @@ comdex tx slashing unjail \
 #### Jail Reason
 
 ```bash
-comdex query slashing signing-info $(comdex tendermint show-validator) \
+akash query slashing signing-info $(akash tendermint show-validator) \
  --node  tcp://localhost:16701 \
- --home ${HOME}/.comdex
+ --home ${HOME}/.akash
 ```
 
 #### List All Active Validator
 
 ```bash
-comdex q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+akash q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
 
 #### List All Inactive Validator
 
 ```bash
-comdex q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+akash q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
 
 #### Show Validator Details
 
 ```
-comdex \
+akash \
 query staking validator \
-$(comdex keys show \ 
-                $(comdex keys list --home ${HOME}/.comdex --output json| jq -r ".[] .address" | tail -n1) \
+$(akash keys show \ 
+                $(akash keys list --home ${HOME}/.akash --output json| jq -r ".[] .address" | tail -n1) \
 --bech val -a) \
---chain-id comdex-1 \
+--chain-id akash-1 \
 --node tcp://localhost:16701
 ```
 
@@ -233,11 +235,11 @@ $(comdex keys show \
 #### Withdraw All Reward From Validator
 
 ```bash
-comdex tx distribution withdraw-all-rewards \
+akash tx distribution withdraw-all-rewards \
 --from mywallet \
---chain-id comdex-1 \
+--chain-id akash-1 \
 --node tcp://localhost:16701 \
---home ${HOME}/.comdex \
+--home ${HOME}/.akash \
 --gas-adjustment 1.4 \
 --gas auto \
 -y
@@ -246,26 +248,26 @@ comdex tx distribution withdraw-all-rewards \
 #### Withdraw Commision Reward From Validator
 
 ```bash
-comdex tx distribution withdraw-rewards $(comdex keys show mywallet --bech val -a) \
+akash tx distribution withdraw-rewards $(akash keys show mywallet --bech val -a) \
 --commission \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---chain-id comdex-1 \
+--chain-id akash-1 \
 --node tcp://localhost:16701 \
---home ${HOME}/.comdex \
+--home ${HOME}/.akash \
 -y 
 ```
 
 #### Delegate My Token to Own Validator
 
 ```bash
-comdex tx staking delegate $(comdex keys show wallet --bech val -a) 1000000ucmdx \
+akash tx staking delegate $(akash keys show wallet --bech val -a) 1000000ucmdx \
 --from mywallet \
 --gas-adjustment 1.4 \
---home ${HOME}/.comdex \
+--home ${HOME}/.akash \
 --node tcp://localhost:16701 \
---chain-id comdex-1 \
+--chain-id akash-1 \
 --gas auto \
 -y
 ```
@@ -273,52 +275,52 @@ comdex tx staking delegate $(comdex keys show wallet --bech val -a) 1000000ucmdx
 #### Delegate Your Token To Our Validator
 
 ```bash
-comdex tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 1000000ucmdx \ 
+akash tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 1000000ucmdx \ 
 --from mywallet \
 --gas-adjustment 1.4 \ 
 --gas auto \
---home ${HOME}/.comdex \
+--home ${HOME}/.akash \
 --node tcp://localhost:16701 \
---chain-id comdex-1 \
+--chain-id akash-1 \
 -y
 ```
 
 #### Redelegate Tokens to Another Validator
 
 ```bash
-comdex tx staking redelegate $(comdex keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ucmdx \
+akash tx staking redelegate $(akash keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ucmdx \
 --from mywallet 
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.comdex \
+--home ${HOME}/.akash \
 --node tcp://localhost:16701 \
---chain-id comdex-1 \
+--chain-id akash-1 \
 -y 
 ```
 
 #### Unbound or Unstake Your Tokens
 
 ```bash
-comdex tx staking unbond $(comdex keys show wallet --bech val -a) 1000000ucmdx \
+akash tx staking unbond $(akash keys show wallet --bech val -a) 1000000ucmdx \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.comdex \
+--home ${HOME}/.akash \
 --node tcp://localhost:16701 \
---chain-id comdex-1 \
+--chain-id akash-1 \
 -y 
 ```
 
 Send tokens to the wallet
 
 ```
-comdex tx bank send wallet <TO_WALLET_ADDRESS> 1000000ucmdx \
+akash tx bank send wallet <TO_WALLET_ADDRESS> 1000000ucmdx \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.comdex \
+--home ${HOME}/.akash \
 --node tcp://localhost:16701 \
---chain-id comdex-1 \
+--chain-id akash-1 \
 -y 
 ```
 
@@ -343,49 +345,49 @@ Install jq package for management json format
 #### List All Proposal
 
 ```bash
-comdex query gov proposals
+akash query gov proposals
 ```
 
 #### How to Vote
 
 ```bash
 ### vote yes
-comdex tx gov vote 1 yes \
+akash tx gov vote 1 yes \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.comdex \
+--home ${HOME}/.akash \
 --node tcp://localhost:16701 \
---chain-id comdex-1 \
+--chain-id akash-1 \
 -y 
 
 ### vote no
-comdex tx gov vote 1 no \
+akash tx gov vote 1 no \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.comdex \
+--home ${HOME}/.akash \
 --node tcp://localhost:16701 \
---chain-id comdex-1 \
+--chain-id akash-1 \
 -y 
 
 ### vote abstain
-comdex tx gov vote 1 abstain \
+akash tx gov vote 1 abstain \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.comdex \
+--home ${HOME}/.akash \
 --node tcp://localhost:16701 \
---chain-id comdex-1 \
+--chain-id akash-1 \
 -y 
 
 ### vote No With Veto
-comdex tx gov vote 1 nowithveto \
+akash tx gov vote 1 nowithveto \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.comdex \
+--home ${HOME}/.akash \
 --node tcp://localhost:16701 \
---chain-id comdex-1 \
+--chain-id akash-1 \
 -y 
 ```
