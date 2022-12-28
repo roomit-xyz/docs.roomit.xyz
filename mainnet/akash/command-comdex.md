@@ -148,7 +148,7 @@ akash tx staking edit-validator \
 --moniker="${MONIKER}" \
 --identity="${PROFILE}" \
 --details="${DETAILS}" \
---website="${WEBSITE}"
+--website="${WEBSITE}" \
 --chain-id=akash-1 \
 --commission-rate=0.05 \
 --from=mywallet \
