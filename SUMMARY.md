@@ -62,7 +62,6 @@
   * [Infrastructures](mainnet/akash/infrastructures/README.md)
     * [Endpoint Public](mainnet/akash/infrastructures/endpoint-public.md)
     * [Port Mapping](mainnet/akash/infrastructures/port-mapping.md)
-    * [Healthcheck](https://health.roomit.xyz/status/comdex)
   * [Wallets](mainnet/akash/wallets.md)
 * [🟩 Gnosis](mainnet/gnosis.md)
 * [🟩 Mysterium](mainnet/mysterium/README.md)

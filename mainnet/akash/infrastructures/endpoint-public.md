@@ -6,24 +6,26 @@ description: Endpoint Public Gravity From RoomIT
 
 ## RPC
 
-{% embed url="https://rpc.comdex.roomit.xyz" %}
-RoomIT RPC Comdex
+{% embed url="https://rpc.akash.roomit.xyz" %}
+RoomIT RPC Akash
 {% endembed %}
 
 ## gRPC-Web
 
-{% embed url="https://grpc-web.comdex.roomit.xyz" %}
-RoomIT gRPC Web Comdex
+{% embed url="https://grpc-web.akash.roomit.xyz" %}
+RoomIT gRPC Web Akash
 {% endembed %}
 
 ## API
 
-{% embed url="https://api.comdex.roomit.xyz" %}
+{% embed url="https://api.akash.roomit.xyz" %}
+RoomIT API Akash
+{% endembed %}
 
 ## gRPC
 
-{% embed url="https://grpc.comdex.roomit.xyz" %}
-RoomIT gRPC Comdex
+{% embed url="https://grpc.akash.roomit.xyz" %}
+RoomIT gRPC Akash
 {% endembed %}
 
 Example Call :&#x20;
@@ -33,11 +35,11 @@ Assume, you have done install _grpcurl_
 {% endhint %}
 
 ```bash
- grpcurl grpc.comdex.roomit.xyz:443  list
+ grpcurl grpc.akash.roomit.xyz:443  list
 ```
 
 ## P2P
 
 ```
-tcp://comdex.p2p.roomit.xyz:16601
+tcp://akash.p2p.roomit.xyz:16602
 ```
