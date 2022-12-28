@@ -7,9 +7,7 @@ description: This is command about CLI Akash
 ### **Key Management**
 
 {% hint style="info" %}
-we assume, variable name\_your\_wallet is name of your own wallet.&#x20;
-
-
+we assume, variable name\_your\_wallet is name of your own wallet.
 
 Install jq package for management json format
 
@@ -79,7 +77,7 @@ akash keys import mywallet mywallet_file.backup --home ${HOME}/.akash
 <pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `akash keys list --home ${HOME}/.akash --output json| jq -r ".[] .address"`
 </strong>do
    CHAIN_ID="akash-1"
-   RPC="tcp://localhost:16701"
+   RPC="tcp://localhost:16702"
    akash q bank balances ${mywallet} --home ${HOME}/.akash --chain-id ${CHAIN_ID} --node ${RPC}
 done
 </code></pre>
@@ -87,7 +85,7 @@ done
 #### Show Balance Address
 
 ```bash
-akash q bank balances mywallet_public_address --home ${HOME}/.akash --chain-id akash-1 --node tcp://localhost:16701
+akash q bank balances mywallet_public_address --home ${HOME}/.akash --chain-id akash-1 --node tcp://localhost:16702
 ```
 
 ### Validator Management
@@ -133,7 +131,7 @@ akash tx staking create-validator \
 --from=mywallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---node tcp://localhost:16701 \
+--node tcp://localhost:16702 \
 --home ${HOME}/.akash \
 -y
 ```
@@ -156,7 +154,7 @@ akash tx staking edit-validator \
 --from=mywallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---node tcp://localhost:16701 \
+--node tcp://localhost:16702 \
 --home ${HOME}/.akash \
 -y
 ```
@@ -192,7 +190,7 @@ akash tx slashing unjail \
 --from mywallet \
 --chain-id akash-1 \
  --home ${HOME}/.akash \
- --node  tcp://localhost:16701 \
+ --node  tcp://localhost:16702 \
  --gas auto \
  --gas-adjustment 1.4 \
  -y
@@ -202,7 +200,7 @@ akash tx slashing unjail \
 
 ```bash
 akash query slashing signing-info $(akash tendermint show-validator) \
- --node  tcp://localhost:16701 \
+ --node  tcp://localhost:16702 \
  --home ${HOME}/.akash
 ```
 
@@ -227,7 +225,7 @@ $(akash keys show \
                 $(akash keys list --home ${HOME}/.akash --output json| jq -r ".[] .address" | tail -n1) \
 --bech val -a) \
 --chain-id akash-1 \
---node tcp://localhost:16701
+--node tcp://localhost:16702
 ```
 
 ### Token Management
@@ -238,7 +236,7 @@ $(akash keys show \
 akash tx distribution withdraw-all-rewards \
 --from mywallet \
 --chain-id akash-1 \
---node tcp://localhost:16701 \
+--node tcp://localhost:16702 \
 --home ${HOME}/.akash \
 --gas-adjustment 1.4 \
 --gas auto \
@@ -254,7 +252,7 @@ akash tx distribution withdraw-rewards $(akash keys show mywallet --bech val -a)
 --gas-adjustment 1.4 \
 --gas auto \
 --chain-id akash-1 \
---node tcp://localhost:16701 \
+--node tcp://localhost:16702 \
 --home ${HOME}/.akash \
 -y 
 ```
@@ -266,7 +264,7 @@ akash tx staking delegate $(akash keys show wallet --bech val -a) 1000000ucmdx \
 --from mywallet \
 --gas-adjustment 1.4 \
 --home ${HOME}/.akash \
---node tcp://localhost:16701 \
+--node tcp://localhost:16702 \
 --chain-id akash-1 \
 --gas auto \
 -y
@@ -280,7 +278,7 @@ akash tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 
 --gas-adjustment 1.4 \ 
 --gas auto \
 --home ${HOME}/.akash \
---node tcp://localhost:16701 \
+--node tcp://localhost:16702 \
 --chain-id akash-1 \
 -y
 ```
@@ -293,7 +291,7 @@ akash tx staking redelegate $(akash keys show wallet --bech val -a) <TO_VALOPER_
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.akash \
---node tcp://localhost:16701 \
+--node tcp://localhost:16702 \
 --chain-id akash-1 \
 -y 
 ```
@@ -306,7 +304,7 @@ akash tx staking unbond $(akash keys show wallet --bech val -a) 1000000ucmdx \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.akash \
---node tcp://localhost:16701 \
+--node tcp://localhost:16702 \
 --chain-id akash-1 \
 -y 
 ```
@@ -319,7 +317,7 @@ akash tx bank send wallet <TO_WALLET_ADDRESS> 1000000ucmdx \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.akash \
---node tcp://localhost:16701 \
+--node tcp://localhost:16702 \
 --chain-id akash-1 \
 -y 
 ```
@@ -357,7 +355,7 @@ akash tx gov vote 1 yes \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.akash \
---node tcp://localhost:16701 \
+--node tcp://localhost:16702 \
 --chain-id akash-1 \
 -y 
 
@@ -367,7 +365,7 @@ akash tx gov vote 1 no \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.akash \
---node tcp://localhost:16701 \
+--node tcp://localhost:16702 \
 --chain-id akash-1 \
 -y 
 
@@ -377,7 +375,7 @@ akash tx gov vote 1 abstain \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.akash \
---node tcp://localhost:16701 \
+--node tcp://localhost:16702 \
 --chain-id akash-1 \
 -y 
 
@@ -387,7 +385,7 @@ akash tx gov vote 1 nowithveto \
 --gas-adjustment 1.4 \
 --gas auto \
 --home ${HOME}/.akash \
---node tcp://localhost:16701 \
+--node tcp://localhost:16702 \
 --chain-id akash-1 \
 -y 
 ```

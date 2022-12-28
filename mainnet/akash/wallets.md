@@ -9,13 +9,13 @@ description: Information Wallet Worker
 Wallet Node
 
 ```
-comdex1psy3gmflujcvcnm7d7palh3ywjxc00dmraucsv
+akash14as4da289px4wcfm863zmkk4g6c3xcm6a6wmd8
 ```
 
 Wallet Operator
 
 ```
-comdexvaloper1psy3gmflujcvcnm7d7palh3ywjxc00dms2x2wd
+akashvaloper14as4da289px4wcfm863zmkk4g6c3xcm6hcqaad
 ```
 
 

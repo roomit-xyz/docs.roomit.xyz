@@ -63,9 +63,7 @@
     * [Endpoint Public](mainnet/akash/infrastructures/endpoint-public.md)
     * [Port Mapping](mainnet/akash/infrastructures/port-mapping.md)
     * [Healthcheck](https://health.roomit.xyz/status/comdex)
-  * [Monitoring View Comdex](mainnet/akash/monitoring-view-gravity-bridge.md)
   * [Wallets](mainnet/akash/wallets.md)
-  * [Firewall Comdex](security/firewall/firewall-comdex.md)
 * [🟩 Gnosis](mainnet/gnosis.md)
 * [🟩 Mysterium](mainnet/mysterium/README.md)
   * [Installation Mysterium](mainnet/mysterium/installation-mysterium.md)
@@ -100,9 +98,9 @@
 * [🟥 User and Group Management](security/user-and-group-management.md)
 * [🟥 Sudo Management](security/sudo-management.md)
 * [🟥 Firewall](security/firewall/README.md)
-  * [Firewall - Comdex](security/firewall/firewall-comdex.md)
-  * [Firewall - Gravity Bridge](security/firewall/firewall-gravity-bridge.md)
-  * [Firewall - NYM Mixnode](security/firewall/firewall-nym-mixnode.md)
+  *
+  *
+  *
 * [🟥 Logging](security/logging/README.md)
   * [Install Promtail](security/logging/install-promtail.md)
   * [Install Loki](security/logging/install-loki.md)
