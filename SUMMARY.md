@@ -67,7 +67,6 @@
     * [Installation Validator](mainnet/akash-1/installation-node/installation-validator.md)
     * [Up And Running](mainnet/akash-1/installation-node/up-and-running.md)
     * [Edit Configuration Node](mainnet/akash-1/installation-node/edit-configuration-node.md)
-    * [Snapshot](mainnet/akash-1/installation-node/state-sync.md)
   * [Command Akash](mainnet/akash-1/command-comdex.md)
   * [Infrastructures](mainnet/akash-1/infrastructures/README.md)
     * [Endpoint Public](mainnet/akash-1/infrastructures/endpoint-public.md)
