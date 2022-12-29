@@ -4,10 +4,6 @@ description: Relayer Documentation
 
 # 🟢 IBC Relayer
 
-&#x20;
-
-## 🟢 IBC Relayer
-
 {% hint style="info" %}
 login to user : salinem
 {% endhint %}
