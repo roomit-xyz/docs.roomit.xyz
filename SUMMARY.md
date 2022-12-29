@@ -123,7 +123,7 @@
 ## Archieves
 
 * [⬛ Mainnet](archieves/mainnet/README.md)
-  * [🟩 Comdex](archieves/mainnet/comdex/README.md)
+  * [🟩 Comdex (Inactive Temporary)](archieves/mainnet/comdex/README.md)
     * [How to Stake Your Token](archieves/mainnet/comdex/how-to-stake-your-token.md)
     * [Installation Node](archieves/mainnet/comdex/installation-node/README.md)
       * [Installation Validator](archieves/mainnet/comdex/installation-node/installation-validator.md)
