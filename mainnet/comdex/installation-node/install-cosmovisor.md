@@ -21,7 +21,7 @@ View of tree FHS
 
 #### Create Shell Variable
 
-Create file in **${HOME}/conf/cosmovisor-env,** this config was included in shell profile before ${HOME}/.zhrc or ${HOME}/.bashrc you can refer [installation-node](../../gravity-bridge/installation-node/ "mention")
+Create file in **${HOME}/conf/cosmovisor-env,** this config was included in shell profile before ${HOME}/.zhrc or ${HOME}/.bashrc you can refer [installation-node](../../akash/installation-node/ "mention")
 
 ```bash
 # Setup Cosmovisor

@@ -24,7 +24,6 @@
     * [Installation Relayer](mainnet/gravity-bridge/installation-node/installation-relayer.md)
     * [Edit Configuration Node](mainnet/gravity-bridge/installation-node/edit-configuration-node.md)
     * [State Sync](mainnet/gravity-bridge/installation-node/state-sync.md)
-  * [🟢 Installation IBC Hermes](mainnet/tendermint-tools/installation-ibc-hermes.md)
   * [Command Gravity](mainnet/gravity-bridge/command-gravity.md)
   * [Infrastructures](mainnet/gravity-bridge/infrastructures/README.md)
     * [Endpoint Public](mainnet/gravity-bridge/infrastructures/endpoint-public.md)
@@ -41,7 +40,6 @@
     * [Up And Running](mainnet/comdex/installation-node/up-and-running.md)
     * [Edit Configuration Node](mainnet/comdex/installation-node/edit-configuration-node.md)
     * [State Sync](mainnet/comdex/installation-node/state-sync.md)
-  *
   * [Command Comdex](mainnet/comdex/command-comdex.md)
   * [Infrastructures](mainnet/comdex/infrastructures/README.md)
     * [Endpoint Public](mainnet/comdex/infrastructures/endpoint-public.md)
@@ -78,7 +76,6 @@
   * [Up And Running](mainnet/mysterium/up-and-running.md)
   * [Dashboard Mysterium](mainnet/mysterium/dashboard-mysterium.md)
 * [⚛ Tendermint Tools](mainnet/tendermint-tools/README.md)
-  *
   * [🟢 Authz](mainnet/tendermint-tools/installation-ibc-hermes-1.md)
   * [🟢 TMKMS](mainnet/tendermint-tools/installation-ibc-hermes-2.md)
   * [🟢 Tenderduty](mainnet/tendermint-tools/installation-ibc-hermes-3.md)
