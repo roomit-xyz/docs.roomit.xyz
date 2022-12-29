@@ -4,7 +4,7 @@ description: Install Node Producer
 
 # Installation Validator
 
-**Chain ID**: akashnet-1| **Latest Binary Version**: v0.20.0
+**Chain ID**: planq\_7070-2 | **Latest Binary Version**: v6.0.2
 
 Update and install packages for compiling
 
@@ -54,13 +54,12 @@ mkdir -p ${HOME}/conf
 mkdir -p ${HOME}/systemd
 ```
 
-#### Install Akash
+#### Install PlanQ
 
 ```bash
 cd ~
 apt install jq -y
 apt install unzip -y
-AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/akash/releases/latest | jq -r '.tag_name')"
 curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "$AKASH_VERSION"
 ```
 
@@ -108,4 +107,4 @@ mv addrbook.json ~/.akash/config
 
 Edit config, You can refer to [edit-configuration-node.md](../../comdex/installation-node/edit-configuration-node.md "mention")
 
-Apply State Sync, refer to [state-sync.md](state-sync.md "mention")
+Apply State Sync, refer to [state-sync.md](../../akash/installation-node/state-sync.md "mention")
