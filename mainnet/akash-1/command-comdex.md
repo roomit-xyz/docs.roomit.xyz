@@ -171,7 +171,7 @@ akash status 2>&1 | jq .ValidatorInfo
 akash status 2>&1 | jq .SyncInfo
 ```
 
-#### Get Peer Node
+#### Get Peer Own Node
 
 ```bash
 echo $(akash tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.akash/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')

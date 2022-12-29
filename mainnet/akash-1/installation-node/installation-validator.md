@@ -60,7 +60,8 @@ mkdir -p ${HOME}/systemd
 cd ~
 apt install jq -y
 apt install unzip -y
-curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "$AKASH_VERSION"
+wget https://github.com/planq-network/planq/releases/download/v1.0.2/planq_1.0.2_Linux_x86_64.tar.gz
+tar xvf planq_1.0.2_Linux_x86_64.tar.gz
 ```
 
 #### Environment
@@ -71,38 +72,26 @@ In this case, RoomIT used zsh, if you used  bash just direct to ${HOME}/.bashrc 
 
 ```
 echo 'export PATH="${PATH}:${HOME}/bin"' >> ${HOME}/.zshrc
+source ~/.zshrc
 ```
 
 #### Intialize Node
 
 ```bash
-AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
-export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
-```
-
-make sure you have done get value of chain
-
-```bash
-echo $AKASH_CHAIN_ID
-```
-
-Create init file node
-
-```
-akash init --chain-id "$AKASH_CHAIN_ID" "YOUE_NAME_VALIDATOR"
+planqd init <your_custom_moniker> --chain-id planq_7070-2
 ```
 
 #### Add Genesis
 
 ```bash
-wget -O $HOME/.akash/config/genesis.json https://github.com/ovrclk/net/raw/master/mainnet/genesis.json 
+wget https://raw.githubusercontent.com/planq-network/networks/main/mainnet/genesis.json
+mv genesis.json ~/.planqd/config/
 ```
 
-#### Add AddressBook
+Validate Genesis
 
-```bash
-wget -O addrbook.json https://snapshots.polkachu.com/addrbook/akash/addrbook.json --inet4-only
-mv addrbook.json ~/.akash/config
+```
+planqd validate-genesis
 ```
 
 Edit config, You can refer to [edit-configuration-node.md](../../comdex/installation-node/edit-configuration-node.md "mention")

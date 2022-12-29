@@ -4,6 +4,12 @@ description: Endpoint Public Gravity From RoomIT
 
 # Endpoint Public
 
+## PEERS
+
+```bash
+3eb12284b7fb707490b8adfda6fa7d94e2fa5cd9@planq.p2p.roomit.xyz:16603
+```
+
 ## RPC
 
 {% embed url="https://rpc.akash.roomit.xyz" %}
