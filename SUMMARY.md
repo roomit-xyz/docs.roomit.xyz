@@ -109,6 +109,7 @@
 * [🟥 User and Group Management](security/user-and-group-management.md)
 * [🟥 Sudo Management](security/sudo-management.md)
 * [🟥 Firewall](security/firewall/README.md)
+  * [Firewall Gravity Bridge](<security/firewall/firewall-gravity-bridge (1).md>)
 * [🟥 Logging](security/logging/README.md)
   * [Install Promtail](security/logging/install-promtail.md)
   * [Install Loki](security/logging/install-loki.md)
