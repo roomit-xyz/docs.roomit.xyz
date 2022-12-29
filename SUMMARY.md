@@ -24,7 +24,7 @@
     * [Installation Relayer](mainnet/gravity-bridge/installation-node/installation-relayer.md)
     * [Edit Configuration Node](mainnet/gravity-bridge/installation-node/edit-configuration-node.md)
     * [State Sync](mainnet/gravity-bridge/installation-node/state-sync.md)
-  * [Installation IBC Hermes](mainnet/tendermint-tools/installation-ibc-hermes.md)
+  * [🟢 Installation IBC Hermes](mainnet/tendermint-tools/installation-ibc-hermes.md)
   * [Command Gravity](mainnet/gravity-bridge/command-gravity.md)
   * [Infrastructures](mainnet/gravity-bridge/infrastructures/README.md)
     * [Endpoint Public](mainnet/gravity-bridge/infrastructures/endpoint-public.md)
@@ -41,7 +41,7 @@
     * [Up And Running](mainnet/comdex/installation-node/up-and-running.md)
     * [Edit Configuration Node](mainnet/comdex/installation-node/edit-configuration-node.md)
     * [State Sync](mainnet/comdex/installation-node/state-sync.md)
-  * [Installation IBC Hermes](mainnet/tendermint-tools/installation-ibc-hermes.md)
+  *
   * [Command Comdex](mainnet/comdex/command-comdex.md)
   * [Infrastructures](mainnet/comdex/infrastructures/README.md)
     * [Endpoint Public](mainnet/comdex/infrastructures/endpoint-public.md)
@@ -67,7 +67,7 @@
     * [Installation Validator](mainnet/planq/installation-node/installation-validator.md)
     * [Up And Running](mainnet/planq/installation-node/up-and-running.md)
     * [Edit Configuration Node](mainnet/planq/installation-node/edit-configuration-node.md)
-  * [Command PlanQ](mainnet/planq/command-comdex.md)
+  * [Command PlanQ](mainnet/planq/command-planq.md)
   * [Infrastructures](mainnet/planq/infrastructures/README.md)
     * [Endpoint Public](mainnet/planq/infrastructures/endpoint-public.md)
     * [Port Mapping](mainnet/planq/infrastructures/port-mapping.md)
@@ -78,7 +78,7 @@
   * [Up And Running](mainnet/mysterium/up-and-running.md)
   * [Dashboard Mysterium](mainnet/mysterium/dashboard-mysterium.md)
 * [⚛ Tendermint Tools](mainnet/tendermint-tools/README.md)
-  * [🟢 IBC Relayer](mainnet/tendermint-tools/installation-ibc-hermes.md)
+  *
   * [🟢 Authz](mainnet/tendermint-tools/installation-ibc-hermes-1.md)
   * [🟢 TMKMS](mainnet/tendermint-tools/installation-ibc-hermes-2.md)
   * [🟢 Tenderduty](mainnet/tendermint-tools/installation-ibc-hermes-3.md)
@@ -112,9 +112,6 @@
 * [🟥 User and Group Management](security/user-and-group-management.md)
 * [🟥 Sudo Management](security/sudo-management.md)
 * [🟥 Firewall](security/firewall/README.md)
-  *
-  *
-  *
 * [🟥 Logging](security/logging/README.md)
   * [Install Promtail](security/logging/install-promtail.md)
   * [Install Loki](security/logging/install-loki.md)
