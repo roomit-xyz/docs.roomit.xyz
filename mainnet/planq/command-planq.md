@@ -388,4 +388,5 @@ planqd tx gov vote 1 nowithveto \
 --node tcp://localhost:16703 \
 --chain-id planq_7070-2 \
 -y 
+
 ```
