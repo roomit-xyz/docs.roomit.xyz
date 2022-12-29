@@ -79,6 +79,7 @@
   * [Dashboard Mysterium](mainnet/mysterium/dashboard-mysterium.md)
 * [⚛ Tendermint Tools](mainnet/tendermint-tools/README.md)
   * [🟢 Authz](mainnet/tendermint-tools/installation-ibc-hermes-1.md)
+  * [🟢 IBC Relayer](mainnet/tendermint-tools/installation-ibc-hermes-1-1.md)
   * [🟢 TMKMS](mainnet/tendermint-tools/installation-ibc-hermes-2.md)
   * [🟢 Tenderduty](mainnet/tendermint-tools/installation-ibc-hermes-3.md)
   * [🟢 Explorers](mainnet/tendermint-tools/installation-ibc-hermes-4.md)
