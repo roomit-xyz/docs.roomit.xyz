@@ -113,6 +113,7 @@
   * [Firewall Comdex](<security/firewall/firewall-comdex (1).md>)
   * [Firewall Akash](security/firewall/firewall-akash.md)
   * [Firewall PlanQ](security/firewall/firewall-planq.md)
+  * [Firewall NYM Mixnode](<security/firewall/firewall-nym-mixnode (1).md>)
 * [🟥 Logging](security/logging/README.md)
   * [Install Promtail](security/logging/install-promtail.md)
   * [Install Loki](security/logging/install-loki.md)
