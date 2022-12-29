@@ -31,7 +31,7 @@ Install jq package for management json format
 #### **Add New Key**
 
 ```bash
-akash keys add mywallet --home ${HOME}/.akash      
+planqd keys add mywallet --home ${HOME}/.planqd      
 ```
 
 #### **Recover Key**
@@ -39,37 +39,37 @@ akash keys add mywallet --home ${HOME}/.akash
 With Passphrase
 
 ```bash
-akash keys add mywallet --recover  --home ${HOME}/.akash            
+planqd keys add mywallet --recover  --home ${HOME}/.planqd            
 ```
 
 With Keyring
 
 ```bash
-akash keys add mywallet --recover --keyring-backend os --home ${HOME}/.akash            
+planqd keys add mywallet --recover --keyring-backend os --home ${HOME}/.planqd            
 ```
 
 #### **List Key**
 
 ```bash
-akash keys list --home ${HOME}/.akash         
+planqd keys list --home ${HOME}/.planqd         
 ```
 
 #### **Delete Key**
 
 ```bash
-akash keys delete mywallet --home ${HOME}/.akash  
+planqd keys delete mywallet --home ${HOME}/.planqd  
 ```
 
 **Export Key**
 
 ```bash
- akash keys export mywallet --home ${HOME}/.akash  
+ planqd keys export mywallet --home ${HOME}/.planqd  
 ```
 
 #### Import Key
 
 ```
-akash keys import mywallet mywallet_file.backup --home ${HOME}/.akash 
+planqd keys import mywallet mywallet_file.backup --home ${HOME}/.planqd 
 ```
 
 #### Show All Balances Address
