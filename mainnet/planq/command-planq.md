@@ -74,18 +74,18 @@ planqd keys import mywallet mywallet_file.backup --home ${HOME}/.planqd
 
 #### Show All Balances Address
 
-<pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `akash keys list --home ${HOME}/.akash --output json| jq -r ".[] .address"`
+<pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `planqd keys list --home ${HOME}/.planqd --output json| jq -r ".[] .address"`
 </strong>do
-   CHAIN_ID="akash-1"
-   RPC="tcp://localhost:16702"
-   akash q bank balances ${mywallet} --home ${HOME}/.akash --chain-id ${CHAIN_ID} --node ${RPC}
+   CHAIN_ID="planq_7070-2"
+   RPC="tcp://localhost:16703"
+   planqd q bank balances ${mywallet} --home ${HOME}/.planqd --chain-id ${CHAIN_ID} --node ${RPC}
 done
 </code></pre>
 
 #### Show Balance Address
 
 ```bash
-akash q bank balances mywallet_public_address --home ${HOME}/.akash --chain-id akash-1 --node tcp://localhost:16702
+planqd q bank balances mywallet_public_address --home ${HOME}/.planqd --chain-id planq_7070-2 --node tcp://localhost:16703
 ```
 
 ### Validator Management
@@ -116,14 +116,14 @@ PROFILE="PGP_KEY_OF_KEYBASE"
 DETAILS="Describes Your Validator"
 WEBSITE="https://yourwebsite.com"
 
-akash tx staking create-validator \
+planqd tx staking create-validator \
 --amount=1000000ucmdx \
---pubkey=$(akash tendermint show-validator --home ${HOME}/.akash) \
+--pubkey=$(planqd tendermint show-validator --home ${HOME}/.planqd) \
 --moniker="${MONIKER}" \
 --identity="${PROFILE}" \
 --details="${DETAILS}" \
 --website="${WEBSITE}" \
---chain-id=akash-1 \
+--chain-id=planq_7070-2 \
 --commission-rate=0.05 \
 --commission-max-rate=0.20 \
 --commission-max-change-rate=0.01 \
@@ -131,8 +131,8 @@ akash tx staking create-validator \
 --from=mywallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---node tcp://localhost:16702 \
---home ${HOME}/.akash \
+--node tcp://localhost:16703 \
+--home ${HOME}/.planqd \
 -y
 ```
 
@@ -144,53 +144,53 @@ PROFILE="PGP_KEY_OF_KEYBASE"
 DETAILS="Describes Your Validator"
 WEBSITE="https://yourwebsite.com"
 
-akash tx staking edit-validator \
+planqd tx staking edit-validator \
 --moniker="${MONIKER}" \
 --identity="${PROFILE}" \
 --details="${DETAILS}" \
 --website="${WEBSITE}" \
---chain-id=akash-1 \
+--chain-id=planq_7070-2 \
 --commission-rate=0.05 \
 --from=mywallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---node tcp://localhost:16702 \
---home ${HOME}/.akash \
+--node tcp://localhost:16703 \
+--home ${HOME}/.planqd \
 -y
 ```
 
 #### Get Validator Info
 
 ```
-akash status 2>&1 | jq .ValidatorInfo
+planqd status 2>&1 | jq .ValidatorInfo
 ```
 
 #### Get Syncing Block
 
 ```
-akash status 2>&1 | jq .SyncInfo
+planqd status 2>&1 | jq .SyncInfo
 ```
 
 #### Get Peer Own Node
 
 ```bash
-echo $(akash tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.akash/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+echo $(planqd tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.planqd/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
 #### Get Peer Node
 
 ```
-curl -sS http://localhost:16702/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
+curl -sS http://localhost:16703/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
 ```
 
 #### Unjail Validator
 
 ```bash
-akash tx slashing unjail \
+planqd tx slashing unjail \
 --from mywallet \
---chain-id akash-1 \
- --home ${HOME}/.akash \
- --node  tcp://localhost:16702 \
+--chain-id planq_7070-2 \
+ --home ${HOME}/.planqd \
+ --node  tcp://localhost:16703 \
  --gas auto \
  --gas-adjustment 1.4 \
  -y
@@ -199,33 +199,33 @@ akash tx slashing unjail \
 #### Jail Reason
 
 ```bash
-akash query slashing signing-info $(akash tendermint show-validator) \
- --node  tcp://localhost:16702 \
- --home ${HOME}/.akash
+planqd query slashing signing-info $(planqd tendermint show-validator) \
+ --node  tcp://localhost:16703 \
+ --home ${HOME}/.planqd
 ```
 
 #### List All Active Validator
 
 ```bash
-akash q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+planqd q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
 
 #### List All Inactive Validator
 
 ```bash
-akash q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+planqd q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
 
 #### Show Validator Details
 
 ```
-akash \
+planqd \
 query staking validator \
-$(akash keys show \ 
-                $(akash keys list --home ${HOME}/.akash --output json| jq -r ".[] .address" | tail -n1) \
+$(planqd keys show \ 
+                $(planqd keys list --home ${HOME}/.planqd --output json| jq -r ".[] .address" | tail -n1) \
 --bech val -a) \
---chain-id akash-1 \
---node tcp://localhost:16702
+--chain-id planq_7070-2 \
+--node tcp://localhost:16703
 ```
 
 ### Token Management
@@ -233,11 +233,11 @@ $(akash keys show \
 #### Withdraw All Reward From Validator
 
 ```bash
-akash tx distribution withdraw-all-rewards \
+planqd tx distribution withdraw-all-rewards \
 --from mywallet \
---chain-id akash-1 \
---node tcp://localhost:16702 \
---home ${HOME}/.akash \
+--chain-id planq_7070-2 \
+--node tcp://localhost:16703 \
+--home ${HOME}/.planqd \
 --gas-adjustment 1.4 \
 --gas auto \
 -y
@@ -246,26 +246,26 @@ akash tx distribution withdraw-all-rewards \
 #### Withdraw Commision Reward From Validator
 
 ```bash
-akash tx distribution withdraw-rewards $(akash keys show mywallet --bech val -a) \
+planqd tx distribution withdraw-rewards $(planqd keys show mywallet --bech val -a) \
 --commission \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---chain-id akash-1 \
---node tcp://localhost:16702 \
---home ${HOME}/.akash \
+--chain-id planq_7070-2 \
+--node tcp://localhost:16703 \
+--home ${HOME}/.planqd \
 -y 
 ```
 
 #### Delegate My Token to Own Validator
 
 ```bash
-akash tx staking delegate $(akash keys show wallet --bech val -a) 1000000ucmdx \
+planqd tx staking delegate $(planqd keys show wallet --bech val -a) 1000000ucmdx \
 --from mywallet \
 --gas-adjustment 1.4 \
---home ${HOME}/.akash \
---node tcp://localhost:16702 \
---chain-id akash-1 \
+--home ${HOME}/.planqd \
+--node tcp://localhost:16703 \
+--chain-id planq_7070-2 \
 --gas auto \
 -y
 ```
@@ -273,52 +273,52 @@ akash tx staking delegate $(akash keys show wallet --bech val -a) 1000000ucmdx \
 #### Delegate Your Token To Our Validator
 
 ```bash
-akash tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 1000000ucmdx \ 
+planqd tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 1000000ucmdx \ 
 --from mywallet \
 --gas-adjustment 1.4 \ 
 --gas auto \
---home ${HOME}/.akash \
---node tcp://localhost:16702 \
---chain-id akash-1 \
+--home ${HOME}/.planqd \
+--node tcp://localhost:16703 \
+--chain-id planq_7070-2 \
 -y
 ```
 
 #### Redelegate Tokens to Another Validator
 
 ```bash
-akash tx staking redelegate $(akash keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ucmdx \
+planqd tx staking redelegate $(planqd keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ucmdx \
 --from mywallet 
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.akash \
---node tcp://localhost:16702 \
---chain-id akash-1 \
+--home ${HOME}/.planqd \
+--node tcp://localhost:16703 \
+--chain-id planq_7070-2 \
 -y 
 ```
 
 #### Unbound or Unstake Your Tokens
 
 ```bash
-akash tx staking unbond $(akash keys show wallet --bech val -a) 1000000ucmdx \
+planqd tx staking unbond $(planqd keys show wallet --bech val -a) 1000000ucmdx \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.akash \
---node tcp://localhost:16702 \
---chain-id akash-1 \
+--home ${HOME}/.planqd \
+--node tcp://localhost:16703 \
+--chain-id planq_7070-2 \
 -y 
 ```
 
 Send tokens to the wallet
 
 ```
-akash tx bank send wallet <TO_WALLET_ADDRESS> 1000000ucmdx \
+planqd tx bank send wallet <TO_WALLET_ADDRESS> 1000000ucmdx \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.akash \
---node tcp://localhost:16702 \
---chain-id akash-1 \
+--home ${HOME}/.planqd \
+--node tcp://localhost:16703 \
+--chain-id planq_7070-2 \
 -y 
 ```
 
@@ -343,49 +343,49 @@ Install jq package for management json format
 #### List All Proposal
 
 ```bash
-akash query gov proposals
+planqd query gov proposals
 ```
 
 #### How to Vote
 
 ```bash
 ### vote yes
-akash tx gov vote 1 yes \
+planqd tx gov vote 1 yes \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.akash \
---node tcp://localhost:16702 \
---chain-id akash-1 \
+--home ${HOME}/.planqd \
+--node tcp://localhost:16703 \
+--chain-id planq_7070-2 \
 -y 
 
 ### vote no
-akash tx gov vote 1 no \
+planqd tx gov vote 1 no \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.akash \
---node tcp://localhost:16702 \
---chain-id akash-1 \
+--home ${HOME}/.planqd \
+--node tcp://localhost:16703 \
+--chain-id planq_7070-2 \
 -y 
 
 ### vote abstain
-akash tx gov vote 1 abstain \
+planqd tx gov vote 1 abstain \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.akash \
---node tcp://localhost:16702 \
---chain-id akash-1 \
+--home ${HOME}/.planqd \
+--node tcp://localhost:16703 \
+--chain-id planq_7070-2 \
 -y 
 
 ### vote No With Veto
-akash tx gov vote 1 nowithveto \
+planqd tx gov vote 1 nowithveto \
 --from mywallet \
 --gas-adjustment 1.4 \
 --gas auto \
---home ${HOME}/.akash \
---node tcp://localhost:16702 \
---chain-id akash-1 \
+--home ${HOME}/.planqd \
+--node tcp://localhost:16703 \
+--chain-id planq_7070-2 \
 -y 
 ```

@@ -1,5 +1,5 @@
 ---
-description: How to start running comdex
+description: How to start running planq
 ---
 
 # Up And Running
@@ -8,55 +8,36 @@ description: How to start running comdex
 Ensure you have add sudoers, refer [sudo-management.md](../../../security/sudo-management.md "mention")
 {% endhint %}
 
-#### Create Exec Akash
-
-```
-cat <<EOF | tee ${HOME}/bin/akash-start.sh
-#!/usr/bin/env bash
-
-# prevents "panic: cannot delete latest saved version" error
-export AKASH_PRUNING=nothing
-
-# prevents "panic: runtime error: invalid memory address or nil pointer dereference" error
-export AKASH_IAVL_DISABLE_FASTNODE=false
-
-# prevents "panic: runtime error: invalid memory address or nil pointer dereference" error on cosmos-sdk's `createSnapshot ... incrVersionReaders`
-export AKASH_STATESYNC_SNAPSHOT_INTERVAL=0
-
-/mainnet/salinem/bin/akash start
-EOF
-```
-
 #### Create Systemd
 
-Create  file in ${HOME}/systemd/cosmovisor-comdex.service
+Create  file in ${HOME}/systemd/planq-node.service
 
 ```bash
-cat > ${HOME}/systemd/akash-node.service << 'EOF'
+cat > ${HOME}/systemd/planqd-node.service  <<EOF
 [Unit]
-Description=Akash Node
-After=network.target
+Description=planq node service
+After=network-online.target
 
 [Service]
-User=akash
-Group=akash
-ExecStart=/mainnet/salinem/bin/akash-start.sh
-KillSignal=SIGINT
+User=planq
+ExecStart=/app/planq/bin/planqd start 
 Restart=on-failure
-RestartSec=15
-StartLimitInterval=200
-StartLimitBurst=10
-#LimitNOFILE=65535
+RestartSec=3
+LimitNOFILE=500000
+LimitNPROC=500000
+Environment="HOME=/app/planq"
+
 
 [Install]
 WantedBy=multi-user.target
+
 EOF
 ```
 
 Linking to Systemd
 
 ```bash
-ln -sf ${HOME}/systemd/akash-node.service /etc/systemd/system/
+ln -sf ${HOME}/systemd/planqd-node.service /etc/systemd/system/
 ```
 
 Reload Daemon
@@ -68,18 +49,18 @@ sudo systemctl daemon-reload
 Enable Service when booting
 
 ```bash
-sudo systemctl enable akash-node.service
+sudo systemctl enable planqd-node.service
 ```
 
 Start Service
 
 ```bash
-sudo systemctl start akash-node.service
+sudo systemctl start planqd-node.service
 ```
 
 Check Service
 
 ```bash
-sudo systemctl status akash-node.service
-sudo journalctl -fu akash-node.service
+sudo systemctl status planqd-node.service
+sudo journalctl -fu planqd-node.service
 ```
