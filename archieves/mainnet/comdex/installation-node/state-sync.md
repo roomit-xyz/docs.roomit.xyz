@@ -14,7 +14,7 @@ State Sync allows a new node to join the network by fetching a snapshot of the a
 **Running in user** : _salinem_
 {% endhint %}
 
-First Set Pruning Configuration, Set variable CONF\_VALIDATOR with .comdex refer [pruning-storage-tendermint.md](../../../automations/scripts/pruning-storage-tendermint.md "mention")
+First Set Pruning Configuration, Set variable CONF\_VALIDATOR with .comdex refer [pruning-storage-tendermint.md](../../../../automations/scripts/pruning-storage-tendermint.md "mention")
 
 
 

@@ -1,6 +1,6 @@
 ---
 description: Document Node Comdex Bridge
-cover: ../../.gitbook/assets/Banner.jpg
+cover: ../../../.gitbook/assets/Banner.jpg
 coverY: 0
 ---
 

@@ -106,6 +106,6 @@ wget -O addrbook.json https://snapshots.polkachu.com/addrbook/akash/addrbook.jso
 mv addrbook.json ~/.akash/config
 ```
 
-Edit config, You can refer to [edit-configuration-node.md](../../comdex/installation-node/edit-configuration-node.md "mention")
+Edit config, You can refer to [edit-configuration-node.md](../../../archieves/mainnet/comdex/installation-node/edit-configuration-node.md "mention")
 
 Apply State Sync, refer to [state-sync.md](state-sync.md "mention")

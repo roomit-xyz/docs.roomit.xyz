@@ -94,6 +94,6 @@ Validate Genesis
 planqd validate-genesis
 ```
 
-Edit config, You can refer to [edit-configuration-node.md](../../comdex/installation-node/edit-configuration-node.md "mention")
+Edit config, You can refer to [edit-configuration-node.md](../../../archieves/mainnet/comdex/installation-node/edit-configuration-node.md "mention")
 
 Apply State Sync, refer to [state-sync.md](../../akash/installation-node/state-sync.md "mention")

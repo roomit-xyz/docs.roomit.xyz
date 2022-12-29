@@ -5,7 +5,7 @@ description: How to start running comdex
 # Up And Running
 
 {% hint style="info" %}
-Ensure you have add sudoers, refer [sudo-management.md](../../../security/sudo-management.md "mention")
+Ensure you have add sudoers, refer [sudo-management.md](../../../../security/sudo-management.md "mention")
 {% endhint %}
 
 #### Create Systemd

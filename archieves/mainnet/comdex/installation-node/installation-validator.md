@@ -15,7 +15,7 @@ sudo apt install curl git jq lz4 build-essential zsh -y
 
 #### User Management
 
-Create User, Please Refer to [user-and-group-management.md](../../../security/user-and-group-management.md "mention")
+Create User, Please Refer to [user-and-group-management.md](../../../../security/user-and-group-management.md "mention")
 
 Login as User salinem
 
