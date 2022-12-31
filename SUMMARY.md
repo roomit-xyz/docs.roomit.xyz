@@ -96,11 +96,11 @@
 * [🟥 User and Group Management](security/user-and-group-management.md)
 * [🟥 Sudo Management](security/sudo-management.md)
 * [🟥 Firewall](security/firewall/README.md)
-  * [Firewall Gravity Bridge](<security/firewall/firewall-gravity-bridge (1).md>)
+  *
   * [Firewall Comdex](<security/firewall/firewall-comdex (1).md>)
-  * [Firewall Akash](security/firewall/firewall-akash.md)
-  * [Firewall PlanQ](security/firewall/firewall-planq.md)
-  * [Firewall NYM Mixnode](<security/firewall/firewall-nym-mixnode (1).md>)
+  *
+  *
+  *
 * [🟥 Logging](security/logging/README.md)
   * [Install Promtail](security/logging/install-promtail.md)
   * [Install Loki](security/logging/install-loki.md)
@@ -111,7 +111,6 @@
 
 * [🟦 Scripts](automations/scripts/README.md)
   * [Pruning Storage Tendermint](automations/scripts/pruning-storage-tendermint.md)
-  * [Auto Restake Tendermint](automations/scripts/auto-restake.md)
   * [Check Balance Address Gravity](automations/scripts/check-balance-address-gravity.md)
   * [Update Ports](automations/scripts/update-ports.md)
 * [🟦 Platform](automations/platform/README.md)
@@ -138,7 +137,7 @@
       * [Healthcheck](https://health.roomit.xyz/status/comdex)
     * [Monitoring View Comdex](archieves/mainnet/comdex/monitoring-view-gravity-bridge.md)
     * [Wallets](archieves/mainnet/comdex/wallets.md)
-    * [Firewall Comdex](<security/firewall/firewall-comdex (1).md>)
+    *
 * [⬛ Testnet](archieves/testnet/README.md)
   * [🟨 OKP4 Validator](testnet/okp4-validator/README.md)
     * [Create Genesis](testnet/okp4-validator/create-genesis.md)
