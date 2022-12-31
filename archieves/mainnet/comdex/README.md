@@ -4,7 +4,7 @@ cover: ../../../.gitbook/assets/Banner.jpg
 coverY: 0
 ---
 
-# 🟩 Comdex
+# ⬛ Comdex
 
 <figure><img src="https://github.com/roomit-xyz/stake.roomit.xyz/raw/main/img/services/comdex.png" alt=""><figcaption></figcaption></figure>
 

@@ -122,7 +122,7 @@
 ## Archieves
 
 * [⬛ Mainnet](archieves/mainnet/README.md)
-  * [🟩 Comdex (Inactive Temporary)](archieves/mainnet/comdex/README.md)
+  * [⬛ Comdex](archieves/mainnet/comdex/README.md)
     * [How to Stake Your Token](archieves/mainnet/comdex/how-to-stake-your-token.md)
     * [Installation Node](archieves/mainnet/comdex/installation-node/README.md)
       * [Installation Validator](archieves/mainnet/comdex/installation-node/installation-validator.md)
@@ -139,5 +139,5 @@
     * [Wallets](archieves/mainnet/comdex/wallets.md)
     *
 * [⬛ Testnet](archieves/testnet/README.md)
-  * [🟨 OKP4 Validator](testnet/okp4-validator/README.md)
+  * [⬛ OKP4 Validator](testnet/okp4-validator/README.md)
     * [Create Genesis](testnet/okp4-validator/create-genesis.md)
