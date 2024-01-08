@@ -321,4 +321,4 @@ Monitoring Host | [Download](https://gist.githubusercontent.com/roomit-xyz/db93b
 
 Monitoring Setinel Node | [Download](https://gist.githubusercontent.com/roomit-xyz/89ba88c7bbe6346444d6417fa7d88e48/raw/20ac3ee811be6d6b7ae28b802fd73c33f78c880e/sentinel-node.json)
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-01-07 at 01.10.03.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/sentinel-node.png" alt=""><figcaption></figcaption></figure>
