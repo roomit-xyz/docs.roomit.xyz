@@ -317,4 +317,8 @@ bash sentinel-telegraf.sh
 
 Monitoring Host | [Download](https://gist.githubusercontent.com/roomit-xyz/db93bd4c01f5d34d4d23af51ba37e0a3/raw/528ce0f5df1484bbf1860ca799e1e6fe826edb10/sentinel-host.json)
 
+<figure><img src="../../../.gitbook/assets/sentinel-host.png" alt=""><figcaption></figcaption></figure>
+
+Monitoring Setinel Node | [Download](https://gist.githubusercontent.com/roomit-xyz/89ba88c7bbe6346444d6417fa7d88e48/raw/20ac3ee811be6d6b7ae28b802fd73c33f78c880e/sentinel-node.json)
+
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-01-07 at 01.10.03.png" alt=""><figcaption></figcaption></figure>
