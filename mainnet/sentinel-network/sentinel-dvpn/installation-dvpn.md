@@ -18,16 +18,19 @@ Minimal Specification
 
 ### Support
 
-<pre><code>- Wireguard and V2Ray
-<strong>  - Architecure 
-</strong>    🖥️ X86_64
-       - Ubuntu 22.04
-       - Rocky Linux
-       - Fedora Server
+<pre><code>Wireguard and V2Ray
+<strong>- Architecure 
+</strong>  🖥️ X86_64
+     - Ubuntu 22.04
+     - Rocky Linux
+     - Fedora Server
 
-    💻 ARMv7 
-       - RaspberryPI 4 
+  💻 ARMv7 
+     - RaspberryPI 4 Debian
+  💻 ARM64/aarch64 
+     - Ubuntu
 </code></pre>
+
 
 Script can detect Architecure and OS what we used, so with one command we can deploy service dvpn easily.&#x20;
 
