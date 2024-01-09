@@ -4,7 +4,11 @@ description: Roomit provide for architecture ARMv7 FOr Sentinel DVPN
 
 # Docker Image ARM DVPN
 
+## ARMv7
 visit : [https://hub.docker.com/r/wajatmaka/sentinel-arm7-debian](https://hub.docker.com/r/wajatmaka/sentinel-arm7-debian)
+
+## ARM64/AARCH64
+visit : [https://hub.docker.com/r/wajatmaka/sentinel-aarch64-alpine](https://hub.docker.com/r/wajatmaka/sentinel-aarch64-alpine)
 
 ## SENTINEL NETWORK
 
@@ -23,8 +27,8 @@ visit : https://github.com/roomit-xyz/sentinel-node
 #### VERSION IMAGES ON ARM ARCHITECTURE
 
 ```
-0.7.0
-0.7.1 new
+0.7.0 armv7
+0.7.1 arm64, aarch64, armv7 (new version)
 ```
 
 #### STAKE YOUR DVPN TO OUR VALIDATOR
