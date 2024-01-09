@@ -20,15 +20,15 @@ Minimal Specification
 
 <pre><code>Wireguard and V2Ray
 <strong>- Architecure 
-</strong>  🖥️ X86_64
+</strong>  🖥️ X86_64 (64 Bit)
      - Ubuntu 22.04
      - Rocky Linux
      - Fedora Server
 
-  💻 ARMv7 
+  💻 ARMv7 (32 Bit)
      - RaspberryPI 4 Debian
-     
-  💻 ARM64/aarch64 
+
+  💻 ARM64/aarch64 (64 Bit)
      - Ubuntu
 </code></pre>
 
