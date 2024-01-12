@@ -1,5 +1,5 @@
 ---
-description: Roomit provide for architecture ARMv7 FOr Sentinel DVPN
+description: Roomit  as maintainer and provides architecture ARMv7 and ARM64/AARCH64 For Sentinel DVPN
 ---
 
 # Docker Image ARM DVPN
