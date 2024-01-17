@@ -93,7 +93,7 @@
   * [Installation Mysterium](mainnet/mysterium/installation-mysterium.md)
   * [Up And Running](mainnet/mysterium/up-and-running.md)
   * [Dashboard Mysterium](mainnet/mysterium/dashboard-mysterium.md)
-* [🟩 Block](mainnet/blockx/README.md)
+* [🟩 Blockx Network](mainnet/blockx/README.md)
   * [Installation Node](mainnet/blockx/installation-node/README.md)
     * [Installation Validator](mainnet/blockx/installation-node/installation-validator.md)
     * [Up And Running](mainnet/blockx/installation-node/up-and-running.md)
