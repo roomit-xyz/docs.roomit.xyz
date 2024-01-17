@@ -275,7 +275,7 @@ sged tx staking delegate $(sged keys show wallet --bech val -a) 1000000usge \
 #### Delegate Your Token To Our Validator
 
 ```bash
-sged tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 1000000usge \ 
+sged tx staking delegate sgevaloper1rhmrwq4xket2ua4s7nqunnne8kzfz4w34082zv 1000000usge \ 
 --from mywallet \
 --gas-adjustment 1.4 \ 
 --gas auto \

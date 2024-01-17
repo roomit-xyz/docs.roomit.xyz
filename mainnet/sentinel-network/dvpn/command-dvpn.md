@@ -275,7 +275,7 @@ sentinelhub tx staking delegate $(sentinelhub keys show wallet --bech val -a) 10
 #### Delegate Your Token To Our Validator
 
 ```bash
-sentinelhub tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 1000000udvpn \ 
+sentinelhub tx staking delegate sentvaloper1pyn04fth38t9tvpa3fvfnn4xng06zsymthu6ua 1000000udvpn \ 
 --from mywallet \
 --gas-adjustment 1.4 \ 
 --gas auto \

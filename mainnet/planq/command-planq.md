@@ -271,7 +271,7 @@ planqd tx staking delegate $(planqd keys show wallet --bech val -a) 1000000aplan
 #### Delegate Your Token To Our Validator
 
 ```bash
-planqd tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 1000000aplanq \ 
+planqd tx staking delegate plqvaloper1fqnr328nlndkxek2jaz8teec0euyr5yh26q26l 1000000aplanq \ 
 --from mywallet \
 --gas-adjustment 1.4 \ 
 --gas auto \

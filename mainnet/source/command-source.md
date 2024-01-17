@@ -275,7 +275,7 @@ sourced tx staking delegate $(sourced keys show wallet --bech val -a) 1000000uso
 #### Delegate Your Token To Our Validator
 
 ```bash
-sourced tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 1000000usource \ 
+sourced tx staking delegate sourcevaloper1s2rjwh8jahg7vjac9hnj99rlkgrpeknwd8expt 1000000usource \ 
 --from mywallet \
 --gas-adjustment 1.4 \ 
 --gas auto \

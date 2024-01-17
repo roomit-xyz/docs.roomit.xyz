@@ -275,7 +275,7 @@ bandd tx staking delegate $(bandd keys show wallet --bech val -a) 1000000uband \
 #### Delegate Your Token To Our Validator
 
 ```bash
-bandd tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 1000000uband \ 
+bandd tx staking delegate bandvaloper13tf84rkc9yflru6kty4xj8jtkuzl6fd66f3q3z 1000000uband \ 
 --from mywallet \
 --gas-adjustment 1.4 \ 
 --gas auto \

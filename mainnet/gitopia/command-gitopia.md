@@ -273,7 +273,7 @@ gitopiad tx staking delegate $(gitopiad keys show wallet --bech val -a) 1000000u
 #### Delegate Your Token To Our Validator
 
 ```bash
-gitopiad tx staking delegate gravityvaloper1ssduj8c0cc8kquljvw3ygq9hduvcysnf590lmz 1000000ulore \ 
+gitopiad tx staking delegate gitopiavaloper1pv8fkl4t7wk9mwptkwf8pemy9rt8qpkydr6k3p 1000000ulore \ 
 --from mywallet \
 --gas-adjustment 1.4 \ 
 --gas auto \
