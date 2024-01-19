@@ -14,7 +14,7 @@ description: Architecture RoomIT
 ## Validator Testnet (Staging)
 
 
-## Decentralized VPN
+## Decentralized VPN (Production)
 
 Decentralized VPN Service
 - Sentinel
