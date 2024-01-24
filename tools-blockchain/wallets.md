@@ -1,8 +1,8 @@
 ---
-description: Information Wallet Worker
+description: Information Wallet Worker IBC and Restake
 ---
 
-## Restake and IBC Wallet
+# Restake and IBC Wallet
 
 | No  | Wallet  | Informations   |
 |---|---|---|
