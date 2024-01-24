@@ -100,6 +100,7 @@
     * [Edit Configuration Node](mainnet/blockx/installation-node/edit-configuration-node.md)
   * [Command Blockx](mainnet/blockx/command-blockx.md)
   * [Infrastructures](mainnet/blockx/infrastructures/README.md)
+    * [Public Services](mainnet/blockx/infrastructures/public-services.md)
     * [Endpoint Public](mainnet/blockx/infrastructures/endpoint-public.md)
     * [Port Mapping](mainnet/blockx/infrastructures/port-mapping.md)
   * [Firewall Blockx](mainnet/blockx/firewall-planq.md)

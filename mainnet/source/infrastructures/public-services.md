@@ -6,11 +6,11 @@
 Source Snapshot
 {% endembed %}
 
-### Wasm
+<!-- ### Wasm
 
 {% embed url="https://roomit.xyz/wasm/mainnet/source/" %}
 Source Wasm
-{% endembed %}
+{% endembed %} -->
 
 ### Addressbook
 

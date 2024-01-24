@@ -6,11 +6,11 @@
 dVPN Sentinel Snapshot
 {% endembed %}
 
-### Wasm
+<!-- ### Wasm
 
 {% embed url="https://roomit.xyz/wasm/mainnet/dvpn/" %}
 dVPN Sentinel Wasm
-{% endembed %}
+{% endembed %} -->
 
 ### Addressbook
 
