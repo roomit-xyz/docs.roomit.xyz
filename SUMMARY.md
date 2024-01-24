@@ -103,7 +103,7 @@
     * [Public Services](mainnet/blockx/infrastructures/public-services.md)
     * [Endpoint Public](mainnet/blockx/infrastructures/endpoint-public.md)
     * [Port Mapping](mainnet/blockx/infrastructures/port-mapping.md)
-  * [Firewall Blockx](mainnet/blockx/firewall-planq.md)
+  * [Firewall Blockx](mainnet/blockx/firewall-blockx.md)
 
 ## Testnet
 
