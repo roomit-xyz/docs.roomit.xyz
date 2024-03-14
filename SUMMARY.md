@@ -110,17 +110,17 @@
 * [All Testnet](https://stake.roomit.xyz/#testnet)
 
 ## Incentive
-* [⬜️ Crossfi]
-  * [Installation Node](mainnet/crossfi/installation-node/README.md)
-    * [Installation Validator](mainnet/crossfi/installation-node/installation-validator.md)
-    * [Up And Running](mainnet/crossfi/installation-node/up-and-running.md)
-    * [Edit Configuration Node](mainnet/crossfi/installation-node/edit-configuration-node.md)
-  * [Command Crossfi](mainnet/crossfi/command-crossfi.md)
-  * [Infrastructures](mainnet/crossfi/infrastructures/README.md)
-    * [Public Services](mainnet/crossfi/infrastructures/public-services.md)
-    * [Endpoint Public](mainnet/crossfi/infrastructures/endpoint-public.md)
-    * [Port Mapping](mainnet/crossfi/infrastructures/port-mapping.md)
-  * [Firewall Crossfi](mainnet/crossfi/firewall-crossfi.md)
+* [⬜️ Crossfi](incentive/crossfi/README.md)
+  * [Installation Node](incentive/crossfi/installation-node/README.md)
+    * [Installation Validator](incentive/crossfi/installation-node/installation-validator.md)
+    * [Up And Running](incentive/crossfi/installation-node/up-and-running.md)
+    * [Edit Configuration Node](incentive/crossfi/installation-node/edit-configuration-node.md)
+  * [Command Crossfi](incentive/crossfi/command-crossfi.md)
+  * [Infrastructures](incentive/crossfi/infrastructures/README.md)
+    * [Public Services](incentive/crossfi/infrastructures/public-services.md)
+    * [Endpoint Public](incentive/crossfi/infrastructures/endpoint-public.md)
+    * [Port Mapping](incentive/crossfi/infrastructures/port-mapping.md)
+  * [Firewall Crossfi](incentive/crossfi/firewall-crossfi.md)
 
 ## Tools Blockchain
 
