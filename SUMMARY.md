@@ -70,7 +70,7 @@
     * [Public Services](mainnet/sge/infrastructures/public-services.md)
     * [Endpoint Public](mainnet/sge/infrastructures/endpoint-public.md)
     * [Port Mapping](mainnet/sge/infrastructures/port-mapping.md)
-  * [Firewall SGE](mainnet/sge/firewall-source.md)
+  * [Firewall SGE](mainnet/sge/firewall-sge.md)
 * [🟩 Sentinel Network](mainnet/sentinel-network/README.md)
   * [🟩 Sentinel Validator](mainnet/sentinel-network/dvpn/README.md)
     * [Installation Node](mainnet/sentinel-network/dvpn/installation-node/README.md)
@@ -108,6 +108,19 @@
 ## Testnet
 
 * [All Testnet](https://stake.roomit.xyz/#testnet)
+
+## Incentive
+* [⬜️ Crossfi]
+  * [Installation Node](mainnet/crossfi/installation-node/README.md)
+    * [Installation Validator](mainnet/crossfi/installation-node/installation-validator.md)
+    * [Up And Running](mainnet/crossfi/installation-node/up-and-running.md)
+    * [Edit Configuration Node](mainnet/crossfi/installation-node/edit-configuration-node.md)
+  * [Command Crossfi](mainnet/crossfi/command-crossfi.md)
+  * [Infrastructures](mainnet/crossfi/infrastructures/README.md)
+    * [Public Services](mainnet/crossfi/infrastructures/public-services.md)
+    * [Endpoint Public](mainnet/crossfi/infrastructures/endpoint-public.md)
+    * [Port Mapping](mainnet/crossfi/infrastructures/port-mapping.md)
+  * [Firewall Crossfi](mainnet/crossfi/firewall-crossfi.md)
 
 ## Tools Blockchain
 
