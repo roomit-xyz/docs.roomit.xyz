@@ -6,7 +6,7 @@ coverY: 0
 
 # 🟩 Source Protocol
 
-<figure><img src="https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/sgenet/chain.png" alt=""><figcaption><p>Source Protocol</p></figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/source/source.png" alt=""><figcaption><p>Source Protocol</p></figcaption></figure>
 
 <figure><img src="https://health.roomit.xyz/api/badge/120/status?style=for-the-badge" alt=""><figcaption></figcaption></figure>
 

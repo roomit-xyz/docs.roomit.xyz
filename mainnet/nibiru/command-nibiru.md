@@ -271,7 +271,7 @@ nibid tx staking delegate $(nibid keys show wallet --bech val -a) 1000000unibi \
 #### Delegate Your Token To Our Validator
 
 ```bash
-nibid tx staking delegate plqvaloper1fqnr328nlndkxek2jaz8teec0euyr5yh26q26l 1000000unibi \ 
+nibid tx staking delegate nibivaloper14ck5q9yhkwr3mgzy5shyhv6j36gjhh5r5crd8v 1000000unibi \ 
 --from mywallet \
 --gas-adjustment 1.4 \ 
 --gas auto \

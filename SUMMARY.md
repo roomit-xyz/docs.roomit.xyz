@@ -115,6 +115,17 @@
     * [Endpoint Public](mainnet/nibiru/infrastructures/endpoint-public.md)
     * [Port Mapping](mainnet/nibiru/infrastructures/port-mapping.md)
   * [Firewall Nibiru](mainnet/nibiru/firewall-nibiru.md)
+* [🟩 Entangle](mainnet/entangle/README.md)
+  * [Installation Node](mainnet/entangle/installation-node/README.md)
+    * [Installation Validator](mainnet/entangle/installation-node/installation-validator.md)
+    * [Up And Running](mainnet/entangle/installation-node/up-and-running.md)
+    * [Edit Configuration Node](mainnet/entangle/installation-node/edit-configuration-node.md)
+  * [Command Entangle](mainnet/entangle/command-entangle.md)
+  * [Infrastructures](mainnet/entangle/infrastructures/README.md)
+    * [Public Services](mainnet/entangle/infrastructures/public-services.md)
+    * [Endpoint Public](mainnet/entangle/infrastructures/endpoint-public.md)
+    * [Port Mapping](mainnet/entangle/infrastructures/port-mapping.md)
+  * [Firewall Entangle](mainnet/entangle/firewall-entangle.md)
 
 
 ## Testnet

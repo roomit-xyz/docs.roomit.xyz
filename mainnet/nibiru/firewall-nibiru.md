@@ -1,11 +1,11 @@
 ---
 description: Netfilter Iptables
 ---
-
+Nibiru
 # Firewall PlanQ
 
 ```
-######## PLANQ VALIDATOR
+######## Nibiru VALIDATOR
 ## gRPC
 -A INPUT -s 10.66.66.0/24 -p tcp -m multiport --dports 1306 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 # gRPC-web
