@@ -137,17 +137,7 @@
     * [Endpoint Public](mainnet/selfchain/infrastructures/endpoint-public.md)
     * [Port Mapping](mainnet/selfchain/infrastructures/port-mapping.md)
   * [Firewall Selfchain](mainnet/selfchain/firewall-selfchain.md)
-* [🟩 Nibiru](mainnet/nibiru/README.md)
-  * [Installation Node](mainnet/nibiru/installation-node/README.md)
-    * [Installation Validator](mainnet/nibiru/installation-node/installation-validator.md)
-    * [Up And Running](mainnet/nibiru/installation-node/up-and-running.md)
-    * [Edit Configuration Node](mainnet/nibiru/installation-node/edit-configuration-node.md)
-  * [Command Nibiru](mainnet/nibiru/command-nibiru.md)
-  * [Infrastructures](mainnet/nibiru/infrastructures/README.md)
-    * [Public Services](mainnet/nibiru/infrastructures/public-services.md)
-    * [Endpoint Public](mainnet/nibiru/infrastructures/endpoint-public.md)
-    * [Port Mapping](mainnet/nibiru/infrastructures/port-mapping.md)
-  * [Firewall Nibiru](mainnet/nibiru/firewall-nibiru.md)
+
 
 
 ## Testnet
