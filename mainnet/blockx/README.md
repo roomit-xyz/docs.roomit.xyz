@@ -6,7 +6,7 @@ coverY: 0
 
 # 🟩 PlanQ
 
-<figure><img src="../../.gitbook/assets/blockx.jpeg" alt=""><figcaption><p>PlanQ</p></figcaption></figure>
+<figure><img src="https://explorer.tendermint.roomit.xyz/logos/blockx.png" alt=""><figcaption><p>PlanQ</p></figcaption></figure>
 
 <figure><img src="https://health.roomit.xyz/api/badge/120/status?style=for-the-badge" alt=""><figcaption></figcaption></figure>
 

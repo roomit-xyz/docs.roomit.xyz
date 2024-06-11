@@ -6,7 +6,7 @@ coverY: 0
 
 # 🟩 Band Protocol
 
-<figure><img src="https://github.com/roomit-xyz/stake.roomit.xyz/blob/main/img/services/band.png?raw=true" alt=""><figcaption><p>Band Protocol</p></figcaption></figure>
+<figure><img src="https://explorer.tendermint.roomit.xyz/logos/band-protocol.png" alt=""><figcaption><p>Band Protocol</p></figcaption></figure>
 
 <figure><img src="https://health.roomit.xyz/api/badge/120/status?style=for-the-badge" alt=""><figcaption></figcaption></figure>
 
