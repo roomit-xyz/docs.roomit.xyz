@@ -1,10 +1,10 @@
 ---
-description: Install Node Producer
+description: Install Node Producer/Validator Nibiru
 ---
 
 # Installation Validator
 
-**Chain ID**: cataclysm-1 | **Latest Binary Version**: v1.2.0
+**Chain ID**: cataclysm-1 | **Latest Binary Version**: v1.4.0
 
 Update and install packages for compiling
 
@@ -16,7 +16,7 @@ sudo apt install curl git jq lz4 build-essential zsh -y
 #### User Management
 
 {% hint style="info" %}
-**Running in user** (Assume) : _salinem_
+**Running in user** (Assume) : _salinem_ We never used this username in our production !
 {% endhint %}
 
 Create User, Please Refer to [user-and-group-management.md](../../../security/user-and-group-management.md "mention")
@@ -37,7 +37,6 @@ and make sure we are in directory
 
 ```bash
 pwd
-
 /mainnet/salinem
 ```
 
@@ -45,7 +44,7 @@ pwd
 **Running in user** : _salinem_
 {% endhint %}
 
-#### FHS of PlanQ
+#### FHS of SGE
 
 Create FHS for application
 
@@ -58,38 +57,78 @@ mkdir -p ${HOME}/conf
 mkdir -p ${HOME}/systemd
 ```
 
-#### Install PlanQ
+### Install Golang
 
 ```bash
-cd ~
-apt install jq -y
-apt install unzip -y
-wget https://github.com/NibiruChain/nibiru/releases/download/v1.2.0/nibid_1.2.0_linux_amd64.tar.gz
-tar xvf nibid_1.2.0_linux_amd64.tar.gz
+# Install Go 1.21.8
+wget https://go.dev/dl/go1.21.8.linux-amd64.tar.gz
+tar xf go1.21.8.linux-amd64.tar.gz
+mv go ${HOME}/bin
 ```
 
-#### Environment
 
-{% hint style="info" %}
-In this case, RoomIT used zsh, if you used bash just direct to ${HOME}/.bashrc or ${HOME}/.profile
-{% endhint %}
-
+### Environment and Variable
+If Using ZSH
 ```
-echo 'export PATH="${PATH}:${HOME}/bin"' >> ${HOME}/.zshrc
+# Set Go path to $PATH variable
+echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> $HOME/.zshrc
+echo "export GOPATH="${HOME}/lib" >> $HOME/.zshrc
+echo "export GOMAXPROCS=2" >> $HOME/.zshrc
+echo "export CHAIN_ID=cataclysm-1" >> $HOME/.zshrc
+echo "export WALLET_NAME=mywallet" >> $HOME/.zshrc
+echo "export MONIKER=MYNODE"  >> $HOME/.zshrc
 source ~/.zshrc
+```
+
+
+If Using BASH
+```
+# Set Go path to $PATH variable
+echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> $HOME/.bashrc
+echo "export GOPATH="${HOME}/lib" >> >> $HOME/.bahsrc
+echo "export GOMAXPROCS=2" >> $HOME/.bashrc
+echo "export CHAIN_ID=cataclysm-1" >> $HOME/.bashrc
+echo "export WALLET_NAME=mywallet" >> $HOME/.bashrc
+echo "export MONIKER=MYNODE"  >> $HOME/.bashrc
+source ~/.bashrc
+```
+
+
+#### Install Nibiru
+
+
+```bash
+cd ${HOME}/source
+# Clone SGE Protocol  version v1.1.1
+git clone  https://github.com/NibiruChain/nibiru.git nibiru
+cd ${HOME}/source/nibiru
+git fetch && git checkout v{'changed': True, 'stdout': '1.4.0', 'stderr': '', 'rc': 0, 'cmd': '/app/mainnet/nibiru/bin/nibid version', 'start': '2024-06-11 06:40:56.098220', 'end': '2024-06-11 06:40:56.174841', 'delta': '0:00:00.076621', 'msg': '', 'stdout_lines': ['1.4.0'], 'stderr_lines': [], 'ansible_facts': {'discovered_interpreter_python': '/usr/bin/python3'}, 'failed': False}
+make build
+cp build/nibid ${HOME}/bin/
 ```
 
 #### Intialize Node
 
 ```bash
-nibid init <your_custom_moniker> --chain-id cataclysm-1
+nibid init --chain-id $CHAIN_ID "$MONIKER"
 ```
 
-#### Add Genesis
+**Replace genesis file with our genesis file**
 
 ```bash
-wget https://roomit.xyz/genesis/mainnet/nibiru/genesis.json
-mv genesis.json ~/.nibid/config/
+wget https://networks.nibiru.fi/cataclysm-1/genesis -O $HOME/.nibid/config/genesis.json
+```
+
+<!-- **Download data Nibiru / oracle scripts files, and store in $HOME/.nibid/files**
+
+```bash
+wget -qO- $BIN_FILES_URL | tar xvz -C $HOME/.nibid/
+``` -->
+
+**Create new account**
+
+```bash
+nibid keys add $WALLET_NAME
 ```
 
 Validate Genesis

@@ -1,5 +1,5 @@
 ---
-description: Endpoint Public SGE From RoomIT
+description: Endpoint Public Sge From RoomIT
 ---
 
 # Endpoint Public
@@ -7,13 +7,13 @@ description: Endpoint Public SGE From RoomIT
 ## PEERS
 
 ```bash
-420994846f175d0413796be9caea49e07ad3a503@sge.p2p.roomit.xyz:16600
+b7f6da1a8aea371206b4d234398c4888c0564066@65.109.99.157:16605
 ```
 
 ## RPC
 
 {% embed url="https://rpc.sge.roomit.xyz" %}
-RoomIT RPC sge
+RoomIT RPC Sge
 {% endembed %}
 
 ## API

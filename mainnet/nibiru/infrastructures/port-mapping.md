@@ -1,9 +1,10 @@
 ---
-description: Port Mapping RoomIT Validator
+description: Port Mapping Nibiru |  RoomIT Validator
 ---
 
 # Port Mapping
 
+### EXAMPLE
 | Services           | Port  | Protocol | Status          |
 | ------------------ | ----- | -------- | --------------- |
 | Proxy App          | 16506 | TCP      | Private         |
@@ -13,4 +14,5 @@ description: Port Mapping RoomIT Validator
 | Prometheus Metrics | 16806 | TCP      | Private         |
 | API                | 1206  | TCP      | Private         |
 | gRPC               | 1306  | TCP      | Private         |
-
+| gRPC Web           | 1406 | TCP      | Private         |
+| TMKMS              | 5006 | TCP      | Private         |

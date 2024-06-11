@@ -1,31 +1,31 @@
 ---
-description: How to start running nibiru
+description: How to start running Entangle
 ---
 
 # Up And Running
 
-{% hint style="info" %}
-**Running in user** (Assume) : _salinem_
-{% endhint %}
+{%  hint style="info" %}
+Ensure you have add sudoers to user salinem, refer [sudo-management.md](../../../security/sudo-management.md "mention")
+{%  endhint %}
 
-{% hint style="info" %}
-Ensure you have add sudoers, refer [sudo-management.md](../../../security/sudo-management.md "mention")
-{% endhint %}
+{%  hint style="info" %}
+**Running in user** (Assume) : _salinem_ We never used this username in our production !
+{%  endhint %}
 
 #### Create Systemd
 
-Create file in ${HOME}/systemd/nibiru-node.service
+Create file in ${HOME}/systemd/entangle-node.service
 
 ```bash
 export HOME="/mainnet/salinem"
-cat > ${HOME}/systemd/nibiru-node.service  <<EOF
+cat > ${HOME}/systemd/entangle-node.service  <<EOF
 [Unit]
-Description=nibiru node service
+Description=entangle node service
 After=network-online.target
 
 [Service]
 User=salinem
-ExecStart=${HOME}/bin/nibid start 
+ExecStart=${HOME}/bin/entangled start 
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=500000
@@ -42,7 +42,7 @@ EOF
 Linking to Systemd
 
 ```bash
-ln -sf ${HOME}/systemd/nibiru-node.service /etc/systemd/system/
+sudo cp ${HOME}/systemd/entangle-node.service /etc/systemd/system/
 ```
 
 Reload Daemon
@@ -54,18 +54,18 @@ sudo systemctl daemon-reload
 Enable Service when booting
 
 ```bash
-sudo systemctl enable nibiru-node.service
+sudo systemctl enable entangle-node.service
 ```
 
 Start Service
 
 ```bash
-sudo systemctl start nibiru-node.service
+sudo systemctl start entangle-node.service
 ```
 
 Check Service
 
 ```bash
-sudo systemctl status nibiru-node.service
-sudo journalctl -fu nibiru-node.service
+sudo systemctl status entangle-node.service
+sudo journalctl -fu entangle-node.service
 ```

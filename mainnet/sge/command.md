@@ -1,8 +1,8 @@
 ---
-description: This is command about CLI SGE Protocol
+description: This is command about CLI Sge
 ---
 
-# Command SGE
+# Command Sge
 
 ### **Key Management**
 
@@ -30,10 +30,15 @@ Install jq package for management json format
 We never use this username in our production!
 {% endhint %}
 
+#### Gas Fee
+        
+```
+--gas=auto --gas-prices=0.025usge --gas-adjustment=1.5
+```
 #### **Add New Key**
 
 ```bash
-sged keys add mywallet --home ${HOME}/.sge  
+sged keys add mywallet --home ${HOME}/.sge 
 ```
 
 #### **Recover Key**
@@ -41,19 +46,19 @@ sged keys add mywallet --home ${HOME}/.sge
 With Passphrase
 
 ```bash
-sged keys add mywallet --recover  --home ${HOME}/.sge        
+sged keys add mywallet --recover  --home ${HOME}/.sge       
 ```
 
 With Keyring
 
 ```bash
-sged keys add mywallet --recover --keyring-backend os --home ${HOME}/.sge        
+sged keys add mywallet --recover --keyring-backend os --home ${HOME}/.sge       
 ```
 
 #### **List Key**
 
 ```bash
-sged keys list --home ${HOME}/.sge     
+sged keys list --home ${HOME}/.sge    
 ```
 
 #### **Delete Key**
@@ -79,15 +84,15 @@ sged keys import mywallet mywallet_file.backup --home ${HOME}/.sge
 <pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `sged keys list --home ${HOME}/.sge--output json| jq -r ".[] .address"`
 </strong>do
    CHAIN_ID="sgenet-1"
-   RPC="tcp://localhost:16705"
-   sged q bank balances ${mywallet} --home ${HOME}/.sge--chain-id ${CHAIN_ID} --node ${RPC}
+   RPC="http:////localhost:16705"
+   sged q bank balances ${mywallet} --home ${HOME}/.sge --chain-id ${CHAIN_ID} --node ${RPC}
 done
 </code></pre>
 
 #### Show Balance Address
 
 ```bash
-sged q bank balances mywallet_public_address --home ${HOME}/.sge--chain-id sgenet-1 --node tcp://localhost:16705
+sged q bank balances mywallet_public_address --home ${HOME}/.sge --chain-id sgenet-1 --node http:////localhost:16705
 ```
 
 ### Validator Management
@@ -131,10 +136,9 @@ sged tx staking create-validator \
 --commission-max-change-rate=0.01 \
 --min-self-delegation=1 \
 --from=mywallet \
---gas-adjustment=1.4 \
---gas=auto \
---node tcp://localhost:16705 \
+--node http:////localhost:16705 \
 --home ${HOME}/.sge\
+--gas=auto --gas-prices=0.025usge --gas-adjustment=1.5 \
 -y
 ```
 
@@ -154,10 +158,9 @@ sged tx staking edit-validator \
 --chain-id=sgenet-1 \
 --commission-rate=0.05 \
 --from=mywallet \
---gas-adjustment=1.4 \
---gas=auto \
---node tcp://localhost:16705 \
---home ${HOME}/.sge\
+--node http:////localhost:16705 \
+--home ${HOME}/.sge \
+--gas=auto --gas-prices=0.025usge --gas-adjustment=1.5 \
 -y
 ```
 
@@ -169,7 +172,7 @@ sged status 2>&1 | jq .ValidatorInfo
 
 #### Get Syncing Block
 
-```
+```bash
 sged status 2>&1 | jq .SyncInfo
 ```
 
@@ -181,20 +184,18 @@ echo $(sged tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.sge
 
 #### Get Peer Node
 
-```
+```bash
 curl -sS http://localhost:16701/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
 ```
 
 #### Unjail Validator
-
 ```bash
 sged tx slashing unjail \
 --from mywallet \
 --chain-id sgenet-1 \
  --home ${HOME}/.sge\
- --node  tcp://localhost:16705 \
- --gas auto \
- --gas-adjustment 1.4 \
+ --node  http:////localhost:16705 \
+ --gas=auto --gas-prices=0.025usge --gas-adjustment=1.5 \
  -y
 ```
 
@@ -202,7 +203,7 @@ sged tx slashing unjail \
 
 ```bash
 sged query slashing signing-info $(sged tendermint show-validator) \
- --node  tcp://localhost:16705 \
+ --node  http:////localhost:16705 \
  --home ${HOME}/.sge
 ```
 
@@ -227,7 +228,7 @@ $(sged keys show \
                 $(sged keys list --home ${HOME}/.sge--output json| jq -r ".[] .address" | tail -n1) \
 --bech val -a) \
 --chain-id sgenet-1 \
---node tcp://localhost:16705
+--node http:////localhost:16705
 ```
 
 ### Token Management
@@ -238,10 +239,9 @@ $(sged keys show \
 sged tx distribution withdraw-all-rewards \
 --from mywallet \
 --chain-id sgenet-1 \
---node tcp://localhost:16705 \
+--node http:////localhost:16705 \
 --home ${HOME}/.sge\
---gas-adjustment 1.4 \
---gas auto \
+--gas=auto --gas-prices=0.025usge --gas-adjustment=1.5 \
 -y
 ```
 
@@ -251,37 +251,34 @@ sged tx distribution withdraw-all-rewards \
 sged tx distribution withdraw-rewards $(sged keys show mywallet --bech val -a) \
 --commission \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --chain-id sgenet-1 \
---node tcp://localhost:16705 \
+--node http:////localhost:16705 \
 --home ${HOME}/.sge\
+--gas=auto --gas-prices=0.025usge --gas-adjustment=1.5 \
 -y 
 ```
 
 #### Delegate My Token to Own Validator
 
 ```bash
-sged tx staking delegate $(sged keys show wallet --bech val -a) 1000000usge \
+sged tx staking delegate $(sged keys show wallet --bech val -a) 100000usge \
 --from mywallet \
---gas-adjustment 1.4 \
 --home ${HOME}/.sge\
---node tcp://localhost:16705 \
+--node http:////localhost:16705 \
 --chain-id sgenet-1 \
---gas auto \
+--gas=auto --gas-prices=0.025usge --gas-adjustment=1.5 \
 -y
 ```
 
 #### Delegate Your Token To Our Validator
 
 ```bash
-sged tx staking delegate sgevaloper1rhmrwq4xket2ua4s7nqunnne8kzfz4w34082zv 1000000usge \ 
+sged tx staking delegate prefixVALOPExxxxxx 100000usge \ 
 --from mywallet \
---gas-adjustment 1.4 \ 
---gas auto \
 --home ${HOME}/.sge\
---node tcp://localhost:16705 \
+--node http:////localhost:16705 \
 --chain-id sgenet-1 \
+--gas=auto --gas-prices=0.025usge --gas-adjustment=1.5 \
 -y
 ```
 
@@ -290,11 +287,10 @@ sged tx staking delegate sgevaloper1rhmrwq4xket2ua4s7nqunnne8kzfz4w34082zv 10000
 ```bash
 sged tx staking redelegate $(sged keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000usge \
 --from mywallet 
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.sge\
---node tcp://localhost:16705 \
+--node http:////localhost:16705 \
 --chain-id sgenet-1 \
+--gas=auto --gas-prices=0.025usge --gas-adjustment=1.5 \
 -y 
 ```
 
@@ -303,11 +299,10 @@ sged tx staking redelegate $(sged keys show wallet --bech val -a) <TO_VALOPER_AD
 ```bash
 sged tx staking unbond $(sged keys show wallet --bech val -a) 1000000usge \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.sge\
---node tcp://localhost:16705 \
+--node http:////localhost:16705 \
 --chain-id sgenet-1 \
+--gas=auto --gas-prices=0.025usge --gas-adjustment=1.5 \
 -y 
 ```
 
@@ -316,11 +311,10 @@ Send tokens to the wallet
 ```
 sged tx bank send wallet <TO_WALLET_ADDRESS> 1000000usge \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.sge\
---node tcp://localhost:16705 \
+--node http:////localhost:16705 \
 --chain-id sgenet-1 \
+--gas=auto --gas-prices=0.025usge --gas-adjustment=1.5 \
 -y 
 ```
 
@@ -354,40 +348,36 @@ sged query gov proposals
 ### vote yes
 sged tx gov vote 1 yes \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.sge\
---node tcp://localhost:16705 \
+--node http:////localhost:16705 \
 --chain-id sgenet-1 \
+--gas=auto --gas-prices=0.025usge --gas-adjustment=1.5 \
 -y 
 
 ### vote no
 sged tx gov vote 1 no \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.sge\
---node tcp://localhost:16705 \
+--node http:////localhost:16705 \
 --chain-id sgenet-1 \
+--gas=auto --gas-prices=0.025usge --gas-adjustment=1.5 \
 -y 
 
 ### vote abstain
 sged tx gov vote 1 abstain \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.sge\
---node tcp://localhost:16705 \
+--node http:////localhost:16705 \
 --chain-id sgenet-1 \
+--gas=auto --gas-prices=0.025usge --gas-adjustment=1.5 \
 -y 
 
 ### vote No With Veto
 sged tx gov vote 1 nowithveto \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.sge\
---node tcp://localhost:16705 \
+--node http:////localhost:16705 \
 --chain-id sgenet-1 \
+--gas=auto --gas-prices=0.025usge --gas-adjustment=1.5 \
 -y 
 ```

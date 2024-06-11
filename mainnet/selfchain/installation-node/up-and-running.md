@@ -1,5 +1,5 @@
 ---
-description: How to start running Nibiru
+description: How to start running Selfchain
 ---
 
 # Up And Running
@@ -14,18 +14,18 @@ Ensure you have add sudoers to user salinem, refer [sudo-management.md](../../..
 
 #### Create Systemd
 
-Create file in ${HOME}/systemd/nibiru-node.service
+Create file in ${HOME}/systemd/selfchain-node.service
 
 ```bash
 export HOME="/mainnet/salinem"
-cat > ${HOME}/systemd/nibiru-node.service  <<EOF
+cat > ${HOME}/systemd/selfchain-node.service  <<EOF
 [Unit]
-Description=nibiru node service
+Description=selfchain node service
 After=network-online.target
 
 [Service]
 User=salinem
-ExecStart=${HOME}/bin/nibirud start 
+ExecStart=${HOME}/bin/selfchaind start 
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=500000
@@ -42,7 +42,7 @@ EOF
 Linking to Systemd
 
 ```bash
-sudo cp ${HOME}/systemd/nibiru-node.service /etc/systemd/system/
+sudo cp ${HOME}/systemd/selfchain-node.service /etc/systemd/system/
 ```
 
 Reload Daemon
@@ -54,18 +54,18 @@ sudo systemctl daemon-reload
 Enable Service when booting
 
 ```bash
-sudo systemctl enable nibiru-node.service
+sudo systemctl enable selfchain-node.service
 ```
 
 Start Service
 
 ```bash
-sudo systemctl start nibiru-node.service
+sudo systemctl start selfchain-node.service
 ```
 
 Check Service
 
 ```bash
-sudo systemctl status nibiru-node.service
-sudo journalctl -fu nibiru-node.service
+sudo systemctl status selfchain-node.service
+sudo journalctl -fu selfchain-node.service
 ```

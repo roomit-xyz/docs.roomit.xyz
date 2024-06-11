@@ -1,16 +1,18 @@
 ---
-description: Port Mapping RoomIT Validator
+description: Port Mapping Entangle |  RoomIT Validator
 ---
 
 # Port Mapping
 
+### EXAMPLE
 | Services           | Port  | Protocol | Status          |
 | ------------------ | ----- | -------- | --------------- |
-| Proxy App          | 16506 | TCP      | Private         |
-| RPC                | 16706 | TCP      | Private         |
-| pProf              | 1106  | TCP      | Private         |
-| P2P                | 16606 | TCP      | Public (Direct) |
-| Prometheus Metrics | 16806 | TCP      | Private         |
-| API                | 1206  | TCP      | Private         |
-| gRPC               | 1306  | TCP      | Private         |
-
+| Proxy App          | 16508 | TCP      | Private         |
+| RPC                | 16708 | TCP      | Private         |
+| pProf              | 1108  | TCP      | Private         |
+| P2P                | 16608 | TCP      | Public (Direct) |
+| Prometheus Metrics | 16808 | TCP      | Private         |
+| API                | 1208  | TCP      | Private         |
+| gRPC               | 1308  | TCP      | Private         |
+| gRPC Web           | 1408 | TCP      | Private         |
+| TMKMS              | 5008 | TCP      | Private         |

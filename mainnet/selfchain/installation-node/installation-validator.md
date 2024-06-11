@@ -1,10 +1,10 @@
 ---
-description: Install Node Producer/Validator Sge
+description: Install Node Producer/Validator Selfchain
 ---
 
 # Installation Validator
 
-**Chain ID**: sgenet-1 | **Latest Binary Version**: v1.1.1
+**Chain ID**: self-1 | **Latest Binary Version**: v1.1.1
 
 Update and install packages for compiling
 
@@ -74,7 +74,7 @@ If Using ZSH
 echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> $HOME/.zshrc
 echo "export GOPATH="${HOME}/lib" >> $HOME/.zshrc
 echo "export GOMAXPROCS=2" >> $HOME/.zshrc
-echo "export CHAIN_ID=sgenet-1" >> $HOME/.zshrc
+echo "export CHAIN_ID=self-1" >> $HOME/.zshrc
 echo "export WALLET_NAME=mywallet" >> $HOME/.zshrc
 echo "export MONIKER=MYNODE"  >> $HOME/.zshrc
 source ~/.zshrc
@@ -87,54 +87,48 @@ If Using BASH
 echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> $HOME/.bashrc
 echo "export GOPATH="${HOME}/lib" >> >> $HOME/.bahsrc
 echo "export GOMAXPROCS=2" >> $HOME/.bashrc
-echo "export CHAIN_ID=sgenet-1" >> $HOME/.bashrc
+echo "export CHAIN_ID=self-1" >> $HOME/.bashrc
 echo "export WALLET_NAME=mywallet" >> $HOME/.bashrc
 echo "export MONIKER=MYNODE"  >> $HOME/.bashrc
 source ~/.bashrc
 ```
 
 
-#### Install Sge
-
+#### Install Selfchain
 
 ```bash
-cd ${HOME}/source
-# Clone SGE Protocol  version v1.1.1
-git clone  https://github.com/sge-network/sge sge
-cd ${HOME}/source/sge
-git fetch && git checkout v{'changed': True, 'stdout': '', 'stderr': 'v1.7.0-tmfix', 'rc': 0, 'cmd': '/app/mainnet/sge/bin/sged version', 'start': '2024-06-11 06:40:56.196099', 'end': '2024-06-11 06:40:56.262733', 'delta': '0:00:00.066634', 'msg': '', 'stdout_lines': [], 'stderr_lines': ['v1.7.0-tmfix'], 'ansible_facts': {'discovered_interpreter_python': '/usr/bin/python3'}, 'failed': False}
-make build
-cp build/sged ${HOME}/bin/
+wget -c https://roomit.xyz/other/selfchaind -O ${HOME}/bin/selfchaind
 ```
+
 
 #### Intialize Node
 
 ```bash
-sged init --chain-id $CHAIN_ID "$MONIKER"
+selfchaind init --chain-id $CHAIN_ID "$MONIKER"
 ```
 
 **Replace genesis file with our genesis file**
 
 ```bash
-wget https://snapshots.indonode.net/sge/genesis.json -O $HOME/.sge/config/genesis.json
+wget https://gist.githubusercontent.com/pratikbin/656a18f371e7a970afd63e2da2890c81/raw/3876268b2d07ce65aece8455c67f98cf557c6e40/selfchain-mainnet-self-1.json -O $HOME/.selfchain/config/genesis.json
 ```
 
-<!-- **Download data Sge / oracle scripts files, and store in $HOME/.sge/files**
+<!-- **Download data Selfchain / oracle scripts files, and store in $HOME/.selfchain/files**
 
 ```bash
-wget -qO- $BIN_FILES_URL | tar xvz -C $HOME/.sge/
+wget -qO- $BIN_FILES_URL | tar xvz -C $HOME/.selfchain/
 ``` -->
 
 **Create new account**
 
 ```bash
-sged keys add $WALLET_NAME
+selfchaind keys add $WALLET_NAME
 ```
 
 Validate Genesis
 
 ```
-sged validate-genesis
+selfchaind validate-genesis
 ```
 
 Edit config, You can refer to [edit-configuration-node.md](edit-configuration-node.md "mention")

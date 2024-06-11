@@ -7,13 +7,13 @@ description: Endpoint Public Entangle From RoomIT
 ## PEERS
 
 ```bash
-793924cae855dd98190288fe9cf817568c43b3b6@p2p-pve01.roomit.xyz:16606
+d80f515771a598aa83f22b91d58be3803fcbc738@65.109.99.157:16608
 ```
 
 ## RPC
 
 {% embed url="https://rpc.entangle.roomit.xyz" %}
-RoomIT RPC entangle
+RoomIT RPC Entangle
 {% endembed %}
 
 ## API
@@ -41,5 +41,5 @@ Assume, you have done install _grpcurl_
 ## P2P
 
 ```
-tcp://p2p-pve01.roomit.xyz:16606
+tcp://entangle.p2p.roomit.xyz:16602
 ```
