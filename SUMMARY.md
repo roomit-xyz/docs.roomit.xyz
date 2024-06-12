@@ -174,6 +174,17 @@
     * [Endpoint Public](testnet/sge/infrastructures/endpoint-public.md)
     * [Port Mapping](testnet/sge/infrastructures/port-mapping.md)
   * [Firewall SGE](testnet/sge/firewall-sge.md)
+* [⬜️ Planq](testnet/planq/README.md)
+  * [Installation Node](testnet/planq/installation-node/README.md)
+    * [Installation Validator](testnet/planq/installation-node/installation-validator.md)
+    * [Up And Running](testnet/planq/installation-node/up-and-running.md)
+    * [Edit Configuration Node](testnet/planq/installation-node/edit-configuration-node.md)
+  * [Command Planq](testnet/planq/command-planq.md)
+  * [Infrastructures](testnet/planq/infrastructures/README.md)
+    * [Public Services](testnet/planq/infrastructures/public-services.md)
+    * [Endpoint Public](testnet/planq/infrastructures/endpoint-public.md)
+    * [Port Mapping](testnet/planq/infrastructures/port-mapping.md)
+  * [Firewall Planq](testnet/planq/firewall-planq.md)
 
 ## Tools Blockchain
 
