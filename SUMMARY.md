@@ -163,6 +163,17 @@
     * [Endpoint Public](testnet/dora/infrastructures/endpoint-public.md)
     * [Port Mapping](testnet/dora/infrastructures/port-mapping.md)
   * [Firewall Dora](testnet/dora/firewall-dora.md)
+* [⬜️ SGE](testnet/sge/README.md)
+  * [Installation Node](testnet/sge/installation-node/README.md)
+    * [Installation Validator](testnet/sge/installation-node/installation-validator.md)
+    * [Up And Running](testnet/sge/installation-node/up-and-running.md)
+    * [Edit Configuration Node](testnet/sge/installation-node/edit-configuration-node.md)
+  * [Command SGE](testnet/sge/command-sge.md)
+  * [Infrastructures](testnet/sge/infrastructures/README.md)
+    * [Public Services](testnet/sge/infrastructures/public-services.md)
+    * [Endpoint Public](testnet/sge/infrastructures/endpoint-public.md)
+    * [Port Mapping](testnet/sge/infrastructures/port-mapping.md)
+  * [Firewall SGE](testnet/sge/firewall-sge.md)
 
 ## Tools Blockchain
 
