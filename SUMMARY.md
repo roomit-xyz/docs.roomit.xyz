@@ -152,6 +152,17 @@
     * [Endpoint Public](testnet/crossfi/infrastructures/endpoint-public.md)
     * [Port Mapping](testnet/crossfi/infrastructures/port-mapping.md)
   * [Firewall Crossfi](testnet/crossfi/firewall-crossfi.md)
+* [⬜️ Dora](testnet/dora/README.md)
+  * [Installation Node](testnet/dora/installation-node/README.md)
+    * [Installation Validator](testnet/dora/installation-node/installation-validator.md)
+    * [Up And Running](testnet/dora/installation-node/up-and-running.md)
+    * [Edit Configuration Node](testnet/dora/installation-node/edit-configuration-node.md)
+  * [Command Dora](testnet/dora/command-dora.md)
+  * [Infrastructures](testnet/dora/infrastructures/README.md)
+    * [Public Services](testnet/dora/infrastructures/public-services.md)
+    * [Endpoint Public](testnet/dora/infrastructures/endpoint-public.md)
+    * [Port Mapping](testnet/dora/infrastructures/port-mapping.md)
+  * [Firewall Dora](testnet/dora/firewall-dora.md)
 
 ## Tools Blockchain
 
