@@ -1,8 +1,8 @@
 ---
-description: This is command about CLI SGE Protocol
+description: This is command about CLI Crossfi
 ---
 
-# Command SGE
+# Command Crossfi
 
 ### **Key Management**
 
@@ -30,10 +30,15 @@ Install jq package for management json format
 We never use this username in our production!
 {% endhint %}
 
+#### Gas Fee
+        
+```
+--gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5
+```
 #### **Add New Key**
 
 ```bash
-crossfid keys add mywallet --home ${HOME}/.mineplex-chain   
+crossfid keys add mywallet --home ${HOME}/.crossfid 
 ```
 
 #### **Recover Key**
@@ -41,53 +46,53 @@ crossfid keys add mywallet --home ${HOME}/.mineplex-chain
 With Passphrase
 
 ```bash
-crossfid keys add mywallet --recover  --home ${HOME}/.mineplex-chain         
+crossfid keys add mywallet --recover  --home ${HOME}/.crossfid       
 ```
 
 With Keyring
 
 ```bash
-crossfid keys add mywallet --recover --keyring-backend os --home ${HOME}/.mineplex-chain         
+crossfid keys add mywallet --recover --keyring-backend os --home ${HOME}/.crossfid       
 ```
 
 #### **List Key**
 
 ```bash
-crossfid keys list --home ${HOME}/.mineplex-chain      
+crossfid keys list --home ${HOME}/.crossfid    
 ```
 
 #### **Delete Key**
 
 ```bash
-crossfid keys delete mywallet --home ${HOME}/.mineplex-chain 
+crossfid keys delete mywallet --home ${HOME}/.crossfid
 ```
 
 **Export Key**
 
 ```bash
- crossfid keys export mywallet --home ${HOME}/.mineplex-chain 
+ crossfid keys export mywallet --home ${HOME}/.crossfid
 ```
 
 #### Import Key
 
 ```
-crossfid keys import mywallet mywallet_file.backup --home ${HOME}/.mineplex-chain 
+crossfid keys import mywallet mywallet_file.backup --home ${HOME}/.crossfid
 ```
 
 #### Show All Balances Address
 
-<pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `crossfid keys list --home ${HOME}/.mineplex-chain --output json| jq -r ".[] .address"`
+<pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `crossfid keys list --home ${HOME}/.crossfid--output json| jq -r ".[] .address"`
 </strong>do
    CHAIN_ID="crossfi-evm-testnet-1"
-   RPC="tcp://localhost:26705"
-   crossfid q bank balances ${mywallet} --home ${HOME}/.mineplex-chain --chain-id ${CHAIN_ID} --node ${RPC}
+   RPC="http:////localhost:26705"
+   crossfid q bank balances ${mywallet} --home ${HOME}/.crossfid --chain-id ${CHAIN_ID} --node ${RPC}
 done
 </code></pre>
 
 #### Show Balance Address
 
 ```bash
-crossfid q bank balances mywallet_public_address --home ${HOME}/.mineplex-chain --chain-id crossfi-evm-testnet-1 --node tcp://localhost:26705
+crossfid q bank balances mywallet_public_address --home ${HOME}/.crossfid --chain-id crossfi-evm-testnet-1 --node http:////localhost:26705
 ```
 
 ### Validator Management
@@ -120,7 +125,7 @@ WEBSITE="https://yourwebsite.com"
 
 crossfid tx staking create-validator \
 --amount=1000000mpx \
---pubkey=$(crossfid tendermint show-validator --home ${HOME}/.mineplex-chain ) \
+--pubkey=$(crossfid tendermint show-validator --home ${HOME}/.crossfid) \
 --moniker="${MONIKER}" \
 --identity="${PROFILE}" \
 --details="${DETAILS}" \
@@ -131,10 +136,9 @@ crossfid tx staking create-validator \
 --commission-max-change-rate=0.01 \
 --min-self-delegation=1 \
 --from=mywallet \
---gas-adjustment=1.4 \
---gas=auto \
---node tcp://localhost:26705 \
---home ${HOME}/.mineplex-chain \
+--node http:////localhost:26705 \
+--home ${HOME}/.crossfid\
+--gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5 \
 -y
 ```
 
@@ -154,10 +158,9 @@ crossfid tx staking edit-validator \
 --chain-id=crossfi-evm-testnet-1 \
 --commission-rate=0.05 \
 --from=mywallet \
---gas-adjustment=1.4 \
---gas=auto \
---node tcp://localhost:26705 \
---home ${HOME}/.mineplex-chain \
+--node http:////localhost:26705 \
+--home ${HOME}/.crossfid \
+--gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5 \
 -y
 ```
 
@@ -169,32 +172,30 @@ crossfid status 2>&1 | jq .ValidatorInfo
 
 #### Get Syncing Block
 
-```
+```bash
 crossfid status 2>&1 | jq .SyncInfo
 ```
 
 #### Get Peer Own Node
 
 ```bash
-echo $(crossfid tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.mineplex-chain /config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+echo $(crossfid tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.crossfid/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
 #### Get Peer Node
 
-```
+```bash
 curl -sS http://localhost:16701/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
 ```
 
 #### Unjail Validator
-
 ```bash
 crossfid tx slashing unjail \
 --from mywallet \
 --chain-id crossfi-evm-testnet-1 \
- --home ${HOME}/.mineplex-chain \
- --node  tcp://localhost:26705 \
- --gas auto \
- --gas-adjustment 1.4 \
+ --home ${HOME}/.crossfid\
+ --node  http:////localhost:26705 \
+ --gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5 \
  -y
 ```
 
@@ -202,8 +203,8 @@ crossfid tx slashing unjail \
 
 ```bash
 crossfid query slashing signing-info $(crossfid tendermint show-validator) \
- --node  tcp://localhost:26705 \
- --home ${HOME}/.mineplex-chain 
+ --node  http:////localhost:26705 \
+ --home ${HOME}/.crossfid
 ```
 
 #### List All Active Validator
@@ -224,10 +225,10 @@ crossfid q staking validators -oj --limit=3000 | jq '.validators[] | select(.sta
 crossfid \
 query staking validator \
 $(crossfid keys show \ 
-                $(crossfid keys list --home ${HOME}/.mineplex-chain --output json| jq -r ".[] .address" | tail -n1) \
+                $(crossfid keys list --home ${HOME}/.crossfid--output json| jq -r ".[] .address" | tail -n1) \
 --bech val -a) \
 --chain-id crossfi-evm-testnet-1 \
---node tcp://localhost:26705
+--node http:////localhost:26705
 ```
 
 ### Token Management
@@ -238,10 +239,9 @@ $(crossfid keys show \
 crossfid tx distribution withdraw-all-rewards \
 --from mywallet \
 --chain-id crossfi-evm-testnet-1 \
---node tcp://localhost:26705 \
---home ${HOME}/.mineplex-chain \
---gas-adjustment 1.4 \
---gas auto \
+--node http:////localhost:26705 \
+--home ${HOME}/.crossfid\
+--gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5 \
 -y
 ```
 
@@ -251,37 +251,34 @@ crossfid tx distribution withdraw-all-rewards \
 crossfid tx distribution withdraw-rewards $(crossfid keys show mywallet --bech val -a) \
 --commission \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --chain-id crossfi-evm-testnet-1 \
---node tcp://localhost:26705 \
---home ${HOME}/.mineplex-chain \
+--node http:////localhost:26705 \
+--home ${HOME}/.crossfid\
+--gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5 \
 -y 
 ```
 
 #### Delegate My Token to Own Validator
 
 ```bash
-crossfid tx staking delegate $(crossfid keys show wallet --bech val -a) 1000000mpx \
+crossfid tx staking delegate $(crossfid keys show wallet --bech val -a) 100000mpx \
 --from mywallet \
---gas-adjustment 1.4 \
---home ${HOME}/.mineplex-chain \
---node tcp://localhost:26705 \
+--home ${HOME}/.crossfid\
+--node http:////localhost:26705 \
 --chain-id crossfi-evm-testnet-1 \
---gas auto \
+--gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5 \
 -y
 ```
 
 #### Delegate Your Token To Our Validator
 
 ```bash
-crossfid tx staking delegate sgevaloper1rhmrwq4xket2ua4s7nqunnne8kzfz4w34082zv 1000000mpx \ 
+crossfid tx staking delegate prefixVALOPExxxxxx 100000mpx \ 
 --from mywallet \
---gas-adjustment 1.4 \ 
---gas auto \
---home ${HOME}/.mineplex-chain \
---node tcp://localhost:26705 \
+--home ${HOME}/.crossfid\
+--node http:////localhost:26705 \
 --chain-id crossfi-evm-testnet-1 \
+--gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5 \
 -y
 ```
 
@@ -290,11 +287,10 @@ crossfid tx staking delegate sgevaloper1rhmrwq4xket2ua4s7nqunnne8kzfz4w34082zv 1
 ```bash
 crossfid tx staking redelegate $(crossfid keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000mpx \
 --from mywallet 
---gas-adjustment 1.4 \
---gas auto \
---home ${HOME}/.mineplex-chain \
---node tcp://localhost:26705 \
+--home ${HOME}/.crossfid\
+--node http:////localhost:26705 \
 --chain-id crossfi-evm-testnet-1 \
+--gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5 \
 -y 
 ```
 
@@ -303,11 +299,10 @@ crossfid tx staking redelegate $(crossfid keys show wallet --bech val -a) <TO_VA
 ```bash
 crossfid tx staking unbond $(crossfid keys show wallet --bech val -a) 1000000mpx \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
---home ${HOME}/.mineplex-chain \
---node tcp://localhost:26705 \
+--home ${HOME}/.crossfid\
+--node http:////localhost:26705 \
 --chain-id crossfi-evm-testnet-1 \
+--gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5 \
 -y 
 ```
 
@@ -316,11 +311,10 @@ Send tokens to the wallet
 ```
 crossfid tx bank send wallet <TO_WALLET_ADDRESS> 1000000mpx \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
---home ${HOME}/.mineplex-chain \
---node tcp://localhost:26705 \
+--home ${HOME}/.crossfid\
+--node http:////localhost:26705 \
 --chain-id crossfi-evm-testnet-1 \
+--gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5 \
 -y 
 ```
 
@@ -354,40 +348,36 @@ crossfid query gov proposals
 ### vote yes
 crossfid tx gov vote 1 yes \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
---home ${HOME}/.mineplex-chain \
---node tcp://localhost:26705 \
+--home ${HOME}/.crossfid\
+--node http:////localhost:26705 \
 --chain-id crossfi-evm-testnet-1 \
+--gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5 \
 -y 
 
 ### vote no
 crossfid tx gov vote 1 no \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
---home ${HOME}/.mineplex-chain \
---node tcp://localhost:26705 \
+--home ${HOME}/.crossfid\
+--node http:////localhost:26705 \
 --chain-id crossfi-evm-testnet-1 \
+--gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5 \
 -y 
 
 ### vote abstain
 crossfid tx gov vote 1 abstain \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
---home ${HOME}/.mineplex-chain \
---node tcp://localhost:26705 \
+--home ${HOME}/.crossfid\
+--node http:////localhost:26705 \
 --chain-id crossfi-evm-testnet-1 \
+--gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5 \
 -y 
 
 ### vote No With Veto
 crossfid tx gov vote 1 nowithveto \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
---home ${HOME}/.mineplex-chain \
---node tcp://localhost:26705 \
+--home ${HOME}/.crossfid\
+--node http:////localhost:26705 \
 --chain-id crossfi-evm-testnet-1 \
+--gas=auto --gas-prices=10000000000000mpx --gas-adjustment=1.5 \
 -y 
 ```

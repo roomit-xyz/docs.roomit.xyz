@@ -4,13 +4,13 @@ description: How to start running Crossfi
 
 # Up And Running
 
-{% hint style="info" %}
-Ensure you have add sudoers, refer [sudo-management.md](../../../security/sudo-management.md "mention")
-{% endhint %}
+{%  hint style="info" %}
+Ensure you have add sudoers to user salinem, refer [sudo-management.md](../../../security/sudo-management.md "mention")
+{%  endhint %}
 
-{% hint style="info" %}
+{%  hint style="info" %}
 **Running in user** (Assume) : _salinem_ We never used this username in our production !
-{% endhint %}
+{%  endhint %}
 
 #### Create Systemd
 
@@ -24,7 +24,7 @@ Description=crossfi node service
 After=network-online.target
 
 [Service]
-User=crossfi
+User=salinem
 ExecStart=${HOME}/bin/crossfid start 
 Restart=on-failure
 RestartSec=3
@@ -42,7 +42,7 @@ EOF
 Linking to Systemd
 
 ```bash
-ln -sf ${HOME}/systemd/crossfi-node.service /etc/systemd/system/
+sudo cp ${HOME}/systemd/crossfi-node.service /etc/systemd/system/
 ```
 
 Reload Daemon

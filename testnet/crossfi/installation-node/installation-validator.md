@@ -1,10 +1,10 @@
 ---
-description: Install Node Producer
+description: Install Node Producer/Validator Crossfi
 ---
 
 # Installation Validator
 
-**Chain ID**: crossfi-evm-testnet-1 | **Latest Binary Version**: 0.3.0-prebuild3
+**Chain ID**: crossfi-evm-testnet-1 | **Latest Binary Version**: v0.3.0-prebuild9
 
 Update and install packages for compiling
 
@@ -37,7 +37,6 @@ and make sure we are in directory
 
 ```bash
 pwd
-
 /mainnet/salinem
 ```
 
@@ -45,7 +44,7 @@ pwd
 **Running in user** : _salinem_
 {% endhint %}
 
-#### FHS of Crossfi
+#### FHS of SGE
 
 Create FHS for application
 
@@ -61,49 +60,46 @@ mkdir -p ${HOME}/systemd
 ### Install Golang
 
 ```bash
-# Install Go 1.21.9
-wget https://go.dev/dl/go1.21.9.linux-amd64.tar.gz
-tar xf go1.21.9.linux-amd64.tar.gz
-sudo mv go /usr/local/go
+# Install Go 1.22.3
+wget https://go.dev/dl/go1.22.3.linux-amd64.tar.gz
+tar xf go1.22.3.linux-amd64.tar.gz
+mv go ${HOME}/bin
+```
 
+
+### Environment and Variable
+If Using ZSH
+```
 # Set Go path to $PATH variable
 echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> $HOME/.zshrc
+echo "export GOPATH="${HOME}/lib" >> $HOME/.zshrc
+echo "export GOMAXPROCS=2" >> $HOME/.zshrc
+echo "export CHAIN_ID=crossfi-evm-testnet-1" >> $HOME/.zshrc
+echo "export WALLET_NAME=mywallet" >> $HOME/.zshrc
+echo "export MONIKER=MYNODE"  >> $HOME/.zshrc
 source ~/.zshrc
 ```
+
+
+If Using BASH
+```
+# Set Go path to $PATH variable
+echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> $HOME/.bashrc
+echo "export GOPATH="${HOME}/lib" >> >> $HOME/.bahsrc
+echo "export GOMAXPROCS=2" >> $HOME/.bashrc
+echo "export CHAIN_ID=crossfi-evm-testnet-1" >> $HOME/.bashrc
+echo "export WALLET_NAME=mywallet" >> $HOME/.bashrc
+echo "export MONIKER=MYNODE"  >> $HOME/.bashrc
+source ~/.bashrc
+```
+
 
 #### Install Crossfi
 
 ```bash
-cd ~
-wget -c https://github.com/crossfichain/crossfi-node/releases/download/v0.3.0-prebuild3/crossfi-node_0.3.0-prebuild3_linux_amd64.tar.gz
-tar xvf crossfi-node_0.3.0-prebuild3_linux_amd64.tar.gz -C ${HOME}/bin
-
+wget -c https://github.com/crossfichain/crossfi-node/releases/download/v0.3.0-prebuild9/crossfi-node_0.3.0-prebuild9_linux_amd64.tar.gz -O ${HOME}/bin/crossfid
 ```
 
-#### Environment
-
-{% hint style="info" %}
-In this case, RoomIT used zsh, if you used bash just direct to ${HOME}/.bashrc or ${HOME}/.profile
-{% endhint %}
-
-```
-echo 'export PATH="${PATH}:${HOME}/bin"' >> ${HOME}/.zshrc
-source ~/.zshrc
-```
-
-Set Variable
-
-```bash
-# Chain ID of Crossfi Mainnet
-export CHAIN_ID=crossfi-evm-testnet-1
-# Wallet name to be used as validator's account, please change this into your name (no whitespace).
-export WALLET_NAME=<YOUR_WALLET_NAME>
-# Name of your validator node, please change this into your name.
-export MONIKER=<YOUR_MONIKER>
-# URL of genesis file for Crossfi Mainnet
-export GENESIS_FILE_URL= 
-
-```
 
 #### Intialize Node
 
@@ -114,14 +110,14 @@ crossfid init --chain-id $CHAIN_ID "$MONIKER"
 **Replace genesis file with our genesis file**
 
 ```bash
-wget $GENESIS_FILE_URL -O $HOME/.mineplex-chain/config/genesis.json
+wget https://testnet-files.itrocket.net/crossfi/genesis.json -O $HOME/.crossfid/config/genesis.json
 ```
 
-**Download data Crossfi / oracle scripts files, and store in $HOME/.mineplex-chain/files**
+<!-- **Download data Crossfi / oracle scripts files, and store in $HOME/.crossfid/files**
 
 ```bash
-wget -qO- $BIN_FILES_URL | tar xvz -C $HOME/.mineplex-chain/
-```
+wget -qO- $BIN_FILES_URL | tar xvz -C $HOME/.crossfid/
+``` -->
 
 **Create new account**
 
