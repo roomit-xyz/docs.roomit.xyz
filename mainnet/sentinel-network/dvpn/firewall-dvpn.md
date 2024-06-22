@@ -1,26 +1,42 @@
 ---
-description: Netfilter Iptables
+description: Port Mapping And Firewall Dvpn |  RoomIT Validator
 ---
 
-# Firewall dvpn
+
+# Port Mapping
+
+### EXAMPLE
+| Services           | Port  | Protocol | Status          |
+| ------------------ | ----- | -------- | --------------- |
+| Proxy App          | 16504 | TCP      | Private         |
+| RPC                | 16704 | TCP      | Private         |
+| pProf              | 1104  | TCP      | Private         |
+| P2P                | 16604 | TCP      | Public (Direct) |
+| Prometheus Metrics | 16804 | TCP      | Private         |
+| API                | 1204  | TCP      | Private         |
+| gRPC               | 1304  | TCP      | Private         |
+| gRPC Web           | 1404 | TCP      | Private         |
+| TMKMS              | 5004 | TCP      | Private         |
+
+
+# Firewall Dvpn
 
 ```
-######## Sentinel VALIDATOR
+######## Dvpn Protocol VALIDATOR
 # gRPC
--A INPUT -s 10.66.66.254,192.168.66.2 -p tcp -m multiport --dports 1305 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
-# Horcrux
--A INPUT -s 10.66.66.251,10.66.66.252,10.66.66.253,192.168.66.3,192.168.66.4,192.168.66.5 -p tcp -m multiport --dports 5005 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -s 10.xxx.xxx.xxx -p tcp -m multiport --dports  1304  -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+# Horcrux / tmkms
+-A INPUT -s 10.xxx.xxx.xxx -p tcp -m multiport --dports  5004 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 # Consensus Metrics Exporter
--A INPUT -s 10.66.66.254,192.168.66.2 -p tcp -m multiport --dports 1605 -j ACCEPT
-# gRPC-web
--A INPUT -s 10.66.66.254,192.168.66.2 -p tcp -m multiport --dports 1405 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -s 10.xxx.xxx.xxx -p tcp -m multiport --dports 1605 -j ACCEPT
 # api
--A INPUT -s 10.66.66.254,192.168.66.2  -p tcp -m multiport --dports 1205 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -s 10.xxx.xxx.xxx  -p tcp -m multiport --dports  1204  -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 # rpc
--A INPUT -s 10.66.66.254,192.168.66.2 -p tcp -m multiport --dports 16705 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -s 10.xxx.xxx.xxx -p tcp -m multiport --dports 16704 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 # p2p
--A INPUT -p tcp -m multiport --dports 16605 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p tcp -m multiport --dports 16604  -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 # Metrics
--A INPUT -s 10.66.66.254,192.168.66.2 -p tcp -m multiport --dports 16805 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -s 10.xxx.xxx.xxx -p tcp -m multiport --dports 16804  -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 
 ```
+
