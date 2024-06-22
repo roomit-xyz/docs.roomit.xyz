@@ -42,7 +42,7 @@ sged tendermint unsafe-reset-all --home $HOME/.sge --keep-addr-book
 lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.sge 
 ```
 
-6. Resoter State Validator
+6. Restore State Validator
 ```bash
 cp ${HOME}/.sge /priv_validator_state.json ${HOME}/.sge /data/priv_validator_state.json
 ```

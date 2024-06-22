@@ -42,7 +42,7 @@ planqd tendermint unsafe-reset-all --home $HOME/.planqd --keep-addr-book
 lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.planqd 
 ```
 
-6. Resoter State Validator
+6. Restore State Validator
 ```bash
 cp ${HOME}/.planqd /priv_validator_state.json ${HOME}/.planqd /data/priv_validator_state.json
 ```

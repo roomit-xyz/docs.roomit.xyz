@@ -42,7 +42,7 @@ blockxd tendermint unsafe-reset-all --home $HOME/.blockxd --keep-addr-book
 lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.blockxd 
 ```
 
-6. Resoter State Validator
+6. Restore State Validator
 ```bash
 cp ${HOME}/.blockxd /priv_validator_state.json ${HOME}/.blockxd /data/priv_validator_state.json
 ```

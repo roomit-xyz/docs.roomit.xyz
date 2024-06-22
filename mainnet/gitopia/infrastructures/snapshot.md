@@ -42,7 +42,7 @@ gitopiad tendermint unsafe-reset-all --home $HOME/.gitopia --keep-addr-book
 lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.gitopia 
 ```
 
-6. Resoter State Validator
+6. Restore State Validator
 ```bash
 cp ${HOME}/.gitopia /priv_validator_state.json ${HOME}/.gitopia /data/priv_validator_state.json
 ```

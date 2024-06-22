@@ -42,7 +42,7 @@ nibid tendermint unsafe-reset-all --home $HOME/.nibid --keep-addr-book
 lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.nibid 
 ```
 
-6. Resoter State Validator
+6. Restore State Validator
 ```bash
 cp ${HOME}/.nibid /priv_validator_state.json ${HOME}/.nibid /data/priv_validator_state.json
 ```

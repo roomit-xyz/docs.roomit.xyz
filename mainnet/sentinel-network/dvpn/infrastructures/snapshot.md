@@ -42,7 +42,7 @@ sentinelhub tendermint unsafe-reset-all --home $HOME/.sentinelhub --keep-addr-bo
 lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.sentinelhub 
 ```
 
-6. Resoter State Validator
+6. Restore State Validator
 ```bash
 cp ${HOME}/.sentinelhub /priv_validator_state.json ${HOME}/.sentinelhub /data/priv_validator_state.json
 ```

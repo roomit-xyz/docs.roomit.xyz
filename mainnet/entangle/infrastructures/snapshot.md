@@ -42,7 +42,7 @@ entangled tendermint unsafe-reset-all --home $HOME/.entangled --keep-addr-book
 lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.entangled 
 ```
 
-6. Resoter State Validator
+6. Restore State Validator
 ```bash
 cp ${HOME}/.entangled /priv_validator_state.json ${HOME}/.entangled /data/priv_validator_state.json
 ```
