@@ -84,7 +84,7 @@ nibid keys import mywallet mywallet_file.backup --home ${HOME}/.nibid
 <pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `nibid keys list --home ${HOME}/.nibid--output json| jq -r ".[] .address"`
 </strong>do
    CHAIN_ID="cataclysm-1"
-   RPC="http:////localhost:16706"
+   RPC="http://localhost:16706"
    nibid q bank balances ${mywallet} --home ${HOME}/.nibid --chain-id ${CHAIN_ID} --node ${RPC}
 done
 </code></pre>
@@ -92,7 +92,7 @@ done
 #### Show Balance Address
 
 ```bash
-nibid q bank balances mywallet_public_address --home ${HOME}/.nibid --chain-id cataclysm-1 --node http:////localhost:16706
+nibid q bank balances mywallet_public_address --home ${HOME}/.nibid --chain-id cataclysm-1 --node http://localhost:16706
 ```
 
 ### Validator Management
@@ -136,7 +136,7 @@ nibid tx staking create-validator \
 --commission-max-change-rate=0.01 \
 --min-self-delegation=1 \
 --from=mywallet \
---node http:////localhost:16706 \
+--node http://localhost:16706 \
 --home ${HOME}/.nibid\
 --gas=1000000 --gas-prices=30000000000unibi --gas-adjustment=1.15 \
 -y
@@ -158,7 +158,7 @@ nibid tx staking edit-validator \
 --chain-id=cataclysm-1 \
 --commission-rate=0.05 \
 --from=mywallet \
---node http:////localhost:16706 \
+--node http://localhost:16706 \
 --home ${HOME}/.nibid \
 --gas=1000000 --gas-prices=30000000000unibi --gas-adjustment=1.15 \
 -y
@@ -194,7 +194,7 @@ nibid tx slashing unjail \
 --from mywallet \
 --chain-id cataclysm-1 \
  --home ${HOME}/.nibid\
- --node  http:////localhost:16706 \
+ --node  http://localhost:16706 \
  --gas=1000000 --gas-prices=30000000000unibi --gas-adjustment=1.15 \
  -y
 ```
@@ -203,7 +203,7 @@ nibid tx slashing unjail \
 
 ```bash
 nibid query slashing signing-info $(nibid tendermint show-validator) \
- --node  http:////localhost:16706 \
+ --node  http://localhost:16706 \
  --home ${HOME}/.nibid
 ```
 
@@ -228,7 +228,7 @@ $(nibid keys show \
                 $(nibid keys list --home ${HOME}/.nibid--output json| jq -r ".[] .address" | tail -n1) \
 --bech val -a) \
 --chain-id cataclysm-1 \
---node http:////localhost:16706
+--node http://localhost:16706
 ```
 
 ### Token Management
@@ -239,7 +239,7 @@ $(nibid keys show \
 nibid tx distribution withdraw-all-rewards \
 --from mywallet \
 --chain-id cataclysm-1 \
---node http:////localhost:16706 \
+--node http://localhost:16706 \
 --home ${HOME}/.nibid\
 --gas=1000000 --gas-prices=30000000000unibi --gas-adjustment=1.15 \
 -y
@@ -252,7 +252,7 @@ nibid tx distribution withdraw-rewards $(nibid keys show mywallet --bech val -a)
 --commission \
 --from mywallet \
 --chain-id cataclysm-1 \
---node http:////localhost:16706 \
+--node http://localhost:16706 \
 --home ${HOME}/.nibid\
 --gas=1000000 --gas-prices=30000000000unibi --gas-adjustment=1.15 \
 -y 
@@ -264,7 +264,7 @@ nibid tx distribution withdraw-rewards $(nibid keys show mywallet --bech val -a)
 nibid tx staking delegate $(nibid keys show wallet --bech val -a) 100000unibi \
 --from mywallet \
 --home ${HOME}/.nibid\
---node http:////localhost:16706 \
+--node http://localhost:16706 \
 --chain-id cataclysm-1 \
 --gas=1000000 --gas-prices=30000000000unibi --gas-adjustment=1.15 \
 -y
@@ -276,7 +276,7 @@ nibid tx staking delegate $(nibid keys show wallet --bech val -a) 100000unibi \
 nibid tx staking delegate prefixVALOPExxxxxx 100000unibi \ 
 --from mywallet \
 --home ${HOME}/.nibid\
---node http:////localhost:16706 \
+--node http://localhost:16706 \
 --chain-id cataclysm-1 \
 --gas=1000000 --gas-prices=30000000000unibi --gas-adjustment=1.15 \
 -y
@@ -288,7 +288,7 @@ nibid tx staking delegate prefixVALOPExxxxxx 100000unibi \
 nibid tx staking redelegate $(nibid keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000unibi \
 --from mywallet 
 --home ${HOME}/.nibid\
---node http:////localhost:16706 \
+--node http://localhost:16706 \
 --chain-id cataclysm-1 \
 --gas=1000000 --gas-prices=30000000000unibi --gas-adjustment=1.15 \
 -y 
@@ -300,7 +300,7 @@ nibid tx staking redelegate $(nibid keys show wallet --bech val -a) <TO_VALOPER_
 nibid tx staking unbond $(nibid keys show wallet --bech val -a) 1000000unibi \
 --from mywallet \
 --home ${HOME}/.nibid\
---node http:////localhost:16706 \
+--node http://localhost:16706 \
 --chain-id cataclysm-1 \
 --gas=1000000 --gas-prices=30000000000unibi --gas-adjustment=1.15 \
 -y 
@@ -312,7 +312,7 @@ Send tokens to the wallet
 nibid tx bank send wallet <TO_WALLET_ADDRESS> 1000000unibi \
 --from mywallet \
 --home ${HOME}/.nibid\
---node http:////localhost:16706 \
+--node http://localhost:16706 \
 --chain-id cataclysm-1 \
 --gas=1000000 --gas-prices=30000000000unibi --gas-adjustment=1.15 \
 -y 
@@ -349,7 +349,7 @@ nibid query gov proposals
 nibid tx gov vote 1 yes \
 --from mywallet \
 --home ${HOME}/.nibid\
---node http:////localhost:16706 \
+--node http://localhost:16706 \
 --chain-id cataclysm-1 \
 --gas=1000000 --gas-prices=30000000000unibi --gas-adjustment=1.15 \
 -y 
@@ -358,7 +358,7 @@ nibid tx gov vote 1 yes \
 nibid tx gov vote 1 no \
 --from mywallet \
 --home ${HOME}/.nibid\
---node http:////localhost:16706 \
+--node http://localhost:16706 \
 --chain-id cataclysm-1 \
 --gas=1000000 --gas-prices=30000000000unibi --gas-adjustment=1.15 \
 -y 
@@ -367,7 +367,7 @@ nibid tx gov vote 1 no \
 nibid tx gov vote 1 abstain \
 --from mywallet \
 --home ${HOME}/.nibid\
---node http:////localhost:16706 \
+--node http://localhost:16706 \
 --chain-id cataclysm-1 \
 --gas=1000000 --gas-prices=30000000000unibi --gas-adjustment=1.15 \
 -y 
@@ -376,7 +376,7 @@ nibid tx gov vote 1 abstain \
 nibid tx gov vote 1 nowithveto \
 --from mywallet \
 --home ${HOME}/.nibid\
---node http:////localhost:16706 \
+--node http://localhost:16706 \
 --chain-id cataclysm-1 \
 --gas=1000000 --gas-prices=30000000000unibi --gas-adjustment=1.15 \
 -y 

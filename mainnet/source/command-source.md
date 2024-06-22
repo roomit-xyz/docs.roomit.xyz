@@ -1,5 +1,5 @@
 ---
-description: This is command about CLI Source Protocol
+description: This is command about CLI Source
 ---
 
 # Command Source
@@ -30,10 +30,15 @@ Install jq package for management json format
 We never use this username in our production!
 {% endhint %}
 
+#### Gas Fee
+        
+```
+--gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5
+```
 #### **Add New Key**
 
 ```bash
-sourced keys add mywallet --home ${HOME}/.source    
+sourced keys add mywallet --home ${HOME}/.source 
 ```
 
 #### **Recover Key**
@@ -41,19 +46,19 @@ sourced keys add mywallet --home ${HOME}/.source
 With Passphrase
 
 ```bash
-sourced keys add mywallet --recover  --home ${HOME}/.source          
+sourced keys add mywallet --recover  --home ${HOME}/.source       
 ```
 
 With Keyring
 
 ```bash
-sourced keys add mywallet --recover --keyring-backend os --home ${HOME}/.source          
+sourced keys add mywallet --recover --keyring-backend os --home ${HOME}/.source       
 ```
 
 #### **List Key**
 
 ```bash
-sourced keys list --home ${HOME}/.source       
+sourced keys list --home ${HOME}/.source    
 ```
 
 #### **Delete Key**
@@ -79,15 +84,15 @@ sourced keys import mywallet mywallet_file.backup --home ${HOME}/.source
 <pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `sourced keys list --home ${HOME}/.source--output json| jq -r ".[] .address"`
 </strong>do
    CHAIN_ID="source-1"
-   RPC="tcp://localhost:16702"
-   sourced q bank balances ${mywallet} --home ${HOME}/.source--chain-id ${CHAIN_ID} --node ${RPC}
+   RPC="http://localhost:16702"
+   sourced q bank balances ${mywallet} --home ${HOME}/.source --chain-id ${CHAIN_ID} --node ${RPC}
 done
 </code></pre>
 
 #### Show Balance Address
 
 ```bash
-sourced q bank balances mywallet_public_address --home ${HOME}/.source--chain-id source-1 --node tcp://localhost:16702
+sourced q bank balances mywallet_public_address --home ${HOME}/.source --chain-id source-1 --node http://localhost:16702
 ```
 
 ### Validator Management
@@ -131,10 +136,9 @@ sourced tx staking create-validator \
 --commission-max-change-rate=0.01 \
 --min-self-delegation=1 \
 --from=mywallet \
---gas-adjustment=1.4 \
---gas=auto \
---node tcp://localhost:16702 \
+--node http://localhost:16702 \
 --home ${HOME}/.source\
+--gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5 \
 -y
 ```
 
@@ -154,10 +158,9 @@ sourced tx staking edit-validator \
 --chain-id=source-1 \
 --commission-rate=0.05 \
 --from=mywallet \
---gas-adjustment=1.4 \
---gas=auto \
---node tcp://localhost:16702 \
---home ${HOME}/.source\
+--node http://localhost:16702 \
+--home ${HOME}/.source \
+--gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5 \
 -y
 ```
 
@@ -169,7 +172,7 @@ sourced status 2>&1 | jq .ValidatorInfo
 
 #### Get Syncing Block
 
-```
+```bash
 sourced status 2>&1 | jq .SyncInfo
 ```
 
@@ -181,20 +184,18 @@ echo $(sourced tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.
 
 #### Get Peer Node
 
-```
+```bash
 curl -sS http://localhost:16701/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
 ```
 
 #### Unjail Validator
-
 ```bash
 sourced tx slashing unjail \
 --from mywallet \
 --chain-id source-1 \
  --home ${HOME}/.source\
- --node  tcp://localhost:16702 \
- --gas auto \
- --gas-adjustment 1.4 \
+ --node  http://localhost:16702 \
+ --gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5 \
  -y
 ```
 
@@ -202,7 +203,7 @@ sourced tx slashing unjail \
 
 ```bash
 sourced query slashing signing-info $(sourced tendermint show-validator) \
- --node  tcp://localhost:16702 \
+ --node  http://localhost:16702 \
  --home ${HOME}/.source
 ```
 
@@ -227,7 +228,7 @@ $(sourced keys show \
                 $(sourced keys list --home ${HOME}/.source--output json| jq -r ".[] .address" | tail -n1) \
 --bech val -a) \
 --chain-id source-1 \
---node tcp://localhost:16702
+--node http://localhost:16702
 ```
 
 ### Token Management
@@ -238,10 +239,9 @@ $(sourced keys show \
 sourced tx distribution withdraw-all-rewards \
 --from mywallet \
 --chain-id source-1 \
---node tcp://localhost:16702 \
+--node http://localhost:16702 \
 --home ${HOME}/.source\
---gas-adjustment 1.4 \
---gas auto \
+--gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5 \
 -y
 ```
 
@@ -251,37 +251,34 @@ sourced tx distribution withdraw-all-rewards \
 sourced tx distribution withdraw-rewards $(sourced keys show mywallet --bech val -a) \
 --commission \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --chain-id source-1 \
---node tcp://localhost:16702 \
+--node http://localhost:16702 \
 --home ${HOME}/.source\
+--gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5 \
 -y 
 ```
 
 #### Delegate My Token to Own Validator
 
 ```bash
-sourced tx staking delegate $(sourced keys show wallet --bech val -a) 1000000usource \
+sourced tx staking delegate $(sourced keys show wallet --bech val -a) 100000usource \
 --from mywallet \
---gas-adjustment 1.4 \
 --home ${HOME}/.source\
---node tcp://localhost:16702 \
+--node http://localhost:16702 \
 --chain-id source-1 \
---gas auto \
+--gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5 \
 -y
 ```
 
 #### Delegate Your Token To Our Validator
 
 ```bash
-sourced tx staking delegate sourcevaloper1s2rjwh8jahg7vjac9hnj99rlkgrpeknwd8expt 1000000usource \ 
+sourced tx staking delegate prefixVALOPExxxxxx 100000usource \ 
 --from mywallet \
---gas-adjustment 1.4 \ 
---gas auto \
 --home ${HOME}/.source\
---node tcp://localhost:16702 \
+--node http://localhost:16702 \
 --chain-id source-1 \
+--gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5 \
 -y
 ```
 
@@ -290,11 +287,10 @@ sourced tx staking delegate sourcevaloper1s2rjwh8jahg7vjac9hnj99rlkgrpeknwd8expt
 ```bash
 sourced tx staking redelegate $(sourced keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000usource \
 --from mywallet 
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.source\
---node tcp://localhost:16702 \
+--node http://localhost:16702 \
 --chain-id source-1 \
+--gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5 \
 -y 
 ```
 
@@ -303,11 +299,10 @@ sourced tx staking redelegate $(sourced keys show wallet --bech val -a) <TO_VALO
 ```bash
 sourced tx staking unbond $(sourced keys show wallet --bech val -a) 1000000usource \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.source\
---node tcp://localhost:16702 \
+--node http://localhost:16702 \
 --chain-id source-1 \
+--gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5 \
 -y 
 ```
 
@@ -316,11 +311,10 @@ Send tokens to the wallet
 ```
 sourced tx bank send wallet <TO_WALLET_ADDRESS> 1000000usource \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.source\
---node tcp://localhost:16702 \
+--node http://localhost:16702 \
 --chain-id source-1 \
+--gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5 \
 -y 
 ```
 
@@ -354,40 +348,36 @@ sourced query gov proposals
 ### vote yes
 sourced tx gov vote 1 yes \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.source\
---node tcp://localhost:16702 \
+--node http://localhost:16702 \
 --chain-id source-1 \
+--gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5 \
 -y 
 
 ### vote no
 sourced tx gov vote 1 no \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.source\
---node tcp://localhost:16702 \
+--node http://localhost:16702 \
 --chain-id source-1 \
+--gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5 \
 -y 
 
 ### vote abstain
 sourced tx gov vote 1 abstain \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.source\
---node tcp://localhost:16702 \
+--node http://localhost:16702 \
 --chain-id source-1 \
+--gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5 \
 -y 
 
 ### vote No With Veto
 sourced tx gov vote 1 nowithveto \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.source\
---node tcp://localhost:16702 \
+--node http://localhost:16702 \
 --chain-id source-1 \
+--gas=1000000 --gas-prices=30000000000usource --gas-adjustment=1.5 \
 -y 
 ```

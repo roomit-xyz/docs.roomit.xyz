@@ -84,7 +84,7 @@ entangled keys import mywallet mywallet_file.backup --home ${HOME}/.entangled
 <pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `entangled keys list --home ${HOME}/.entangled--output json| jq -r ".[] .address"`
 </strong>do
    CHAIN_ID="entangle_33033-1"
-   RPC="http:////localhost:16708"
+   RPC="http://localhost:16708"
    entangled q bank balances ${mywallet} --home ${HOME}/.entangled --chain-id ${CHAIN_ID} --node ${RPC}
 done
 </code></pre>
@@ -92,7 +92,7 @@ done
 #### Show Balance Address
 
 ```bash
-entangled q bank balances mywallet_public_address --home ${HOME}/.entangled --chain-id entangle_33033-1 --node http:////localhost:16708
+entangled q bank balances mywallet_public_address --home ${HOME}/.entangled --chain-id entangle_33033-1 --node http://localhost:16708
 ```
 
 ### Validator Management
@@ -136,7 +136,7 @@ entangled tx staking create-validator \
 --commission-max-change-rate=0.01 \
 --min-self-delegation=1 \
 --from=mywallet \
---node http:////localhost:16708 \
+--node http://localhost:16708 \
 --home ${HOME}/.entangled\
 --gas=500000 --gas-prices=10aNGL --gas-adjustment=1.2 \
 -y
@@ -158,7 +158,7 @@ entangled tx staking edit-validator \
 --chain-id=entangle_33033-1 \
 --commission-rate=0.05 \
 --from=mywallet \
---node http:////localhost:16708 \
+--node http://localhost:16708 \
 --home ${HOME}/.entangled \
 --gas=500000 --gas-prices=10aNGL --gas-adjustment=1.2 \
 -y
@@ -194,7 +194,7 @@ entangled tx slashing unjail \
 --from mywallet \
 --chain-id entangle_33033-1 \
  --home ${HOME}/.entangled\
- --node  http:////localhost:16708 \
+ --node  http://localhost:16708 \
  --gas=500000 --gas-prices=10aNGL --gas-adjustment=1.2 \
  -y
 ```
@@ -203,7 +203,7 @@ entangled tx slashing unjail \
 
 ```bash
 entangled query slashing signing-info $(entangled tendermint show-validator) \
- --node  http:////localhost:16708 \
+ --node  http://localhost:16708 \
  --home ${HOME}/.entangled
 ```
 
@@ -228,7 +228,7 @@ $(entangled keys show \
                 $(entangled keys list --home ${HOME}/.entangled--output json| jq -r ".[] .address" | tail -n1) \
 --bech val -a) \
 --chain-id entangle_33033-1 \
---node http:////localhost:16708
+--node http://localhost:16708
 ```
 
 ### Token Management
@@ -239,7 +239,7 @@ $(entangled keys show \
 entangled tx distribution withdraw-all-rewards \
 --from mywallet \
 --chain-id entangle_33033-1 \
---node http:////localhost:16708 \
+--node http://localhost:16708 \
 --home ${HOME}/.entangled\
 --gas=500000 --gas-prices=10aNGL --gas-adjustment=1.2 \
 -y
@@ -252,7 +252,7 @@ entangled tx distribution withdraw-rewards $(entangled keys show mywallet --bech
 --commission \
 --from mywallet \
 --chain-id entangle_33033-1 \
---node http:////localhost:16708 \
+--node http://localhost:16708 \
 --home ${HOME}/.entangled\
 --gas=500000 --gas-prices=10aNGL --gas-adjustment=1.2 \
 -y 
@@ -264,7 +264,7 @@ entangled tx distribution withdraw-rewards $(entangled keys show mywallet --bech
 entangled tx staking delegate $(entangled keys show wallet --bech val -a) 100000aNGL \
 --from mywallet \
 --home ${HOME}/.entangled\
---node http:////localhost:16708 \
+--node http://localhost:16708 \
 --chain-id entangle_33033-1 \
 --gas=500000 --gas-prices=10aNGL --gas-adjustment=1.2 \
 -y
@@ -276,7 +276,7 @@ entangled tx staking delegate $(entangled keys show wallet --bech val -a) 100000
 entangled tx staking delegate prefixVALOPExxxxxx 100000aNGL \ 
 --from mywallet \
 --home ${HOME}/.entangled\
---node http:////localhost:16708 \
+--node http://localhost:16708 \
 --chain-id entangle_33033-1 \
 --gas=500000 --gas-prices=10aNGL --gas-adjustment=1.2 \
 -y
@@ -288,7 +288,7 @@ entangled tx staking delegate prefixVALOPExxxxxx 100000aNGL \
 entangled tx staking redelegate $(entangled keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000aNGL \
 --from mywallet 
 --home ${HOME}/.entangled\
---node http:////localhost:16708 \
+--node http://localhost:16708 \
 --chain-id entangle_33033-1 \
 --gas=500000 --gas-prices=10aNGL --gas-adjustment=1.2 \
 -y 
@@ -300,7 +300,7 @@ entangled tx staking redelegate $(entangled keys show wallet --bech val -a) <TO_
 entangled tx staking unbond $(entangled keys show wallet --bech val -a) 1000000aNGL \
 --from mywallet \
 --home ${HOME}/.entangled\
---node http:////localhost:16708 \
+--node http://localhost:16708 \
 --chain-id entangle_33033-1 \
 --gas=500000 --gas-prices=10aNGL --gas-adjustment=1.2 \
 -y 
@@ -312,7 +312,7 @@ Send tokens to the wallet
 entangled tx bank send wallet <TO_WALLET_ADDRESS> 1000000aNGL \
 --from mywallet \
 --home ${HOME}/.entangled\
---node http:////localhost:16708 \
+--node http://localhost:16708 \
 --chain-id entangle_33033-1 \
 --gas=500000 --gas-prices=10aNGL --gas-adjustment=1.2 \
 -y 
@@ -349,7 +349,7 @@ entangled query gov proposals
 entangled tx gov vote 1 yes \
 --from mywallet \
 --home ${HOME}/.entangled\
---node http:////localhost:16708 \
+--node http://localhost:16708 \
 --chain-id entangle_33033-1 \
 --gas=500000 --gas-prices=10aNGL --gas-adjustment=1.2 \
 -y 
@@ -358,7 +358,7 @@ entangled tx gov vote 1 yes \
 entangled tx gov vote 1 no \
 --from mywallet \
 --home ${HOME}/.entangled\
---node http:////localhost:16708 \
+--node http://localhost:16708 \
 --chain-id entangle_33033-1 \
 --gas=500000 --gas-prices=10aNGL --gas-adjustment=1.2 \
 -y 
@@ -367,7 +367,7 @@ entangled tx gov vote 1 no \
 entangled tx gov vote 1 abstain \
 --from mywallet \
 --home ${HOME}/.entangled\
---node http:////localhost:16708 \
+--node http://localhost:16708 \
 --chain-id entangle_33033-1 \
 --gas=500000 --gas-prices=10aNGL --gas-adjustment=1.2 \
 -y 
@@ -376,7 +376,7 @@ entangled tx gov vote 1 abstain \
 entangled tx gov vote 1 nowithveto \
 --from mywallet \
 --home ${HOME}/.entangled\
---node http:////localhost:16708 \
+--node http://localhost:16708 \
 --chain-id entangle_33033-1 \
 --gas=500000 --gas-prices=10aNGL --gas-adjustment=1.2 \
 -y 

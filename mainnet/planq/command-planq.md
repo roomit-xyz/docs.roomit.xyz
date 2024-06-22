@@ -1,4 +1,8 @@
-# Command PlanQ
+---
+description: This is command about CLI Planq
+---
+
+# Command Planq
 
 ### **Key Management**
 
@@ -21,15 +25,20 @@ Install jq package for management json format
 {% endhint %}
 
 {% hint style="info" %}
-**Running in user** : _salinem_
+**Running in user** (Assume) : _salinem_
 
 We never use this username in our production!
 {% endhint %}
 
+#### Gas Fee
+        
+```
+--gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15
+```
 #### **Add New Key**
 
 ```bash
-planqd keys add mywallet --home ${HOME}/.planqd      
+planqd keys add mywallet --home ${HOME}/.planqd 
 ```
 
 #### **Recover Key**
@@ -37,45 +46,45 @@ planqd keys add mywallet --home ${HOME}/.planqd
 With Passphrase
 
 ```bash
-planqd keys add mywallet --recover  --home ${HOME}/.planqd            
+planqd keys add mywallet --recover  --home ${HOME}/.planqd       
 ```
 
 With Keyring
 
 ```bash
-planqd keys add mywallet --recover --keyring-backend os --home ${HOME}/.planqd            
+planqd keys add mywallet --recover --keyring-backend os --home ${HOME}/.planqd       
 ```
 
 #### **List Key**
 
 ```bash
-planqd keys list --home ${HOME}/.planqd         
+planqd keys list --home ${HOME}/.planqd    
 ```
 
 #### **Delete Key**
 
 ```bash
-planqd keys delete mywallet --home ${HOME}/.planqd  
+planqd keys delete mywallet --home ${HOME}/.planqd
 ```
 
 **Export Key**
 
 ```bash
- planqd keys export mywallet --home ${HOME}/.planqd  
+ planqd keys export mywallet --home ${HOME}/.planqd
 ```
 
 #### Import Key
 
 ```
-planqd keys import mywallet mywallet_file.backup --home ${HOME}/.planqd 
+planqd keys import mywallet mywallet_file.backup --home ${HOME}/.planqd
 ```
 
 #### Show All Balances Address
 
-<pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `planqd keys list --home ${HOME}/.planqd --output json| jq -r ".[] .address"`
+<pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `planqd keys list --home ${HOME}/.planqd--output json| jq -r ".[] .address"`
 </strong>do
    CHAIN_ID="planq_7070-2"
-   RPC="tcp://localhost:16703"
+   RPC="http://localhost:16703"
    planqd q bank balances ${mywallet} --home ${HOME}/.planqd --chain-id ${CHAIN_ID} --node ${RPC}
 done
 </code></pre>
@@ -83,7 +92,7 @@ done
 #### Show Balance Address
 
 ```bash
-planqd q bank balances mywallet_public_address --home ${HOME}/.planqd --chain-id planq_7070-2 --node tcp://localhost:16703
+planqd q bank balances mywallet_public_address --home ${HOME}/.planqd --chain-id planq_7070-2 --node http://localhost:16703
 ```
 
 ### Validator Management
@@ -115,7 +124,7 @@ DETAILS="Describes Your Validator"
 WEBSITE="https://yourwebsite.com"
 
 planqd tx staking create-validator \
---amount=1000000ucmdx \
+--amount=1000000000000000000aplanq \
 --pubkey=$(planqd tendermint show-validator --home ${HOME}/.planqd) \
 --moniker="${MONIKER}" \
 --identity="${PROFILE}" \
@@ -127,10 +136,9 @@ planqd tx staking create-validator \
 --commission-max-change-rate=0.01 \
 --min-self-delegation=1 \
 --from=mywallet \
---gas-adjustment=1.4 \
---gas=auto \
---node tcp://localhost:16703 \
---home ${HOME}/.planqd \
+--node http://localhost:16703 \
+--home ${HOME}/.planqd\
+--gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15 \
 -y
 ```
 
@@ -150,10 +158,9 @@ planqd tx staking edit-validator \
 --chain-id=planq_7070-2 \
 --commission-rate=0.05 \
 --from=mywallet \
---gas-adjustment=1.4 \
---gas=auto \
---node tcp://localhost:16703 \
+--node http://localhost:16703 \
 --home ${HOME}/.planqd \
+--gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15 \
 -y
 ```
 
@@ -165,7 +172,7 @@ planqd status 2>&1 | jq .ValidatorInfo
 
 #### Get Syncing Block
 
-```
+```bash
 planqd status 2>&1 | jq .SyncInfo
 ```
 
@@ -177,20 +184,18 @@ echo $(planqd tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.p
 
 #### Get Peer Node
 
-```
-curl -sS http://localhost:16703/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
+```bash
+curl -sS http://localhost:16701/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
 ```
 
 #### Unjail Validator
-
 ```bash
 planqd tx slashing unjail \
 --from mywallet \
 --chain-id planq_7070-2 \
- --home ${HOME}/.planqd \
- --node  tcp://localhost:16703 \
- --gas auto \
- --gas-adjustment 1.4 \
+ --home ${HOME}/.planqd\
+ --node  http://localhost:16703 \
+ --gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15 \
  -y
 ```
 
@@ -198,7 +203,7 @@ planqd tx slashing unjail \
 
 ```bash
 planqd query slashing signing-info $(planqd tendermint show-validator) \
- --node  tcp://localhost:16703 \
+ --node  http://localhost:16703 \
  --home ${HOME}/.planqd
 ```
 
@@ -220,10 +225,10 @@ planqd q staking validators -oj --limit=3000 | jq '.validators[] | select(.statu
 planqd \
 query staking validator \
 $(planqd keys show \ 
-                $(planqd keys list --home ${HOME}/.planqd --output json| jq -r ".[] .address" | tail -n1) \
+                $(planqd keys list --home ${HOME}/.planqd--output json| jq -r ".[] .address" | tail -n1) \
 --bech val -a) \
 --chain-id planq_7070-2 \
---node tcp://localhost:16703
+--node http://localhost:16703
 ```
 
 ### Token Management
@@ -234,10 +239,9 @@ $(planqd keys show \
 planqd tx distribution withdraw-all-rewards \
 --from mywallet \
 --chain-id planq_7070-2 \
---node tcp://localhost:16703 \
---home ${HOME}/.planqd \
---gas-adjustment 1.4 \
---gas auto \
+--node http://localhost:16703 \
+--home ${HOME}/.planqd\
+--gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15 \
 -y
 ```
 
@@ -247,37 +251,34 @@ planqd tx distribution withdraw-all-rewards \
 planqd tx distribution withdraw-rewards $(planqd keys show mywallet --bech val -a) \
 --commission \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --chain-id planq_7070-2 \
---node tcp://localhost:16703 \
---home ${HOME}/.planqd \
+--node http://localhost:16703 \
+--home ${HOME}/.planqd\
+--gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15 \
 -y 
 ```
 
 #### Delegate My Token to Own Validator
 
 ```bash
-planqd tx staking delegate $(planqd keys show wallet --bech val -a) 1000000aplanq \
+planqd tx staking delegate $(planqd keys show wallet --bech val -a) 100000aplanq \
 --from mywallet \
---gas-adjustment 1.4 \
---home ${HOME}/.planqd \
---node tcp://localhost:16703 \
+--home ${HOME}/.planqd\
+--node http://localhost:16703 \
 --chain-id planq_7070-2 \
---gas auto \
+--gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15 \
 -y
 ```
 
 #### Delegate Your Token To Our Validator
 
 ```bash
-planqd tx staking delegate plqvaloper1fqnr328nlndkxek2jaz8teec0euyr5yh26q26l 1000000aplanq \ 
+planqd tx staking delegate prefixVALOPExxxxxx 100000aplanq \ 
 --from mywallet \
---gas-adjustment 1.4 \ 
---gas auto \
---home ${HOME}/.planqd \
---node tcp://localhost:16703 \
+--home ${HOME}/.planqd\
+--node http://localhost:16703 \
 --chain-id planq_7070-2 \
+--gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15 \
 -y
 ```
 
@@ -286,11 +287,10 @@ planqd tx staking delegate plqvaloper1fqnr328nlndkxek2jaz8teec0euyr5yh26q26l 100
 ```bash
 planqd tx staking redelegate $(planqd keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000aplanq \
 --from mywallet 
---gas-adjustment 1.4 \
---gas auto \
---home ${HOME}/.planqd \
---node tcp://localhost:16703 \
+--home ${HOME}/.planqd\
+--node http://localhost:16703 \
 --chain-id planq_7070-2 \
+--gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15 \
 -y 
 ```
 
@@ -299,11 +299,10 @@ planqd tx staking redelegate $(planqd keys show wallet --bech val -a) <TO_VALOPE
 ```bash
 planqd tx staking unbond $(planqd keys show wallet --bech val -a) 1000000aplanq \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
---home ${HOME}/.planqd \
---node tcp://localhost:16703 \
+--home ${HOME}/.planqd\
+--node http://localhost:16703 \
 --chain-id planq_7070-2 \
+--gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15 \
 -y 
 ```
 
@@ -312,11 +311,10 @@ Send tokens to the wallet
 ```
 planqd tx bank send wallet <TO_WALLET_ADDRESS> 1000000aplanq \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
---home ${HOME}/.planqd \
---node tcp://localhost:16703 \
+--home ${HOME}/.planqd\
+--node http://localhost:16703 \
 --chain-id planq_7070-2 \
+--gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15 \
 -y 
 ```
 
@@ -350,40 +348,36 @@ planqd query gov proposals
 ### vote yes
 planqd tx gov vote 1 yes \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
---home ${HOME}/.planqd \
---node tcp://localhost:16703 \
+--home ${HOME}/.planqd\
+--node http://localhost:16703 \
 --chain-id planq_7070-2 \
+--gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15 \
 -y 
 
 ### vote no
 planqd tx gov vote 1 no \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
---home ${HOME}/.planqd \
---node tcp://localhost:16703 \
+--home ${HOME}/.planqd\
+--node http://localhost:16703 \
 --chain-id planq_7070-2 \
+--gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15 \
 -y 
 
 ### vote abstain
 planqd tx gov vote 1 abstain \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
---home ${HOME}/.planqd \
---node tcp://localhost:16703 \
+--home ${HOME}/.planqd\
+--node http://localhost:16703 \
 --chain-id planq_7070-2 \
+--gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15 \
 -y 
 
 ### vote No With Veto
 planqd tx gov vote 1 nowithveto \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
---home ${HOME}/.planqd \
---node tcp://localhost:16703 \
+--home ${HOME}/.planqd\
+--node http://localhost:16703 \
 --chain-id planq_7070-2 \
+--gas=1000000 --gas-prices=30000000000aplanq --gas-adjustment=1.15 \
 -y 
 ```

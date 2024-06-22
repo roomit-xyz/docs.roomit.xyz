@@ -1,8 +1,8 @@
 ---
-description: This is command about CLI dVPN Sentinel Network
+description: This is command about CLI Dvpn
 ---
 
-# Command Sentinel
+# Command Dvpn
 
 ### **Key Management**
 
@@ -30,10 +30,15 @@ Install jq package for management json format
 We never use this username in our production!
 {% endhint %}
 
+#### Gas Fee
+        
+```
+--gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4
+```
 #### **Add New Key**
 
 ```bash
-sentinelhub keys add mywallet --home ${HOME}/.sentinelhub    
+sentinelhub keys add mywallet --home ${HOME}/.sentinelhub 
 ```
 
 #### **Recover Key**
@@ -41,19 +46,19 @@ sentinelhub keys add mywallet --home ${HOME}/.sentinelhub
 With Passphrase
 
 ```bash
-sentinelhub keys add mywallet --recover  --home ${HOME}/.sentinelhub          
+sentinelhub keys add mywallet --recover  --home ${HOME}/.sentinelhub       
 ```
 
 With Keyring
 
 ```bash
-sentinelhub keys add mywallet --recover --keyring-backend os --home ${HOME}/.sentinelhub          
+sentinelhub keys add mywallet --recover --keyring-backend os --home ${HOME}/.sentinelhub       
 ```
 
 #### **List Key**
 
 ```bash
-sentinelhub keys list --home ${HOME}/.sentinelhub       
+sentinelhub keys list --home ${HOME}/.sentinelhub    
 ```
 
 #### **Delete Key**
@@ -79,15 +84,15 @@ sentinelhub keys import mywallet mywallet_file.backup --home ${HOME}/.sentinelhu
 <pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `sentinelhub keys list --home ${HOME}/.sentinelhub--output json| jq -r ".[] .address"`
 </strong>do
    CHAIN_ID="sentinelhub-2"
-   RPC="tcp://localhost:16704"
-   sentinelhub q bank balances ${mywallet} --home ${HOME}/.sentinelhub--chain-id ${CHAIN_ID} --node ${RPC}
+   RPC="http://localhost:16704"
+   sentinelhub q bank balances ${mywallet} --home ${HOME}/.sentinelhub --chain-id ${CHAIN_ID} --node ${RPC}
 done
 </code></pre>
 
 #### Show Balance Address
 
 ```bash
-sentinelhub q bank balances mywallet_public_address --home ${HOME}/.sentinelhub--chain-id sentinelhub-2 --node tcp://localhost:16704
+sentinelhub q bank balances mywallet_public_address --home ${HOME}/.sentinelhub --chain-id sentinelhub-2 --node http://localhost:16704
 ```
 
 ### Validator Management
@@ -131,10 +136,9 @@ sentinelhub tx staking create-validator \
 --commission-max-change-rate=0.01 \
 --min-self-delegation=1 \
 --from=mywallet \
---gas-adjustment=1.4 \
---gas=auto \
---node tcp://localhost:16704 \
+--node http://localhost:16704 \
 --home ${HOME}/.sentinelhub\
+--gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4 \
 -y
 ```
 
@@ -154,10 +158,9 @@ sentinelhub tx staking edit-validator \
 --chain-id=sentinelhub-2 \
 --commission-rate=0.05 \
 --from=mywallet \
---gas-adjustment=1.4 \
---gas=auto \
---node tcp://localhost:16704 \
---home ${HOME}/.sentinelhub\
+--node http://localhost:16704 \
+--home ${HOME}/.sentinelhub \
+--gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4 \
 -y
 ```
 
@@ -169,7 +172,7 @@ sentinelhub status 2>&1 | jq .ValidatorInfo
 
 #### Get Syncing Block
 
-```
+```bash
 sentinelhub status 2>&1 | jq .SyncInfo
 ```
 
@@ -181,20 +184,18 @@ echo $(sentinelhub tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HO
 
 #### Get Peer Node
 
-```
-curl -sS http://localhost:16704/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
+```bash
+curl -sS http://localhost:16701/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
 ```
 
 #### Unjail Validator
-
 ```bash
 sentinelhub tx slashing unjail \
 --from mywallet \
 --chain-id sentinelhub-2 \
  --home ${HOME}/.sentinelhub\
- --node  tcp://localhost:16704 \
- --gas auto \
- --gas-adjustment 1.4 \
+ --node  http://localhost:16704 \
+ --gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4 \
  -y
 ```
 
@@ -202,7 +203,7 @@ sentinelhub tx slashing unjail \
 
 ```bash
 sentinelhub query slashing signing-info $(sentinelhub tendermint show-validator) \
- --node  tcp://localhost:16704 \
+ --node  http://localhost:16704 \
  --home ${HOME}/.sentinelhub
 ```
 
@@ -227,7 +228,7 @@ $(sentinelhub keys show \
                 $(sentinelhub keys list --home ${HOME}/.sentinelhub--output json| jq -r ".[] .address" | tail -n1) \
 --bech val -a) \
 --chain-id sentinelhub-2 \
---node tcp://localhost:16704
+--node http://localhost:16704
 ```
 
 ### Token Management
@@ -238,10 +239,9 @@ $(sentinelhub keys show \
 sentinelhub tx distribution withdraw-all-rewards \
 --from mywallet \
 --chain-id sentinelhub-2 \
---node tcp://localhost:16704 \
+--node http://localhost:16704 \
 --home ${HOME}/.sentinelhub\
---gas-adjustment 1.4 \
---gas auto \
+--gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4 \
 -y
 ```
 
@@ -251,37 +251,34 @@ sentinelhub tx distribution withdraw-all-rewards \
 sentinelhub tx distribution withdraw-rewards $(sentinelhub keys show mywallet --bech val -a) \
 --commission \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --chain-id sentinelhub-2 \
---node tcp://localhost:16704 \
+--node http://localhost:16704 \
 --home ${HOME}/.sentinelhub\
+--gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4 \
 -y 
 ```
 
 #### Delegate My Token to Own Validator
 
 ```bash
-sentinelhub tx staking delegate $(sentinelhub keys show wallet --bech val -a) 1000000udvpn \
+sentinelhub tx staking delegate $(sentinelhub keys show wallet --bech val -a) 100000udvpn \
 --from mywallet \
---gas-adjustment 1.4 \
 --home ${HOME}/.sentinelhub\
---node tcp://localhost:16704 \
+--node http://localhost:16704 \
 --chain-id sentinelhub-2 \
---gas auto \
+--gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4 \
 -y
 ```
 
 #### Delegate Your Token To Our Validator
 
 ```bash
-sentinelhub tx staking delegate sentvaloper1pyn04fth38t9tvpa3fvfnn4xng06zsymthu6ua 1000000udvpn \ 
+sentinelhub tx staking delegate prefixVALOPExxxxxx 100000udvpn \ 
 --from mywallet \
---gas-adjustment 1.4 \ 
---gas auto \
 --home ${HOME}/.sentinelhub\
---node tcp://localhost:16704 \
+--node http://localhost:16704 \
 --chain-id sentinelhub-2 \
+--gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4 \
 -y
 ```
 
@@ -290,11 +287,10 @@ sentinelhub tx staking delegate sentvaloper1pyn04fth38t9tvpa3fvfnn4xng06zsymthu6
 ```bash
 sentinelhub tx staking redelegate $(sentinelhub keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000udvpn \
 --from mywallet 
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.sentinelhub\
---node tcp://localhost:16704 \
+--node http://localhost:16704 \
 --chain-id sentinelhub-2 \
+--gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4 \
 -y 
 ```
 
@@ -303,11 +299,10 @@ sentinelhub tx staking redelegate $(sentinelhub keys show wallet --bech val -a) 
 ```bash
 sentinelhub tx staking unbond $(sentinelhub keys show wallet --bech val -a) 1000000udvpn \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.sentinelhub\
---node tcp://localhost:16704 \
+--node http://localhost:16704 \
 --chain-id sentinelhub-2 \
+--gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4 \
 -y 
 ```
 
@@ -316,11 +311,10 @@ Send tokens to the wallet
 ```
 sentinelhub tx bank send wallet <TO_WALLET_ADDRESS> 1000000udvpn \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.sentinelhub\
---node tcp://localhost:16704 \
+--node http://localhost:16704 \
 --chain-id sentinelhub-2 \
+--gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4 \
 -y 
 ```
 
@@ -354,40 +348,36 @@ sentinelhub query gov proposals
 ### vote yes
 sentinelhub tx gov vote 1 yes \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.sentinelhub\
---node tcp://localhost:16704 \
+--node http://localhost:16704 \
 --chain-id sentinelhub-2 \
+--gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4 \
 -y 
 
 ### vote no
 sentinelhub tx gov vote 1 no \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.sentinelhub\
---node tcp://localhost:16704 \
+--node http://localhost:16704 \
 --chain-id sentinelhub-2 \
+--gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4 \
 -y 
 
 ### vote abstain
 sentinelhub tx gov vote 1 abstain \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.sentinelhub\
---node tcp://localhost:16704 \
+--node http://localhost:16704 \
 --chain-id sentinelhub-2 \
+--gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4 \
 -y 
 
 ### vote No With Veto
 sentinelhub tx gov vote 1 nowithveto \
 --from mywallet \
---gas-adjustment 1.4 \
---gas auto \
 --home ${HOME}/.sentinelhub\
---node tcp://localhost:16704 \
+--node http://localhost:16704 \
 --chain-id sentinelhub-2 \
+--gas=500000 --gas-prices=0.1udvpn --gas-adjustment=1.4 \
 -y 
 ```

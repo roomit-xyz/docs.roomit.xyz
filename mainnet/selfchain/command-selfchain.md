@@ -84,7 +84,7 @@ selfchaind keys import mywallet mywallet_file.backup --home ${HOME}/.selfchain
 <pre class="language-bash"><code class="lang-bash"><strong>for mywallet in `selfchaind keys list --home ${HOME}/.selfchain--output json| jq -r ".[] .address"`
 </strong>do
    CHAIN_ID="self-1"
-   RPC="http:////localhost:16709"
+   RPC="http://localhost:16709"
    selfchaind q bank balances ${mywallet} --home ${HOME}/.selfchain --chain-id ${CHAIN_ID} --node ${RPC}
 done
 </code></pre>
@@ -92,7 +92,7 @@ done
 #### Show Balance Address
 
 ```bash
-selfchaind q bank balances mywallet_public_address --home ${HOME}/.selfchain --chain-id self-1 --node http:////localhost:16709
+selfchaind q bank balances mywallet_public_address --home ${HOME}/.selfchain --chain-id self-1 --node http://localhost:16709
 ```
 
 ### Validator Management
@@ -136,7 +136,7 @@ selfchaind tx staking create-validator \
 --commission-max-change-rate=0.01 \
 --min-self-delegation=1 \
 --from=mywallet \
---node http:////localhost:16709 \
+--node http://localhost:16709 \
 --home ${HOME}/.selfchain\
 --gas=auto --gas-prices=0.5uslf --gas-adjustment=1.2 \
 -y
@@ -158,7 +158,7 @@ selfchaind tx staking edit-validator \
 --chain-id=self-1 \
 --commission-rate=0.05 \
 --from=mywallet \
---node http:////localhost:16709 \
+--node http://localhost:16709 \
 --home ${HOME}/.selfchain \
 --gas=auto --gas-prices=0.5uslf --gas-adjustment=1.2 \
 -y
@@ -194,7 +194,7 @@ selfchaind tx slashing unjail \
 --from mywallet \
 --chain-id self-1 \
  --home ${HOME}/.selfchain\
- --node  http:////localhost:16709 \
+ --node  http://localhost:16709 \
  --gas=auto --gas-prices=0.5uslf --gas-adjustment=1.2 \
  -y
 ```
@@ -203,7 +203,7 @@ selfchaind tx slashing unjail \
 
 ```bash
 selfchaind query slashing signing-info $(selfchaind tendermint show-validator) \
- --node  http:////localhost:16709 \
+ --node  http://localhost:16709 \
  --home ${HOME}/.selfchain
 ```
 
@@ -228,7 +228,7 @@ $(selfchaind keys show \
                 $(selfchaind keys list --home ${HOME}/.selfchain--output json| jq -r ".[] .address" | tail -n1) \
 --bech val -a) \
 --chain-id self-1 \
---node http:////localhost:16709
+--node http://localhost:16709
 ```
 
 ### Token Management
@@ -239,7 +239,7 @@ $(selfchaind keys show \
 selfchaind tx distribution withdraw-all-rewards \
 --from mywallet \
 --chain-id self-1 \
---node http:////localhost:16709 \
+--node http://localhost:16709 \
 --home ${HOME}/.selfchain\
 --gas=auto --gas-prices=0.5uslf --gas-adjustment=1.2 \
 -y
@@ -252,7 +252,7 @@ selfchaind tx distribution withdraw-rewards $(selfchaind keys show mywallet --be
 --commission \
 --from mywallet \
 --chain-id self-1 \
---node http:////localhost:16709 \
+--node http://localhost:16709 \
 --home ${HOME}/.selfchain\
 --gas=auto --gas-prices=0.5uslf --gas-adjustment=1.2 \
 -y 
@@ -264,7 +264,7 @@ selfchaind tx distribution withdraw-rewards $(selfchaind keys show mywallet --be
 selfchaind tx staking delegate $(selfchaind keys show wallet --bech val -a) 100000uslf \
 --from mywallet \
 --home ${HOME}/.selfchain\
---node http:////localhost:16709 \
+--node http://localhost:16709 \
 --chain-id self-1 \
 --gas=auto --gas-prices=0.5uslf --gas-adjustment=1.2 \
 -y
@@ -276,7 +276,7 @@ selfchaind tx staking delegate $(selfchaind keys show wallet --bech val -a) 1000
 selfchaind tx staking delegate prefixVALOPExxxxxx 100000uslf \ 
 --from mywallet \
 --home ${HOME}/.selfchain\
---node http:////localhost:16709 \
+--node http://localhost:16709 \
 --chain-id self-1 \
 --gas=auto --gas-prices=0.5uslf --gas-adjustment=1.2 \
 -y
@@ -288,7 +288,7 @@ selfchaind tx staking delegate prefixVALOPExxxxxx 100000uslf \
 selfchaind tx staking redelegate $(selfchaind keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000uslf \
 --from mywallet 
 --home ${HOME}/.selfchain\
---node http:////localhost:16709 \
+--node http://localhost:16709 \
 --chain-id self-1 \
 --gas=auto --gas-prices=0.5uslf --gas-adjustment=1.2 \
 -y 
@@ -300,7 +300,7 @@ selfchaind tx staking redelegate $(selfchaind keys show wallet --bech val -a) <T
 selfchaind tx staking unbond $(selfchaind keys show wallet --bech val -a) 1000000uslf \
 --from mywallet \
 --home ${HOME}/.selfchain\
---node http:////localhost:16709 \
+--node http://localhost:16709 \
 --chain-id self-1 \
 --gas=auto --gas-prices=0.5uslf --gas-adjustment=1.2 \
 -y 
@@ -312,7 +312,7 @@ Send tokens to the wallet
 selfchaind tx bank send wallet <TO_WALLET_ADDRESS> 1000000uslf \
 --from mywallet \
 --home ${HOME}/.selfchain\
---node http:////localhost:16709 \
+--node http://localhost:16709 \
 --chain-id self-1 \
 --gas=auto --gas-prices=0.5uslf --gas-adjustment=1.2 \
 -y 
@@ -349,7 +349,7 @@ selfchaind query gov proposals
 selfchaind tx gov vote 1 yes \
 --from mywallet \
 --home ${HOME}/.selfchain\
---node http:////localhost:16709 \
+--node http://localhost:16709 \
 --chain-id self-1 \
 --gas=auto --gas-prices=0.5uslf --gas-adjustment=1.2 \
 -y 
@@ -358,7 +358,7 @@ selfchaind tx gov vote 1 yes \
 selfchaind tx gov vote 1 no \
 --from mywallet \
 --home ${HOME}/.selfchain\
---node http:////localhost:16709 \
+--node http://localhost:16709 \
 --chain-id self-1 \
 --gas=auto --gas-prices=0.5uslf --gas-adjustment=1.2 \
 -y 
@@ -367,7 +367,7 @@ selfchaind tx gov vote 1 no \
 selfchaind tx gov vote 1 abstain \
 --from mywallet \
 --home ${HOME}/.selfchain\
---node http:////localhost:16709 \
+--node http://localhost:16709 \
 --chain-id self-1 \
 --gas=auto --gas-prices=0.5uslf --gas-adjustment=1.2 \
 -y 
@@ -376,7 +376,7 @@ selfchaind tx gov vote 1 abstain \
 selfchaind tx gov vote 1 nowithveto \
 --from mywallet \
 --home ${HOME}/.selfchain\
---node http:////localhost:16709 \
+--node http://localhost:16709 \
 --chain-id self-1 \
 --gas=auto --gas-prices=0.5uslf --gas-adjustment=1.2 \
 -y 
