@@ -5,19 +5,19 @@ description: Endpoint Public Dvpn From RoomIT
 # Endpoint Public
 
 ## RPC
-    {% embed url="https://rpc.dvpn.roomit.xyz" %}
-    RoomIT RPC Dvpn
-    {% endembed %}
+{% embed url="https://rpc.dvpn.roomit.xyz" %}
+RoomIT RPC Dvpn
+{% endembed %}
 
 ## API
-    {% embed url="https://api.dvpn.roomit.xyz" %}
-    RoomIT API dvpn
-    {% endembed %}
+{% embed url="https://api.dvpn.roomit.xyz" %}
+RoomIT API dvpn
+{% endembed %}
 
 ## gRPC
-    {% embed url="grpc.dvpn.roomit.xyz:8443" %}
-    RoomIT gRPC dvpn
-    {% endembed %}
+{% embed url="grpc.dvpn.roomit.xyz:8443" %}
+RoomIT gRPC dvpn
+{% endembed %}
 
 Example Call :
 
