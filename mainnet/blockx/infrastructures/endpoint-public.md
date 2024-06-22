@@ -4,29 +4,23 @@ description: Endpoint Public Blockx From RoomIT
 
 # Endpoint Public
 
-## PEERS
-
-```bash
-3e56cc72b6f947c78c29611f567bf359e6ab450d9@p2p-pve01.roomit.xyz:16707
-```
-
 ## RPC
 
-{% embed url="https://rpc.blockx.roomit.xyz" %}
-RoomIT RPC blockx
-{% endembed %}
+    {% embed url="https://rpc.blockx.roomit.xyz" %}
+    RoomIT RPC Blockx
+    {% endembed %}
 
 ## API
 
-{% embed url="https://api.blockx.roomit.xyz" %}
-RoomIT API blockx
-{% endembed %}
+    {% embed url="https://api.blockx.roomit.xyz" %}
+    RoomIT API blockx
+    {% endembed %}
 
 ## gRPC
 
-{% embed url="grpc.blockx.roomit.xyz:8443" %}
-RoomIT gRPC blockx
-{% endembed %}
+    {% embed url="grpc.blockx.roomit.xyz:8443" %}
+    RoomIT gRPC blockx
+    {% endembed %}
 
 Example Call :
 
@@ -38,8 +32,3 @@ Assume, you have done install _grpcurl_
  grpcurl grpc.blockx.roomit.xyz:8443  list
 ```
 
-## P2P
-
-```
-p2p-pve01.roomit.xyz:16707
-```

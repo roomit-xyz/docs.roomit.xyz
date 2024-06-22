@@ -4,29 +4,23 @@ description: Endpoint Public Band From RoomIT
 
 # Endpoint Public
 
-## PEERS
-
-```bash
-420994846f175d0413796be9caea49e07ad3a503@band.p2p.roomit.xyz:16600
-```
-
 ## RPC
 
-{% embed url="https://rpc.band.roomit.xyz" %}
-RoomIT RPC Band
-{% endembed %}
+    {% embed url="https://rpc.band.roomit.xyz" %}
+    RoomIT RPC Band
+    {% endembed %}
 
 ## API
 
-{% embed url="https://api.band.roomit.xyz" %}
-RoomIT API Band
-{% endembed %}
+    {% embed url="https://api.band.roomit.xyz" %}
+    RoomIT API band
+    {% endembed %}
 
 ## gRPC
 
-{% embed url="grpc.band.roomit.xyz:8443" %}
-RoomIT gRPC Band
-{% endembed %}
+    {% embed url="grpc.band.roomit.xyz:8443" %}
+    RoomIT gRPC band
+    {% endembed %}
 
 Example Call :
 
@@ -38,8 +32,3 @@ Assume, you have done install _grpcurl_
  grpcurl grpc.band.roomit.xyz:8443  list
 ```
 
-## P2P
-
-```
-tcp://band.p2p.roomit.xyz:16602
-```
