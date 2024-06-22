@@ -5,3 +5,22 @@ description: AddressBook Band From RoomIT
 {%  embed url="https://roomit.xyz/addressbook/mainnet/band/" %}
 Band Addressbook
 {%  endembed %}
+
+### How to Deploy
+
+Stop Your Service Blockchain
+```bash
+sudo systemctl stop band-node
+```
+>> Notes : for systemd init blockchain, adjust with your name of service. __systemctl stop bandd__
+
+
+Download And Deploy
+```
+curl -Ls  https://roomit.xyz/addressbook/mainnet/band/addrbook.json > $HOME/.band/config/addrbook.json 
+```
+
+Start Your Service Blockchain
+```bash
+sudo systemctl start band-node
+```
