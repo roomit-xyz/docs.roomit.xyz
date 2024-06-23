@@ -139,4 +139,4 @@ sentinelhub validate-genesis
 
 Edit config, You can refer to [edit-configuration-node.md](edit-configuration-node.md "mention")
 
-Apply State Sync, refer to [state-sync.md](../../../dvpn/installation-node/state-sync.md "mention")
+Apply State Sync, refer to [state-sync.md](../infrastructures/statesync.md "mention")
