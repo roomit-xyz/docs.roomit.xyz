@@ -44,7 +44,7 @@ lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.source
 
 6. Restore State Validator
 ```bash
-cp ${HOME}/.source /priv_validator_state.json ${HOME}/.source /data/priv_validator_state.json
+cp ${HOME}/.source /priv_validator_state.json ${HOME}/.source/data/priv_validator_state.json
 ```
 
 7. Start Node Blockchain

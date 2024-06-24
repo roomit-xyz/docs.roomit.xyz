@@ -44,7 +44,7 @@ lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.gitopia
 
 6. Restore State Validator
 ```bash
-cp ${HOME}/.gitopia /priv_validator_state.json ${HOME}/.gitopia /data/priv_validator_state.json
+cp ${HOME}/.gitopia /priv_validator_state.json ${HOME}/.gitopia/data/priv_validator_state.json
 ```
 
 7. Start Node Blockchain

@@ -44,7 +44,7 @@ lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.nibid
 
 6. Restore State Validator
 ```bash
-cp ${HOME}/.nibid /priv_validator_state.json ${HOME}/.nibid /data/priv_validator_state.json
+cp ${HOME}/.nibid /priv_validator_state.json ${HOME}/.nibid/data/priv_validator_state.json
 ```
 
 7. Start Node Blockchain

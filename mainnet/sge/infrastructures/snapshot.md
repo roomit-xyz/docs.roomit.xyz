@@ -44,7 +44,7 @@ lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.sge
 
 6. Restore State Validator
 ```bash
-cp ${HOME}/.sge /priv_validator_state.json ${HOME}/.sge /data/priv_validator_state.json
+cp ${HOME}/.sge /priv_validator_state.json ${HOME}/.sge/data/priv_validator_state.json
 ```
 
 7. Start Node Blockchain

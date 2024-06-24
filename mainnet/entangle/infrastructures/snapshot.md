@@ -44,7 +44,7 @@ lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.entangled
 
 6. Restore State Validator
 ```bash
-cp ${HOME}/.entangled /priv_validator_state.json ${HOME}/.entangled /data/priv_validator_state.json
+cp ${HOME}/.entangled /priv_validator_state.json ${HOME}/.entangled/data/priv_validator_state.json
 ```
 
 7. Start Node Blockchain

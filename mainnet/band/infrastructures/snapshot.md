@@ -42,9 +42,9 @@ bandd tendermint unsafe-reset-all --home $HOME/.band --keep-addr-book
 lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.band 
 ```
 
-6. Resoter State Validator
+6. Restore State Validator
 ```bash
-cp ${HOME}/.band /priv_validator_state.json ${HOME}/.band /data/priv_validator_state.json
+cp ${HOME}/.band /priv_validator_state.json ${HOME}/.band/data/priv_validator_state.json
 ```
 
 7. Start Node Blockchain

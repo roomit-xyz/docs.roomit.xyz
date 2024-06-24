@@ -44,7 +44,7 @@ lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.planqd
 
 6. Restore State Validator
 ```bash
-cp ${HOME}/.planqd /priv_validator_state.json ${HOME}/.planqd /data/priv_validator_state.json
+cp ${HOME}/.planqd /priv_validator_state.json ${HOME}/.planqd/data/priv_validator_state.json
 ```
 
 7. Start Node Blockchain

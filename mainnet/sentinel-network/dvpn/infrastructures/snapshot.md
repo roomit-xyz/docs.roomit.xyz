@@ -44,7 +44,7 @@ lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.sentinelhub
 
 6. Restore State Validator
 ```bash
-cp ${HOME}/.sentinelhub /priv_validator_state.json ${HOME}/.sentinelhub /data/priv_validator_state.json
+cp ${HOME}/.sentinelhub /priv_validator_state.json ${HOME}/.sentinelhub/data/priv_validator_state.json
 ```
 
 7. Start Node Blockchain

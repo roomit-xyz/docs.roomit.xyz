@@ -44,7 +44,7 @@ lzma -d -c ${SNAPSHOT} | tar -xv -C $HOME/.blockxd
 
 6. Restore State Validator
 ```bash
-cp ${HOME}/.blockxd /priv_validator_state.json ${HOME}/.blockxd /data/priv_validator_state.json
+cp ${HOME}/.blockxd /priv_validator_state.json ${HOME}/.blockxd/data/priv_validator_state.json
 ```
 
 7. Start Node Blockchain
