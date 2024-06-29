@@ -40,6 +40,16 @@ Script can detect Architecure and OS what we used, so with one command we can de
 **How to Install Wireguard**\
 We assume you have a VPS and can login to your VPS and running as root. example for install wireguard service Decentralize VPN Sentinel
 
+> If you did not installed yet gitopia, please install first for cloning
+
+> Need faucet $LORE Gitopia? please contact us at [Email](mailto:admin@roomit.xyz) | [Telegram](https://t.me/roomit_xyz) | [X](https://x.com/roomit_xyz)
+
+Install gitopia
+```
+curl https://get.gitopia.com | bash
+```
+
+Deploy Sentinel DVPN Node
 ```
 sudo su -
 git clone gitopia://roomit-xyz/sentinel-node
