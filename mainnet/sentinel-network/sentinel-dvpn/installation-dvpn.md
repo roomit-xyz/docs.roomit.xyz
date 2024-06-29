@@ -4,7 +4,7 @@ description: Automation Script Installation Decentralized VPN
 
 # Installation DVPN
 
-visit : [https://github.com/roomit-xyz/sentinel-node](https://github.com/roomit-xyz/sentinel-node)
+visit : [https://gitopia.com/roomit-xyz/sentinel-node](https://gitopia.com/roomit-xyz/sentinel-node)
 
 Last Version | 0.7.1
 
@@ -41,8 +41,8 @@ Script can detect Architecure and OS what we used, so with one command we can de
 We assume you have a VPS and can login to your VPS and running as root. example for install wireguard service Decentralize VPN Sentinel
 
 ```
-wget -c https://raw.githubusercontent.com/roomit-xyz/sentinel-node/main/sentinel-node.sh
 sudo su -
+git clone gitopia://roomit-xyz/sentinel-node
 chmod +x sentinel-node.sh 
 ./sentinel-node.sh wireguard install
 ```

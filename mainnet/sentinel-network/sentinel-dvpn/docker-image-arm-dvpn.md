@@ -22,7 +22,7 @@ Checkout https://docs.sentinel.co/node-setup for more
 
 ### SCRIPT INSTALLATION
 
-visit : https://github.com/roomit-xyz/sentinel-node
+visit : [https://github.com/roomit-xyz/sentinel-node](https://gitopia.com/roomit-xyz/sentinel-node)
 
 #### VERSION IMAGES ON ARM ARCHITECTURE
 
