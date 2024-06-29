@@ -46,6 +46,7 @@ We assume you have a VPS and can login to your VPS and running as root. example 
 
 Install gitopia
 ```
+sudo su -
 curl https://get.gitopia.com | bash
 ```
 
