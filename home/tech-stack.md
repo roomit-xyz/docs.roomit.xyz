@@ -61,7 +61,7 @@ we manage all environment using provisioning and automated.
 #### Security Tools
 
 * Layer 3 and 4 (net filter) | Firewall
-* crowdsec | Firewall | WAF
+* Crowdsec | Firewall | WAF
 * Audit and Accounting | auditd
 * Filesystem Integrity | Aide
 * Openvas | Scanner vulnearbility
