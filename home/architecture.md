@@ -65,7 +65,8 @@ A type of virtual private network that is distributed and managed by many nodes 
 ## FLOW
 From the architecture diagram above, the following aspects can be concluded:
 
-** Users **
+**Users**
+
 Users can contribute and invest their tokens to decentralize the network or use the VPN services we provide over the internet. Additionally, users can perform transactions or monitor their investments through the web services we offer, such as:
 
 - https://stake.roomit.xyz
@@ -74,11 +75,13 @@ Users can contribute and invest their tokens to decentralize the network or use 
 - https://health.roomit.xyz/status/roomit-mainnet
 - https://monittoring.roomit.xyz
 
-** Administrator **
+**Administrator**
+
 Since the system is well isolated, administrators need VPN access, SSH Public Key, and OTP Access to enter the system. Access is only possible through a single gateway. Roomit is truly designed with a baseline and isolated security system.
 
 
-** System **
+**System**
+
 Our blockchain machines only have P2P connection access. The function of this P2P connection is used for the connection between validators to perform transactions.
 
 
