@@ -57,6 +57,24 @@ Output :
 {"latestBlockHeight":"9788147"}
 ```
 
+* For Get Chain ID
+```
+GET - /api/chainid?blockchain_name=planq
+```
+Output :
+```
+{"network":"planq_7070-2"}
+```
+
+* For Get Status Synchronize Block
+```
+GET - /api/synced?blockchain_name=planq
+```
+Output :
+```
+{"catchingUp":false}
+```
+
   
 
 #### Peers
@@ -100,3 +118,31 @@ Output :
 ```
 {"persistent":"3eb12284b7fb707490b8adfda6fa7d94e2fa5cd9@p2p.tendermint.roomit.xyz:16603"}
 ```
+
+#### Snapshot
+
+* For Get Our Seeds Peers
+```
+GET - /api/snapshot/fileinfo?stage=mainnet&blockchain_name=planq
+```
+Output :
+```
+{"filename":"2024-07-10-planq-9773721.tar.lzma","size":465960750}
+```
+
+
+#### IBC
+
+* For Get IBC Support
+```
+GET - /api/ibc
+```
+Output :
+```
+["planq_7070-2","gitopia","source-1","sentinelhub-2","sgenet-1","osmosis-1"]
+```
+
+
+
+
+
