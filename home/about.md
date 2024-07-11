@@ -100,7 +100,7 @@ We provide infrastuctures service for support decentralized and strong network, 
 
 [Ansible - Tendermint](https://gitopia.com/roomit-xyz/roomit-automation)
 
-Overall we have valuation from our delegators around $ 300k USD.
+Overall we have valuations from our delegators around $ 300k USD.
 
 
 Roomit is very grateful to the parties who have contributed to the development of Roomit. May health and happiness always be bestowed upon us all.
