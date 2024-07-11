@@ -1,8 +1,10 @@
 # Table of contents
 
 * [Home](README.md)
-  * [Architecture](readme/architecture.md)
-  * [Tech Stack](readme/tech-stack.md)
+  * [Architecture](home/architecture.md)
+  * [Rest API ](home/api.md)
+  * [Tech Stack](home/tech-stack.md)
+  * [Experince](home/expereince.md)
 
 ## MAINNET
 
