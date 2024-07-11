@@ -6,7 +6,7 @@ description: Stack Technology RoomIT
 
 **Spesification Server**
 
-We are running virtual over hypervisor cluster with specsification server hypervisor following :
+We are running virtual machine over hypervisor cluster with specsification server hypervisor following :
 
 ```
 CPU  : AMD EPYC 4244P - 6 c / 12 t - 3.8 GHz / 5.1 GHz
