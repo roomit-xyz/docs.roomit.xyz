@@ -1,3 +1,7 @@
+---
+description: Rest API RoomIT
+---
+
 # Rest API Roomit
 
 Roomit offers an API for seamless management and integration of blockchain services, enabling users to efficiently handle their investments and access network features and able integrating in our platform.

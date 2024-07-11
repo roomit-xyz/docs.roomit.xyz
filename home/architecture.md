@@ -32,7 +32,7 @@ A testnet in blockchain is a trial network used for development, testing, and ex
 - Entangle
 - Block Network
 - Gnosischain
-- Dan Lain lain
+- Etc
 
 **Testnet**
 - Aptos (AIT2-3)
@@ -52,7 +52,7 @@ A testnet in blockchain is a trial network used for development, testing, and ex
 - Selfchain
 - Initia
 - Aleo
-- Dan Lain lain
+- Etc
 
 **2. VPN Decentralized (DVPN)**
 
