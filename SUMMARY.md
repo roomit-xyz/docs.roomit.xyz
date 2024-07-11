@@ -4,7 +4,7 @@
   * [Architecture](home/architecture.md)
   * [Tech Stack](home/tech-stack.md)
   * [Rest API ](home/api.md)
-  * [Experince](home/experience.md)
+  * [Experience](home/experience.md)
 
 ## MAINNET
 
