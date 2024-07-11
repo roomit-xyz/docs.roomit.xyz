@@ -62,7 +62,7 @@ A type of virtual private network that is distributed and managed by many nodes 
 - Mysterium
 - NYM
 
-## FLOW
+## Flow
 From the architecture diagram above, the following aspects can be concluded:
 
 **Users**
