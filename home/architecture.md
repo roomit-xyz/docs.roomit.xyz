@@ -82,6 +82,6 @@ Since the system is well isolated, administrators need VPN access, SSH Public Ke
 
 **System**
 
-Our blockchain machines only have P2P connection access. The function of this P2P connection is used for the connection between validators to perform transactions.
+Our blockchain machines only have P2P connection access. The function of this P2P connection is used for the connection between validators to perform transactions. All request From internet for Endpoint Public Service or website service come through from proxy and did not touch validation server, we have provide service for each blockchain for Endpoint or Snapshots in other Machines.
 
 
