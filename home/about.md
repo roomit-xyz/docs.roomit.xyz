@@ -69,8 +69,11 @@ We provide infrastuctures service for support decentralized and strong network, 
 
 #### Opensource Contribution
 - Maintainer Image dVPN Sentinel Image Docker multi architecture
+
 [Link 1- General](https://docs.roomit.xyz/mainnet/sentinel-network/sentinel-dvpn/docker-image-arm-dvpn)
+
 [Link 2 - Docker Image aarch64](https://hub.docker.com/r/wajatmaka/sentinel-aarch64-alpine)
+
 [Link 3 - Docker Image arm7](https://hub.docker.com/r/wajatmaka/sentinel-arm7-debian)
 ```
 - Architecure 
@@ -87,9 +90,11 @@ We provide infrastuctures service for support decentralized and strong network, 
 ```
 
 - Maintainer Script Automation Deployment for dVPN Sentinel
+
 [Script Automation Deployment dVPN](https://gitopia.com/roomit-xyz/sentinel-node)
 
 - Ansible Auto deployment for tendermint
+
 [Ansible - Tendermint](https://gitopia.com/roomit-xyz/roomit-automation)
 
 Overall we have valuation from our delegators around $ 300k USD.
