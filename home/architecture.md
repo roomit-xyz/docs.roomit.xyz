@@ -16,6 +16,7 @@ The Roomit architecture is built independently from scratch, utilizing robust ha
 The Main Component Roomit provided is following:
 
 **1. Validation Blockchain (Mainnet dan Testnet)**
+
 Roomit has conducted extensive validations across various blockchains. These validations are carried out on both production and staging systems. In the blockchain ecosystem, the production system refers to the mainnet, which is the primary or production network of a blockchain project. This is the final version of the network released for public use and operates with cryptocurrency that holds real value.
 A testnet in blockchain is a trial network used for development, testing, and experimentation before features or changes are applied to the main network (mainnet). The details are as follows:
 
@@ -54,6 +55,7 @@ A testnet in blockchain is a trial network used for development, testing, and ex
 - Dan Lain lain
 
 **2. VPN Decentralized (DVPN)**
+
 A type of virtual private network that is distributed and managed by many nodes or participants in the network, unlike traditional VPNs which are managed by a single central entity, is called a decentralized VPN. We also provide VPN services, which are connected to blockchain. The services we offer are as follows:
 
 - Sentinel
