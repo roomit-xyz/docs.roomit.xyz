@@ -103,7 +103,7 @@ We provide infrastuctures service for support decentralized and strong network, 
 Overall we have valuation from our delegators around $ 300k USD.
 
 
-With this, Roomit is very grateful to the parties who have contributed to the development of Roomit. May health and happiness always be bestowed upon us all.
+Roomit is very grateful to the parties who have contributed to the development of Roomit. May health and happiness always be bestowed upon us all.
 
 Best Regards,
 Roomit
