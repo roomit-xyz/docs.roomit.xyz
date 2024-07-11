@@ -2,12 +2,12 @@
 description: About RoomIT
 ---
 
-### Summary
+## Summary
 
 Roomit is group technology from Indonesia (2022 - current) with IT professionals, focused on leveraging blockchain technology and focus in depin (Decentralized Physical Infrastructure) Technology. create a decentralized virtual private network (VPN) service and validation transaction in many blockchains. The core idea behind Valiadtor is to provide users with a secure, private, and censorship-resistant internet browsing experience.
 
 
-### Services
+## Services
 
 #### Validation
 Currently, We are validate in many blockcain mainnet/production on tendermint based and EVM. We are validating following :
