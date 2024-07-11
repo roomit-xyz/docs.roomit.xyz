@@ -2,9 +2,9 @@
 
 * [Home](README.md)
   * [Architecture](home/architecture.md)
-  * [Rest API ](home/api.md)
   * [Tech Stack](home/tech-stack.md)
-  * [Experince](home/expereince.md)
+  * [Rest API ](home/api.md)
+  * [Experince](home/experience.md)
 
 ## MAINNET
 
