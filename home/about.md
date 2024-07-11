@@ -27,6 +27,7 @@ Currently, We are validate in many blockcain mainnet/production on tendermint ba
 #### Decentralized VPN
 Besides that, we have provide infrastrcture VPN based on : 
 - Sentinel
+
   Location :
      - Chicago | US
      - Detroit | US 
@@ -36,9 +37,11 @@ Besides that, we have provide infrastrcture VPN based on :
      - Meung-sur-Loire | France
      - Boulogne-Billancourt | France
 - NYM 
+
   Location :
      - Indonesia
 - Mysterium
+
   Location :
      - Indoneisa
      - Germany
