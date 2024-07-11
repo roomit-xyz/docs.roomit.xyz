@@ -11,7 +11,7 @@ https://stake.roomit.xyz
 
 #### Profile
 
-For Get details Our Validator Profiles
+* For Get details Our Validator Profiles
 ```
 GET - /api/profile
 ```
@@ -38,7 +38,8 @@ Output :
 ```
 
 #### System
-For get version blockchain what we used
+
+* For get version blockchain what we used
 ```
 GET - /api/version?blockchain_name=planq
 ```
@@ -47,7 +48,7 @@ Output :
 {"version":"1.1.0"}
 ```
 
-For get last block from blockchain 
+* For get last block from blockchain 
 ```
 GET - /api/lastblock?blockchain_name=planq
 ```
@@ -60,7 +61,7 @@ Output :
 
 #### Peers
 
-For Get Peers - Non Filtered from our RPC, this RPC no filtered only connected with our node will be show
+* For Get Peers - Non Filtered from our RPC, this RPC no filtered only connected with our node will be show
 ```
 GET - /api/peers/nonfiltered?blockchain_name=planq
 ```
@@ -71,7 +72,7 @@ Output :
 .........
 ```
 
-For Get Peers - Filtered from our RPC, this RPC no filtered only connected with our node will be show
+* For Get Peers - Filtered from our RPC, this RPC no filtered only connected with our node will be show
 ```
 GET - /api/peers/filtered?blockchain_name=planq
 ```
@@ -82,7 +83,7 @@ Output :
 .........
 ```
 
-For Get Our Seeds Peers
+* For Get Our Seeds Peers
 ```
 GET - /api/peers/seeds?blockchain_name=planq
 ```
@@ -91,7 +92,7 @@ Output :
 {"seeds":"08bc9afd0cac4ae6cf8f1877920b0cc7e58a6f42@seeds.tendermint.roomit.xyz:40003"}
 ```
 
-For Get Our Persistent Peers
+* For Get Our Persistent Peers
 ```
 GET - /api/peers/persistent?blockchain_name=planq
 ```
