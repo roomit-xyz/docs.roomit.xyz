@@ -16,9 +16,12 @@ https://stake.roomit.xyz
 #### Profile
 
 * For Get details Our Validator Profiles
+
 ```
-GET - /api/profile
+GET - /api/mainnet/profile
+GET - /api/testnet/profile
 ```
+
 Output :
 ```
 ........
@@ -45,7 +48,7 @@ Output :
 
 * For get version blockchain what we used
 ```
-GET - /api/version?blockchain_name=planq
+GET - /api/mainnet/version?blockchain_name=planq
 ```
 Output :
 ```
@@ -54,7 +57,8 @@ Output :
 
 * For get last block from blockchain 
 ```
-GET - /api/lastblock?blockchain_name=planq
+GET - /api/mainnet/lastblock?blockchain_name=planq
+GET - /api/testnet/lastblock?blockchain_name=planq
 ```
 Output :
 ```
@@ -63,7 +67,8 @@ Output :
 
 * For Get Chain ID
 ```
-GET - /api/chainid?blockchain_name=planq
+GET - /api/mainnet/chainid?blockchain_name=planq
+GET - /api/testnet/chainid?blockchain_name=planq
 ```
 Output :
 ```
@@ -72,7 +77,8 @@ Output :
 
 * For Get Status Synchronize Block
 ```
-GET - /api/synced?blockchain_name=planq
+GET - /api/mainnet/synced?blockchain_name=planq
+GET - /api/testnet/synced?blockchain_name=planq
 ```
 Output :
 ```
@@ -85,7 +91,7 @@ Output :
 
 * For Get Peers - Non Filtered from our RPC, this RPC no filtered only connected with our node will be show
 ```
-GET - /api/peers/nonfiltered?blockchain_name=planq
+GET - /api/mainnet/peers/nonfiltered?blockchain_name=planq
 ```
 Output :
 ```
@@ -96,7 +102,7 @@ Output :
 
 * For Get Peers - Filtered from our RPC, this RPC no filtered only connected with our node will be show
 ```
-GET - /api/peers/filtered?blockchain_name=planq
+GET - /api/mainnet/peers/filtered?blockchain_name=planq
 ```
 Output :
 ```
@@ -107,7 +113,8 @@ Output :
 
 * For Get Our Seeds Peers
 ```
-GET - /api/peers/seeds?blockchain_name=planq
+GET - /api/mainnet/peers/seeds?blockchain_name=planq
+GET - /api/testnet/peers/seeds?blockchain_name=planq
 ```
 Output :
 ```
@@ -116,7 +123,8 @@ Output :
 
 * For Get Our Persistent Peers
 ```
-GET - /api/peers/persistent?blockchain_name=planq
+GET - /api/mainnet/peers/persistent?blockchain_name=planq
+GET - /api/testnet/peers/persistent?blockchain_name=planq
 ```
 Output :
 ```
@@ -127,7 +135,8 @@ Output :
 
 * For Get Our Seeds Peers
 ```
-GET - /api/snapshot/fileinfo?stage=mainnet&blockchain_name=planq
+GET - /api/mainnet/snapshot/fileinfo?blockchain_name=planq
+GET - /api/testnet/snapshot/fileinfo?blockchain_name=planq
 ```
 Output :
 ```
@@ -139,7 +148,7 @@ Output :
 
 * For Get IBC Support
 ```
-GET - /api/ibc
+GET - /api/mainnet/ibc
 ```
 Output :
 ```
