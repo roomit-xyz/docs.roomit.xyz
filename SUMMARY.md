@@ -219,6 +219,17 @@
     * [Endpoint Public](testnet/planq/infrastructures/endpoint-public.md)
     * [Port Mapping](testnet/planq/infrastructures/port-mapping.md)
   * [Firewall Planq](testnet/planq/firewall-planq.md)
+* [⬜️ Empeiria](testnet/empe/README.md)
+  * [Installation Node](testnet/empe/installation-node/README.md)
+    * [Installation Validator](testnet/empe/installation-node/installation-validator.md)
+    * [Up And Running](testnet/empe/installation-node/up-and-running.md)
+    * [Edit Configuration Node](testnet/empe/installation-node/edit-configuration-node.md)
+  * [Command Empeiria](testnet/empe/command-empe.md)
+  * [Infrastructures](testnet/empe/infrastructures/README.md)
+    * [Public Services](testnet/empe/infrastructures/public-services.md)
+    * [Endpoint Public](testnet/empe/infrastructures/endpoint-public.md)
+    * [Port Mapping](testnet/empe/infrastructures/port-mapping.md)
+  * [Firewall Empeiria](testnet/empe/firewall-empe.md)
 
 ## Tools Blockchain
 
