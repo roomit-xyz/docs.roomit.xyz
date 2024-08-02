@@ -233,6 +233,20 @@
     * [Snapshot](testnet/empe/infrastructures/snapshot.md)
     * [State Sync](testnet/empe/infrastructures/statesync.md)
   * [Firewall and Port Mapping empe](testnet/empe/firewall-empe.md)
+* [⬜️ Symphony](testnet/symphony/README.md)
+  * [Installation Node](testnet/symphony/installation-node/README.md)
+    * [Installation Validator](testnet/symphony/installation-node/installation-validator.md)
+    * [Up And Running](testnet/symphony/installation-node/up-and-running.md)
+    * [Edit Configuration Node](testnet/symphony/installation-node/edit-configuration-node.md)
+  * [Command Symphony](testnet/symphony/command-symphony.md)
+  * [Infrastructures](testnet/symphony/infrastructures/README.md)
+    * [Addresbook](testnet/symphony/infrastructures/addressbook.md)
+    * [Endpoint Public](testnet/symphony/infrastructures/endpoint-public.md)
+    * [Genesis](testnet/symphony/infrastructures/genesis.md)
+    * [Peers](testnet/symphony/infrastructures/peers.md)
+    * [Snapshot](testnet/symphony/infrastructures/snapshot.md)
+    * [State Sync](testnet/symphony/infrastructures/statesync.md)
+  * [Firewall and Port Mapping symphony](testnet/symphony/firewall-symphony.md)
 
 ## Tools Blockchain
 
