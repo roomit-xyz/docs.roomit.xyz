@@ -171,6 +171,20 @@
     * [Snapshot](mainnet/selfchain/infrastructures/snapshot.md)
     * [State Sync](mainnet/selfchain/infrastructures/statesync.md)
   * [Firewall and Port Mapping Selfchain](mainnet/selfchain/firewall-selfchain.md)
+* [🟩 Crossfi](mainnet/crossfi/README.md)
+  * [Installation Node](mainnet/crossfi/installation-node/README.md)
+    * [Installation Validator](mainnet/crossfi/installation-node/installation-validator.md)
+    * [Up And Running](mainnet/crossfi/installation-node/up-and-running.md)
+    * [Edit Configuration Node](mainnet/crossfi/installation-node/edit-configuration-node.md)
+  * [Command Crossfi](mainnet/crossfi/command-crossfi.md)
+  * [Infrastructures](mainnet/crossfi/infrastructures/README.md)
+    * [Addresbook](mainnet/crossfi/infrastructures/addressbook.md)
+    * [Endpoint Public](mainnet/crossfi/infrastructures/endpoint-public.md)
+    * [Genesis](mainnet/crossfi/infrastructures/genesis.md)
+    * [Peers](mainnet/crossfi/infrastructures/peers.md)
+    * [Snapshot](mainnet/crossfi/infrastructures/snapshot.md)
+    * [State Sync](mainnet/crossfi/infrastructures/statesync.md)
+  * [Firewall and Port Mapping Crossfi](mainnet/crossfi/firewall-crossfi.md)
 
 
 
