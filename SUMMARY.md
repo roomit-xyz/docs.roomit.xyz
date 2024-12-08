@@ -264,7 +264,7 @@
     * [Snapshot](testnet/arkeo/infrastructures/snapshot.md)
     * [State Sync](testnet/arkeo/infrastructures/statesync.md)
   * [Firewall and Port Mapping Arkeo](testnet/arkeo/firewall-arkeo.md)
-* [⬜️ Crossfi](testnet/crossfi/README.md)
+* [⬜️ Crossfi](testnet/arkeo/README.md)
   * [Installation Node](testnet/crossfi/installation-node/README.md)
     * [Installation Validator](testnet/crossfi/installation-node/installation-validator.md)
     * [Up And Running](testnet/crossfi/installation-node/up-and-running.md)
