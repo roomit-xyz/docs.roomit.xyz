@@ -185,7 +185,20 @@
     * [Snapshot](mainnet/crossfi/infrastructures/snapshot.md)
     * [State Sync](mainnet/crossfi/infrastructures/statesync.md)
   * [Firewall and Port Mapping Crossfi](mainnet/crossfi/firewall-crossfi.md)
-
+* [🟩 AtomOne](mainnet/atomone/README.md)
+  * [Installation Node](mainnet/atomone/installation-node/README.md)
+    * [Installation Validator](mainnet/atomone/installation-node/installation-validator.md)
+    * [Up And Running](mainnet/atomone/installation-node/up-and-running.md)
+    * [Edit Configuration Node](mainnet/atomone/installation-node/edit-configuration-node.md)
+  * [Command AtomOne](mainnet/atomone/command-atomone.md)
+  * [Infrastructures](mainnet/atomone/infrastructures/README.md)
+    * [Addresbook](mainnet/atomone/infrastructures/addressbook.md)
+    * [Endpoint Public](mainnet/atomone/infrastructures/endpoint-public.md)
+    * [Genesis](mainnet/atomone/infrastructures/genesis.md)
+    * [Peers](mainnet/atomone/infrastructures/peers.md)
+    * [Snapshot](mainnet/atomone/infrastructures/snapshot.md)
+    * [State Sync](mainnet/atomone/infrastructures/statesync.md)
+  * [Firewall and Port Mapping AtomOne](mainnet/atomone/firewall-atomone.md)
 
 
 ## Testnet
