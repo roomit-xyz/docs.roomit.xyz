@@ -21,6 +21,8 @@ Roomit has conducted extensive validations across various blockchains. These val
 A testnet in blockchain is a trial network used for development, testing, and experimentation before features or changes are applied to the main network (mainnet). The details are as follows:
 
 **Mainnet**
+- Atomone 
+- Fuel Network
 - Gitopia Blockchain
 - Planq Network
 - Source Protocol
@@ -28,9 +30,7 @@ A testnet in blockchain is a trial network used for development, testing, and ex
 - Sentinel Network
 - Selfchain 
 - Nibiru
-- Band Protocol
 - Entangle
-- Block Network
 - Gnosischain
 - Etc
 

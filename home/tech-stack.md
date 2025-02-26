@@ -67,11 +67,13 @@ we manage all environment using provisioning and automated.
 * Openvas | Scanner vulnearbility
 * Hardening System
 * ZAP
+* Wazuh
 
 #### Automation
 
 * Ansible
 * Terraform
+* Jenkins
 
 #### Monitoring System
 
