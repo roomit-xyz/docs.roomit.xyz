@@ -364,7 +364,7 @@
 * [♦ Ethereum Tools](tools-blockchain/ethereum-tools.md)
 * [💮 Polkadot Tools](tools-blockchain/polkadot-tools.md)
 
-## Monitoring
+<!-- ## Monitoring
 
 * [🟪 Install Monitoring Stack](monitoring/install-monitoring-stack.md)
 * [🟪 Install Grafana Renderer](https://roomit.medium.com/install-grafana-renderer-cb1059bf93cb)
@@ -410,4 +410,4 @@
     * [Installation Docker](automations/platform/docker/docker.md)
     * [Docker Administrator I](https://roomit.medium.com/install-docker-and-command-managment-a43c635360bb)
 
-## Archieves
+## Archieves -->
