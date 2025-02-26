@@ -326,7 +326,7 @@
     * [Port Mapping](testnet/fuelsequence/infrastructures/port-mapping.md)
   * [Firewall Fuel Network](testnet/fuelsequence/firewall-fuelsequence.md)
 
-* [⬜️ AtomOne](testnet/atomone/README.md)
+<!-- * [⬜️ AtomOne](testnet/atomone/README.md)
   * [Installation Node](testnet/atomone/installation-node/README.md)
     * [Installation Validator](testnet/atomone/installation-node/installation-validator.md)
     * [Up And Running](testnet/atomone/installation-node/up-and-running.md)
@@ -348,7 +348,7 @@
     * [Public Services](testnet/crossfi/infrastructures/public-services.md)
     * [Endpoint Public](testnet/crossfi/infrastructures/endpoint-public.md)
     * [Port Mapping](testnet/crossfi/infrastructures/port-mapping.md)
-  * [Firewall Crossfi](testnet/crossfi/firewall-crossfi.md)
+  * [Firewall Crossfi](testnet/crossfi/firewall-crossfi.md) -->
 
 
 
