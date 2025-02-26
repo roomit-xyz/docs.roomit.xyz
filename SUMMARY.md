@@ -20,6 +20,7 @@
       * [Healthcheck](https://health.roomit.xyz/status/nym-mixnode/)
     * [Monitoring View Mixnode](mainnet/nym/nym-mixnode/monitoring-view-gravity-bridge.md)
     * [Firewall NYM](mainnet/nym/nym-mixnode/firewall-nym.md)
+
 * [🟩 PlanQ](mainnet/planq/README.md)
   * [Installation Node](mainnet/planq/installation-node/README.md)
     * [Installation Validator](mainnet/planq/installation-node/installation-validator.md)
@@ -34,6 +35,7 @@
     * [Snapshot](mainnet/planq/infrastructures/snapshot.md)
     * [State Sync](mainnet/planq/infrastructures/statesync.md)
   * [Firewall and Port Mapping PlanQ](mainnet/planq/firewall-planq.md)
+
 * [🟩 Gitopia](mainnet/gitopia/README.md)
   * [Installation Node](mainnet/gitopia/installation-node/README.md)
     * [Installation Validator](mainnet/gitopia/installation-node/installation-validator.md)
@@ -48,6 +50,7 @@
     * [Snapshot](mainnet/gitopia/infrastructures/snapshot.md)
     * [State Sync](mainnet/gitopia/infrastructures/statesync.md)
   * [Firewall and Port Mapping Gitopia](mainnet/gitopia/firewall-gitopia.md)
+
 * [🟩 Band Protocol](mainnet/band/README.md)
   * [Installation Node](mainnet/band/installation-node/README.md)
     * [Installation Validator](mainnet/band/installation-node/installation-validator.md)
@@ -62,6 +65,7 @@
     * [Snapshot](mainnet/band/infrastructures/snapshot.md)
     * [State Sync](mainnet/band/infrastructures/statesync.md)
   * [Firewall and Port Mapping Band](mainnet/band/firewall-band.md)
+
 * [🟩 Source Protocol](mainnet/source/README.md)
   * [Installation Node](mainnet/source/installation-node/README.md)
     * [Installation Validator](mainnet/source/installation-node/installation-validator.md)
@@ -76,6 +80,7 @@
     * [Snapshot](mainnet/source/infrastructures/snapshot.md)
     * [State Sync](mainnet/source/infrastructures/statesync.md)
   * [Firewall and Port Mapping Source](mainnet/source/firewall-source.md)
+
 * [🟩 SGE Network](mainnet/sge/README.md)
   * [Installation Node](mainnet/sge/installation-node/README.md)
     * [Installation Validator](mainnet/sge/installation-node/installation-validator.md)
@@ -90,6 +95,7 @@
     * [Snapshot](mainnet/sge/infrastructures/snapshot.md)
     * [State Sync](mainnet/sge/infrastructures/statesync.md)
   * [Firewall and Port Mapping SGE](mainnet/sge/firewall-sge.md)
+
 * [🟩 Sentinel Network](mainnet/sentinel-network/README.md)
   * [🟩 Sentinel Validator](mainnet/sentinel-network/dvpn/README.md)
     * [Installation Node](mainnet/sentinel-network/dvpn/installation-node/README.md)
@@ -111,10 +117,12 @@
     * [APM Sentinel Node](mainnet/sentinel-network/sentinel-dvpn/apm-sentinel-node.md)
     * [Docker Image ARM DVPN](mainnet/sentinel-network/sentinel-dvpn/docker-image-arm-dvpn.md)
 * [🟩 Gnosis](mainnet/gnosis.md)
+
 * [🟩 Mysterium](mainnet/mysterium/README.md)
   * [Installation Mysterium](mainnet/mysterium/installation-mysterium.md)
   * [Up And Running](mainnet/mysterium/up-and-running.md)
   * [Dashboard Mysterium](mainnet/mysterium/dashboard-mysterium.md)
+
 * [🟩 Blockx Network](mainnet/blockx/README.md)
   * [Installation Node](mainnet/blockx/installation-node/README.md)
     * [Installation Validator](mainnet/blockx/installation-node/installation-validator.md)
@@ -129,6 +137,7 @@
     * [Snapshot](mainnet/blockx/infrastructures/snapshot.md)
     * [State Sync](mainnet/blockx/infrastructures/statesync.md)
   * [Firewall and Port Mapping Blockx](mainnet/blockx/firewall-blockx.md)
+
 * [🟩 Nibiru](mainnet/nibiru/README.md)
   * [Installation Node](mainnet/nibiru/installation-node/README.md)
     * [Installation Validator](mainnet/nibiru/installation-node/installation-validator.md)
@@ -143,6 +152,7 @@
     * [Snapshot](mainnet/nibiru/infrastructures/snapshot.md)
     * [State Sync](mainnet/nibiru/infrastructures/statesync.md)
   * [Firewall and Port Mapping Nibiru](mainnet/nibiru/firewall-nibiru.md)
+
 * [🟩 Entangle](mainnet/entangle/README.md)
   * [Installation Node](mainnet/entangle/installation-node/README.md)
     * [Installation Validator](mainnet/entangle/installation-node/installation-validator.md)
@@ -157,6 +167,7 @@
     * [Snapshot](mainnet/entangle/infrastructures/snapshot.md)
     * [State Sync](mainnet/entangle/infrastructures/statesync.md)
   * [Firewall and Port Mapping Entangle](mainnet/entangle/firewall-entangle.md)
+
 * [🟩 Selfchain](mainnet/selfchain/README.md)
   * [Installation Node](mainnet/selfchain/installation-node/README.md)
     * [Installation Validator](mainnet/selfchain/installation-node/installation-validator.md)
@@ -171,6 +182,7 @@
     * [Snapshot](mainnet/selfchain/infrastructures/snapshot.md)
     * [State Sync](mainnet/selfchain/infrastructures/statesync.md)
   * [Firewall and Port Mapping Selfchain](mainnet/selfchain/firewall-selfchain.md)
+
 * [🟩 Crossfi](mainnet/crossfi/README.md)
   * [Installation Node](mainnet/crossfi/installation-node/README.md)
     * [Installation Validator](mainnet/crossfi/installation-node/installation-validator.md)
@@ -185,6 +197,7 @@
     * [Snapshot](mainnet/crossfi/infrastructures/snapshot.md)
     * [State Sync](mainnet/crossfi/infrastructures/statesync.md)
   * [Firewall and Port Mapping Crossfi](mainnet/crossfi/firewall-crossfi.md)
+
 * [🟩 AtomOne](mainnet/atomone/README.md)
   * [Installation Node](mainnet/atomone/installation-node/README.md)
     * [Installation Validator](mainnet/atomone/installation-node/installation-validator.md)
@@ -199,6 +212,7 @@
     * [Snapshot](mainnet/atomone/infrastructures/snapshot.md)
     * [State Sync](mainnet/atomone/infrastructures/statesync.md)
   * [Firewall and Port Mapping AtomOne](mainnet/atomone/firewall-atomone.md)
+
 * [🟩 Fuel Network](mainnet/fuelsequence/README.md)
   * [Installation Node](mainnet/fuelsequence/installation-node/README.md)
     * [Installation Validator](mainnet/fuelsequence/installation-node/installation-validator.md)
@@ -228,6 +242,7 @@
     * [Endpoint Public](testnet/dora/infrastructures/endpoint-public.md)
     * [Port Mapping](testnet/dora/infrastructures/port-mapping.md)
   * [Firewall Dora](testnet/dora/firewall-dora.md)
+
 * [⬜️ SGE](testnet/sge/README.md)
   * [Installation Node](testnet/sge/installation-node/README.md)
     * [Installation Validator](testnet/sge/installation-node/installation-validator.md)
@@ -239,6 +254,7 @@
     * [Endpoint Public](testnet/sge/infrastructures/endpoint-public.md)
     * [Port Mapping](testnet/sge/infrastructures/port-mapping.md)
   * [Firewall SGE](testnet/sge/firewall-sge.md)
+
 * [⬜️ Planq](testnet/planq/README.md)
   * [Installation Node](testnet/planq/installation-node/README.md)
     * [Installation Validator](testnet/planq/installation-node/installation-validator.md)
@@ -250,6 +266,7 @@
     * [Endpoint Public](testnet/planq/infrastructures/endpoint-public.md)
     * [Port Mapping](testnet/planq/infrastructures/port-mapping.md)
   * [Firewall Planq](testnet/planq/firewall-planq.md)
+
 * [⬜️ Empeiria](testnet/empe/README.md)
   * [Installation Node](testnet/empe/installation-node/README.md)
     * [Installation Validator](testnet/empe/installation-node/installation-validator.md)
@@ -264,6 +281,7 @@
     * [Snapshot](testnet/empe/infrastructures/snapshot.md)
     * [State Sync](testnet/empe/infrastructures/statesync.md)
   * [Firewall and Port Mapping empe](testnet/empe/firewall-empe.md)
+
 * [⬜️ Symphony](testnet/symphony/README.md)
   * [Installation Node](testnet/symphony/installation-node/README.md)
     * [Installation Validator](testnet/symphony/installation-node/installation-validator.md)
@@ -278,6 +296,7 @@
     * [Snapshot](testnet/symphony/infrastructures/snapshot.md)
     * [State Sync](testnet/symphony/infrastructures/statesync.md)
   * [Firewall and Port Mapping symphony](testnet/symphony/firewall-symphony.md)
+
 * [⬜️ Arkeo](testnet/arkeo/README.md)
   * [Installation Node](testnet/arkeo/installation-node/README.md)
     * [Installation Validator](testnet/arkeo/installation-node/installation-validator.md)
@@ -292,17 +311,7 @@
     * [Snapshot](testnet/arkeo/infrastructures/snapshot.md)
     * [State Sync](testnet/arkeo/infrastructures/statesync.md)
   * [Firewall and Port Mapping Arkeo](testnet/arkeo/firewall-arkeo.md)
-* [⬜️ Crossfi](testnet/crossfi/README.md)
-  * [Installation Node](testnet/crossfi/installation-node/README.md)
-    * [Installation Validator](testnet/crossfi/installation-node/installation-validator.md)
-    * [Up And Running](testnet/crossfi/installation-node/up-and-running.md)
-    * [Edit Configuration Node](testnet/crossfi/installation-node/edit-configuration-node.md)
-  * [Command Crossfi](testnet/crossfi/command-crossfi.md)
-  * [Infrastructures](testnet/crossfi/infrastructures/README.md)
-    * [Public Services](testnet/crossfi/infrastructures/public-services.md)
-    * [Endpoint Public](testnet/crossfi/infrastructures/endpoint-public.md)
-    * [Port Mapping](testnet/crossfi/infrastructures/port-mapping.md)
-  * [Firewall Crossfi](testnet/crossfi/firewall-crossfi.md)
+
 * [⬜️ Atomone](testnet/atomone/README.md)
   * [Installation Node](testnet/atomone/installation-node/README.md)
     * [Installation Validator](testnet/atomone/installation-node/installation-validator.md)
@@ -314,6 +323,7 @@
     * [Endpoint Public](testnet/atomone/infrastructures/endpoint-public.md)
     * [Port Mapping](testnet/atomone/infrastructures/port-mapping.md)
   * [Firewall Atomone](testnet/atomone/firewall-atomone.md)
+
 * [⬜️ Fuel Network](testnet/fuelsequence/README.md)
   * [Installation Node](testnet/fuelsequence/installation-node/README.md)
     * [Installation Validator](testnet/fuelsequence/installation-node/installation-validator.md)
@@ -325,6 +335,18 @@
     * [Endpoint Public](testnet/fuelsequence/infrastructures/endpoint-public.md)
     * [Port Mapping](testnet/fuelsequence/infrastructures/port-mapping.md)
   * [Firewall Fuel Network](testnet/fuelsequence/firewall-fuelsequence.md)
+  
+* [⬜️ Crossfi](testnet/crossfi/README.md)
+  * [Installation Node](testnet/crossfi/installation-node/README.md)
+    * [Installation Validator](testnet/crossfi/installation-node/installation-validator.md)
+    * [Up And Running](testnet/crossfi/installation-node/up-and-running.md)
+    * [Edit Configuration Node](testnet/crossfi/installation-node/edit-configuration-node.md)
+  * [Command Crossfi](testnet/crossfi/command-crossfi.md)
+  * [Infrastructures](testnet/crossfi/infrastructures/README.md)
+    * [Public Services](testnet/crossfi/infrastructures/public-services.md)
+    * [Endpoint Public](testnet/crossfi/infrastructures/endpoint-public.md)
+    * [Port Mapping](testnet/crossfi/infrastructures/port-mapping.md)
+  * [Firewall Crossfi](testnet/crossfi/firewall-crossfi.md)
 
 ## Tools Blockchain
 
