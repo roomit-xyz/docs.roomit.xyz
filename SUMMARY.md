@@ -350,6 +350,18 @@
     * [Port Mapping](testnet/crossfi/infrastructures/port-mapping.md)
   * [Firewall Crossfi](testnet/crossfi/firewall-crossfi.md)
 
+* [⬜️ Selfchain](testnet/selfchain/README.md)
+  * [Installation Node](testnet/selfchain/installation-node/README.md)
+    * [Installation Validator](testnet/selfchain/installation-node/installation-validator.md)
+    * [Up And Running](testnet/selfchain/installation-node/up-and-running.md)
+    * [Edit Configuration Node](testnet/selfchain/installation-node/edit-configuration-node.md)
+  * [Command Selfchain](testnet/selfchain/command-selfchain.md)
+  * [Infrastructures](testnet/selfchain/infrastructures/README.md)
+    * [Public Services](testnet/selfchain/infrastructures/public-services.md)
+    * [Endpoint Public](testnet/selfchain/infrastructures/endpoint-public.md)
+    * [Port Mapping](testnet/selfchain/infrastructures/port-mapping.md)
+  * [Firewall Selfchain](testnet/selfchain/firewall-selfchain.md)
+
 
 
 ## Tools Blockchain
